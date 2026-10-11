@@ -14,84 +14,41 @@
 
 <style>
 :root{
-  --bg:#09090b;
-  --panel:#131316;
-  --panel2:#1b1a1e;
-  --gold:#d8b46a;
-  --gold2:#f4dca4;
-  --text:#f5f3ee;
-  --muted:#a7a3a0;
-  --border:rgba(216,180,106,.22);
-  --green:#68d9a0;
-  --red:#ff7777;
+  --bg:#09090b;--panel:#131316;--panel2:#1b1a1e;
+  --gold:#d8b46a;--gold2:#f4dca4;--text:#f5f3ee;
+  --muted:#a7a3a0;--border:rgba(216,180,106,.22);
+  --green:#68d9a0;--red:#ff7777
 }
 *{box-sizing:border-box}
-body{
-  margin:0;background:var(--bg);color:var(--text);
-  font-family:Arial,Helvetica,sans-serif;min-height:100vh
-}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif;min-height:100vh}
 button,input,select{font:inherit}
 button{cursor:pointer}
-button:focus-visible,input:focus-visible,select:focus-visible{
-  outline:2px solid var(--gold);outline-offset:2px
-}
+button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
 .app{max-width:1450px;margin:auto}
-.topbar{
-  position:sticky;top:0;z-index:20;min-height:72px;
-  display:flex;align-items:center;justify-content:space-between;
-  gap:15px;padding:12px 25px;background:rgba(9,9,11,.97);
-  border-bottom:1px solid var(--border)
-}
+.topbar{position:sticky;top:0;z-index:20;min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:15px;padding:12px 25px;background:rgba(9,9,11,.97);border-bottom:1px solid var(--border)}
 .brand{display:flex;align-items:center;gap:10px;color:var(--text);text-decoration:none}
-.brand-icon{
-  width:41px;height:41px;display:grid;place-items:center;
-  border:1px solid var(--gold);border-radius:12px;
-  color:var(--gold);font-size:25px;font-weight:900
-}
+.brand-icon{width:41px;height:41px;display:grid;place-items:center;border:1px solid var(--gold);border-radius:12px;color:var(--gold);font-size:25px;font-weight:900}
 .brand-name{font-size:18px;font-weight:900;letter-spacing:1px}
 .brand-sub{font-size:9px;color:var(--muted);letter-spacing:1px;margin-top:4px}
 .top-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-.btn{
-  display:inline-flex;align-items:center;justify-content:center;gap:7px;
-  border:1px solid var(--border);border-radius:11px;padding:11px 14px;
-  color:var(--text);background:var(--panel2);font-weight:700
-}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;border:1px solid var(--border);border-radius:11px;padding:11px 14px;color:var(--text);background:var(--panel2);font-weight:700}
 .btn:hover{border-color:var(--gold)}
-.btn-gold{
-  color:#18130a;background:linear-gradient(135deg,var(--gold2),var(--gold));
-  border-color:transparent
-}
+.btn:disabled{opacity:.6;cursor:not-allowed}
+.btn-gold{color:#18130a;background:linear-gradient(135deg,var(--gold2),var(--gold));border-color:transparent}
 .btn-small{padding:9px 11px;font-size:12px}
 .install-btn{border-color:var(--gold);color:var(--gold2)}
 .layout{display:grid;grid-template-columns:230px minmax(0,1fr)}
-.sidebar{
-  padding:24px 14px;border-right:1px solid var(--border);
-  min-height:calc(100vh - 72px);background:#0c0c0f
-}
-.side-label{
-  color:#77747a;font-size:10px;letter-spacing:1.7px;
-  margin:8px 12px 13px;text-transform:uppercase
-}
+.sidebar{padding:24px 14px;border-right:1px solid var(--border);min-height:calc(100vh - 72px);background:#0c0c0f}
+.side-label{color:#77747a;font-size:10px;letter-spacing:1.7px;margin:8px 12px 13px;text-transform:uppercase}
 .nav{display:grid;gap:5px}
-.nav button{
-  width:100%;text-align:left;padding:13px 12px;border-radius:10px;
-  background:transparent;border:1px solid transparent;color:#b7b3b0
-}
-.nav button.active,.nav button:hover{
-  background:rgba(216,180,106,.09);border-color:var(--border);color:var(--gold2)
-}
-.sidebar-note{
-  margin-top:25px;padding:15px;border:1px solid var(--border);
-  border-radius:14px;background:#17150f
-}
+.nav button{width:100%;text-align:left;padding:13px 12px;border-radius:10px;background:transparent;border:1px solid transparent;color:#b7b3b0}
+.nav button.active,.nav button:hover{background:rgba(216,180,106,.09);border-color:var(--border);color:var(--gold2)}
+.sidebar-note{margin-top:25px;padding:15px;border:1px solid var(--border);border-radius:14px;background:#17150f}
 .sidebar-note p{font-size:12px;color:var(--muted);line-height:1.6}
 main{padding:27px;min-width:0}
 .page{display:none}
 .page.active{display:block}
-.heading{
-  display:flex;align-items:flex-start;justify-content:space-between;
-  gap:15px;margin-bottom:22px
-}
+.heading{display:flex;align-items:flex-start;justify-content:space-between;gap:15px;margin-bottom:22px}
 .eyebrow{color:var(--gold);font-size:11px;letter-spacing:1.7px;text-transform:uppercase}
 h1{font-size:clamp(26px,3vw,36px);margin:9px 0;letter-spacing:-.7px}
 h2{font-size:19px;margin:0 0 9px}
@@ -101,41 +58,23 @@ p{line-height:1.6}
 .small{font-size:12px}
 .grid{display:grid;gap:15px}
 .stats{grid-template-columns:repeat(4,minmax(0,1fr));margin-bottom:18px}
-.card{
-  min-width:0;padding:19px;border:1px solid var(--border);
-  border-radius:16px;background:linear-gradient(145deg,#17171b,#101013)
-}
+.card{min-width:0;padding:19px;border:1px solid var(--border);border-radius:16px;background:linear-gradient(145deg,#17171b,#101013)}
 .stat-label{font-size:12px;color:var(--muted)}
 .stat-value{font-size:clamp(19px,2vw,28px);font-weight:850;margin:12px 0;overflow-wrap:anywhere}
 .stat-foot{font-size:11px;color:var(--gold)}
-.hero{
-  padding:30px;border:1px solid rgba(216,180,106,.35);border-radius:20px;
-  margin-bottom:20px;
-  background:radial-gradient(ellipse at 90% 15%,rgba(216,180,106,.17),transparent 42%),
-  linear-gradient(125deg,#211c13,#111114 65%,#19150e)
-}
+.hero{padding:30px;border:1px solid rgba(216,180,106,.35);border-radius:20px;margin-bottom:20px;background:radial-gradient(ellipse at 90% 15%,rgba(216,180,106,.17),transparent 42%),linear-gradient(125deg,#211c13,#111114 65%,#19150e)}
 .hero-content{max-width:650px}
 .hero h1{font-size:clamp(30px,4vw,45px);line-height:1.12}
 .hero p{font-size:14px;color:#c8c2b8;max-width:550px}
 .hero-buttons{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
-.section-head{
-  display:flex;align-items:center;justify-content:space-between;
-  gap:10px;margin:26px 0 14px
-}
+.section-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:26px 0 14px}
 .section-head h2{margin:0}
 .package-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
-.package{
-  padding:18px;border:1px solid var(--border);border-radius:16px;
-  background:linear-gradient(150deg,#19191d,#101013);
-  display:flex;flex-direction:column;min-width:0
-}
+.package{padding:18px;border:1px solid var(--border);border-radius:16px;background:linear-gradient(150deg,#19191d,#101013);display:flex;flex-direction:column;min-width:0}
 .package.featured{border-color:rgba(216,180,106,.65);background:#201b12}
 .package-top{display:flex;justify-content:space-between;align-items:center;gap:7px}
 .package-name{font-size:17px;font-weight:800}
-.tag{
-  color:var(--gold2);border:1px solid var(--border);border-radius:20px;
-  padding:5px 7px;font-size:9px;text-transform:uppercase
-}
+.tag{color:var(--gold2);border:1px solid var(--border);border-radius:20px;padding:5px 7px;font-size:9px;text-transform:uppercase}
 .package-price{font-size:23px;font-weight:850;margin:18px 0 4px;overflow-wrap:anywhere}
 .package-sub{font-size:11px;color:var(--muted)}
 .line{height:1px;background:var(--border);margin:15px 0}
@@ -147,94 +86,44 @@ p{line-height:1.6}
 .level-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
 .level-card{padding:17px;border:1px solid var(--border);border-radius:14px;background:var(--panel)}
 .level-percent{font-size:28px;font-weight:850;color:var(--gold);margin:10px 0}
-.notice{
-  border:1px solid var(--border);border-radius:12px;padding:13px 14px;
-  background:rgba(216,180,106,.05);font-size:12px;line-height:1.7;color:#c8c0b2
-}
+.notice{border:1px solid var(--border);border-radius:12px;padding:13px 14px;background:rgba(216,180,106,.05);font-size:12px;line-height:1.7;color:#c8c0b2}
 .table-wrap{overflow-x:auto}
 table{width:100%;border-collapse:collapse;min-width:500px}
 th,td{padding:13px 11px;text-align:left;border-bottom:1px solid var(--border);font-size:12px}
 th{color:var(--muted);font-weight:600}
 td{color:#e6e1d9}
-.status{
-  display:inline-block;padding:5px 8px;border-radius:20px;
-  color:var(--gold2);background:#27231a;font-size:10px
-}
+.status{display:inline-block;padding:5px 8px;border-radius:20px;color:var(--gold2);background:#27231a;font-size:10px}
 .empty{text-align:center;padding:24px 10px;color:var(--muted);font-size:13px}
 .form{display:grid;gap:14px}
 .field{display:grid;gap:7px}
 .field label{font-size:12px;color:#c8c2bb}
-.field input,.field select{
-  width:100%;padding:13px;border:1px solid #37343a;
-  border-radius:10px;background:#0c0c0f;color:var(--text)
-}
+.field input,.field select{width:100%;padding:13px;border:1px solid #37343a;border-radius:10px;background:#0c0c0f;color:var(--text)}
 .form>.btn{width:100%}
 .ref-link{display:flex;gap:8px;margin-top:15px}
-.ref-link input{
-  flex:1;min-width:0;padding:11px;border-radius:9px;
-  border:1px solid #37343a;background:#0c0c0f;color:#eee
-}
-.modal-backdrop{
-  display:none;position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.8);
-  padding:16px;align-items:center;justify-content:center;overflow:auto
-}
+.ref-link input{flex:1;min-width:0;padding:11px;border-radius:9px;border:1px solid #37343a;background:#0c0c0f;color:#eee}
+.modal-backdrop{display:none;position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.8);padding:16px;align-items:center;justify-content:center;overflow:auto}
 .modal-backdrop.show{display:flex}
-.modal{
-  width:min(100%,450px);max-height:92vh;overflow:auto;padding:22px;
-  border:1px solid var(--border);border-radius:18px;background:#141417
-}
+.modal{width:min(100%,450px);max-height:92vh;overflow:auto;padding:22px;border:1px solid var(--border);border-radius:18px;background:#141417}
 .modal-head{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:16px}
 .close{width:35px;height:35px;border:0;border-radius:9px;background:#29272c;color:white;font-size:21px}
 .auth-tabs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:17px 0}
 .auth-tabs button{padding:11px;border:1px solid var(--border);border-radius:9px;background:#0c0c0f;color:#aaa}
 .auth-tabs button.active{color:var(--gold2);background:#282116}
-.toast{
-  position:fixed;z-index:100;bottom:30px;left:50%;transform:translate(-50%,15px);
-  background:#26231c;border:1px solid var(--border);padding:13px 17px;
-  border-radius:12px;font-size:13px;max-width:90vw;opacity:0;pointer-events:none;transition:.2s
-}
+.toast{position:fixed;z-index:100;bottom:30px;left:50%;transform:translate(-50%,15px);background:#26231c;border:1px solid var(--border);padding:13px 17px;border-radius:12px;font-size:13px;max-width:90vw;opacity:0;pointer-events:none;transition:.2s}
 .toast.show{opacity:1;transform:translate(-50%,0)}
 .hidden{display:none!important}
 .footer{text-align:center;margin:30px 0 5px;color:#77747a;font-size:11px;line-height:1.8}
 .mobile-nav{display:none}
-@media(max-width:1100px){
-  .package-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
-}
+@media(max-width:1100px){.package-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:760px){
-  .topbar{padding:10px 12px;min-height:64px}
-  .brand-icon{width:36px;height:36px}
-  .brand-name{font-size:16px}
-  .brand-sub{font-size:8px}
-  .layout{display:block}
-  .sidebar{display:none}
-  main{padding:19px 13px 100px}
-  .top-actions{gap:5px}
-  .top-actions .btn{font-size:11px;padding:9px 8px}
-  .hero{padding:23px 18px}
-  .two-col{grid-template-columns:1fr}
-  .mobile-nav{
-    display:flex;position:fixed;bottom:0;left:0;right:0;z-index:30;
-    padding:7px 3px calc(7px + env(safe-area-inset-bottom));
-    background:rgba(12,12,15,.97);border-top:1px solid var(--border);
-    justify-content:space-around
-  }
-  .mobile-nav button{
-    flex:1;min-width:0;display:flex;flex-direction:column;gap:4px;
-    align-items:center;padding:6px 1px;background:transparent;border:0;
-    color:#aaa5aa;font-size:9px
-  }
-  .mobile-nav button span{font-size:18px}
-  .mobile-nav button.active{color:var(--gold2)}
-  .heading{flex-wrap:wrap}
+ .topbar{padding:10px 12px;min-height:64px}.brand-icon{width:36px;height:36px}.brand-name{font-size:16px}.brand-sub{font-size:8px}
+ .layout{display:block}.sidebar{display:none}main{padding:19px 13px 100px}.top-actions{gap:5px}.top-actions .btn{font-size:11px;padding:9px 8px}
+ .hero{padding:23px 18px}.two-col{grid-template-columns:1fr}
+ .mobile-nav{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:30;padding:7px 3px calc(7px + env(safe-area-inset-bottom));background:rgba(12,12,15,.97);border-top:1px solid var(--border);justify-content:space-around}
+ .mobile-nav button{flex:1;min-width:0;display:flex;flex-direction:column;gap:4px;align-items:center;padding:6px 1px;background:transparent;border:0;color:#aaa5aa;font-size:9px}
+ .mobile-nav button span{font-size:18px}.mobile-nav button.active{color:var(--gold2)}.heading{flex-wrap:wrap}
 }
-@media(max-width:410px){
-  .package-grid{grid-template-columns:1fr}
-  .stats{gap:9px}
-  .card{padding:14px}
-  .stat-value{font-size:20px}
-  .brand-sub{letter-spacing:.4px}
-}
+@media(max-width:410px){.package-grid{grid-template-columns:1fr}.stats{gap:9px}.card{padding:14px}.stat-value{font-size:20px}.brand-sub{letter-spacing:.4px}}
 </style>
 </head>
 
@@ -243,15 +132,13 @@ td{color:#e6e1d9}
 <header class="topbar">
   <a href="#" class="brand" onclick="showPage('overview');return false">
     <div class="brand-icon">E</div>
-    <div>
-      <div class="brand-name">ELITEVEST</div>
-      <div class="brand-sub">INVEST TODAY · GROW TOMORROW</div>
-    </div>
+    <div><div class="brand-name">ELITEVEST</div><div class="brand-sub">INVEST TODAY · GROW TOMORROW</div></div>
   </a>
   <div class="top-actions">
     <button class="btn btn-small install-btn" id="installButton" onclick="installEliteVest()">⬇ Install App</button>
-    <button class="btn btn-small" onclick="openAuth('login')">Sign in</button>
-    <button class="btn btn-gold btn-small" onclick="openAuth('register')">Join now</button>
+    <button class="btn btn-small" id="signInButton" onclick="openAuth('login')">Sign in</button>
+    <button class="btn btn-gold btn-small" id="joinButton" onclick="openAuth('register')">Join now</button>
+    <button class="btn btn-small hidden" id="signOutButton" onclick="signOutEliteVest()">Sign out</button>
   </div>
 </header>
 
@@ -277,30 +164,30 @@ td{color:#e6e1d9}
 <main id="mainContent">
 <section class="page active" id="page-overview">
   <div class="heading">
-    <div><div class="eyebrow">Member dashboard</div><h1>Welcome to EliteVest</h1><div class="muted small">Your portfolio overview.</div></div>
+    <div><div class="eyebrow">Member dashboard</div><h1 id="welcomeTitle">Welcome to EliteVest</h1><div class="muted small" id="welcomeSubtitle">Sign in to view your account.</div></div>
     <button class="btn btn-gold" onclick="showPage('packages')">＋ Explore packages</button>
   </div>
-
   <div class="hero">
     <div class="hero-content">
       <div class="eyebrow">Invest today · Grow tomorrow</div>
       <h1>Plan your financial future.</h1>
-      <p>Explore the EliteVest package previews, view sample figures, and use the mobile-friendly dashboard.</p>
+      <p>Explore package information, view your account details, and use the mobile-friendly dashboard.</p>
       <div class="hero-buttons">
         <button class="btn btn-gold" onclick="showPage('packages')">View packages</button>
         <button class="btn" onclick="installEliteVest()">⬇ Install EliteVest</button>
+        <button class="btn" onclick="openAuth('register')">Create account</button>
       </div>
     </div>
   </div>
 
   <div class="grid stats">
-    <div class="card"><div class="stat-label">Demo wallet balance</div><div class="stat-value" id="statBalance">UGX 0</div><div class="stat-foot">Preview only</div></div>
-    <div class="card"><div class="stat-label">Selected packages</div><div class="stat-value" id="statActive">0</div><div class="stat-foot">Demo session</div></div>
-    <div class="card"><div class="stat-label">Projected earnings</div><div class="stat-value" id="statEarnings">UGX 0</div><div class="stat-foot">Not guaranteed</div></div>
-    <div class="card"><div class="stat-label">Referral earnings</div><div class="stat-value" id="statReferral">UGX 0</div><div class="stat-foot">Demo value</div></div>
+    <div class="card"><div class="stat-label">Wallet balance</div><div class="stat-value" id="statBalance">UGX 0</div><div class="stat-foot" id="balanceFoot">Sign in to load balance</div></div>
+    <div class="card"><div class="stat-label">Demo selections</div><div class="stat-value" id="statActive">0</div><div class="stat-foot">Not actual investments</div></div>
+    <div class="card"><div class="stat-label">Illustrative projection</div><div class="stat-value" id="statEarnings">UGX 0</div><div class="stat-foot">Not guaranteed</div></div>
+    <div class="card"><div class="stat-label">Referral earnings</div><div class="stat-value" id="statReferral">UGX 0</div><div class="stat-foot">Not activated</div></div>
   </div>
 
-  <div class="notice"><strong>Important:</strong> These are illustrative projections, not guaranteed earnings. This prototype does not accept deposits or make payouts.</div>
+  <div class="notice"><strong>Important:</strong> Projected figures are not guaranteed earnings. This prototype does not accept deposits, activate investments, or make payouts.</div>
 
   <div class="section-head"><h2>Popular packages</h2><button class="btn btn-small" onclick="showPage('packages')">View all →</button></div>
   <div class="grid package-grid" id="featuredPackages"></div>
@@ -308,93 +195,93 @@ td{color:#e6e1d9}
   <div class="section-head"><h2>Recent activity</h2><button class="btn btn-small" onclick="showPage('history')">History →</button></div>
   <div class="card table-wrap">
     <table><thead><tr><th>Activity</th><th>Amount</th><th>Status</th><th>Date</th></tr></thead><tbody id="recentRows"></tbody></table>
-    <div id="recentEmpty" class="empty">No demo activity yet.</div>
+    <div id="recentEmpty" class="empty">Sign in to load your transaction history.</div>
   </div>
 </section>
 
 <section class="page" id="page-packages">
-  <div class="heading"><div><div class="eyebrow">Explore opportunities</div><h1>Investment packages</h1><p class="muted small">Review the proposed package figures.</p></div></div>
-  <div class="notice">The figures below are projections supplied for this concept. A projected return is not a guarantee of profit or repayment.</div>
-  <div class="section-head"><h2>All packages</h2><span class="muted small">UGX</span></div>
+  <div class="heading"><div><div class="eyebrow">Explore opportunities</div><h1>Investment packages</h1><p class="muted small">Package details are loaded from Supabase when available.</p></div></div>
+  <div class="notice">The figures below are projections, not promises. Displaying a package does not mean that deposits, investment activation, or payouts are available.</div>
+  <div class="section-head"><h2>Available packages</h2><span class="muted small">UGX</span></div>
   <div class="grid package-grid" id="allPackages"></div>
 </section>
 
 <section class="page" id="page-wallet">
-  <div class="heading"><div><div class="eyebrow">Account summary</div><h1>My wallet</h1><p class="muted small">Demo wallet overview.</p></div></div>
+  <div class="heading"><div><div class="eyebrow">Account summary</div><h1>My wallet</h1><p class="muted small">Wallet information is read from your account.</p></div></div>
   <div class="grid stats">
-    <div class="card"><div class="stat-label">Available balance</div><div class="stat-value" id="walletBalance">UGX 0</div></div>
-    <div class="card"><div class="stat-label">Selected package value</div><div class="stat-value" id="walletInvested">UGX 0</div></div>
+    <div class="card"><div class="stat-label">Available balance</div><div class="stat-value" id="walletBalance">UGX 0</div><div class="stat-foot" id="walletFoot">Sign in to load wallet</div></div>
+    <div class="card"><div class="stat-label">Demo package selections</div><div class="stat-value" id="walletInvested">UGX 0</div><div class="stat-foot">Stored only in this browser session</div></div>
   </div>
-  <div class="notice">No real wallet or mobile-money connection is configured. Do not send money based on this prototype.</div>
-  <div class="section-head"><h2>Wallet activity</h2></div>
-  <div class="card table-wrap"><table><thead><tr><th>Activity</th><th>Amount</th><th>Status</th><th>Date</th></tr></thead><tbody id="walletRows"></tbody></table><div id="walletEmpty" class="empty">No wallet activity yet.</div></div>
+  <div class="notice">The wallet balance is read-only. This website cannot add money to your wallet or transfer money to a mobile-money number.</div>
+  <div class="section-head"><h2>Wallet transactions</h2></div>
+  <div class="card table-wrap"><table><thead><tr><th>Activity</th><th>Amount</th><th>Status</th><th>Date</th></tr></thead><tbody id="walletRows"></tbody></table><div id="walletEmpty" class="empty">Sign in to load your wallet transactions.</div></div>
 </section>
 
 <section class="page" id="page-withdraw">
-  <div class="heading"><div><div class="eyebrow">Payout interface</div><h1>Withdraw funds</h1><p class="muted small">Demo withdrawal form.</p></div></div>
+  <div class="heading"><div><div class="eyebrow">Payout interface</div><h1>Withdraw funds</h1><p class="muted small">Withdrawal processing is not yet connected.</p></div></div>
   <div class="grid two-col">
     <div class="card">
       <h2>Withdrawal request</h2>
-      <p class="muted small">The proposed service schedule is Monday to Friday.</p>
+      <p class="muted small">This form is a preview only. It will not submit a real request.</p>
       <form class="form" id="withdrawForm">
         <div class="field"><label for="withdrawAmount">Amount (UGX)</label><input id="withdrawAmount" type="number" min="1" step="1" placeholder="Enter amount" required></div>
         <div class="field"><label for="withdrawNetwork">Mobile money network</label><select id="withdrawNetwork" required><option value="">Select network</option><option>MTN Mobile Money</option><option>Airtel Money</option></select></div>
         <div class="field"><label for="withdrawPhone">Phone number</label><input id="withdrawPhone" type="tel" placeholder="07XXXXXXXX" required></div>
-        <button class="btn btn-gold" type="submit">Submit demo request</button>
+        <button class="btn btn-gold" type="submit">Check demo form</button>
       </form>
-      <p class="muted small">No money is sent and no real request is created.</p>
+      <p class="muted small">No money is sent and no real withdrawal request is created.</p>
     </div>
     <div class="card">
       <h2>Withdrawal information</h2><div class="line"></div>
-      <div class="row"><span>Planned service days</span><strong>Monday–Friday</strong></div>
-      <div class="row"><span>Weekend</span><strong>Closed</strong></div>
-      <div class="row"><span>Current status</span><strong>Demo only</strong></div><div class="line"></div>
-      <div class="notice">A live service needs server-side balance checks, transaction records, secure approval, and a verified payment provider.</div>
+      <div class="row"><span>Mobile money</span><strong>Not connected</strong></div>
+      <div class="row"><span>Balance verification</span><strong>Not enabled</strong></div>
+      <div class="row"><span>Current status</span><strong>Preview only</strong></div><div class="line"></div>
+      <div class="notice">A live withdrawal system requires secure server-side balance checks, transaction records, authorization, and a verified payment provider.</div>
     </div>
   </div>
 </section>
 
 <section class="page" id="page-referrals">
-  <div class="heading"><div><div class="eyebrow">Member network</div><h1>Referral programme</h1><p class="muted small">Proposed three-level commission structure.</p></div></div>
-  <div class="hero"><div class="hero-content"><div class="eyebrow">Share EliteVest</div><h1>Invite people to explore.</h1><p>Your personal demo referral link can be connected to a secure backend later.</p><div class="ref-link"><input id="refLink" readonly><button class="btn btn-gold" onclick="copyReferral()">Copy</button></div></div></div>
+  <div class="heading"><div><div class="eyebrow">Member network</div><h1>Referral programme</h1><p class="muted small">Referral commissions are not currently activated.</p></div></div>
+  <div class="hero"><div class="hero-content"><div class="eyebrow">Share EliteVest</div><h1>Invite people to explore.</h1><p>This is a preview link. Referral tracking and commissions are not connected to the backend.</p><div class="ref-link"><input id="refLink" readonly><button class="btn btn-gold" onclick="copyReferral()">Copy</button></div></div></div>
   <div class="grid level-grid">
-    <div class="level-card"><div class="muted small">Level 1 · Direct</div><div class="level-percent">5%</div><div class="muted small">Proposed commission</div></div>
-    <div class="level-card"><div class="muted small">Level 2</div><div class="level-percent">2%</div><div class="muted small">Proposed commission</div></div>
-    <div class="level-card"><div class="muted small">Level 3</div><div class="level-percent">1%</div><div class="muted small">Proposed commission</div></div>
+    <div class="level-card"><div class="muted small">Level 1 · Direct</div><div class="level-percent">5%</div><div class="muted small">Proposed only</div></div>
+    <div class="level-card"><div class="muted small">Level 2</div><div class="level-percent">2%</div><div class="muted small">Proposed only</div></div>
+    <div class="level-card"><div class="muted small">Level 3</div><div class="level-percent">1%</div><div class="muted small">Proposed only</div></div>
   </div>
   <div class="section-head"><h2>Illustrative commission amounts</h2></div>
   <div class="card table-wrap"><table><thead><tr><th>Package</th><th>Level 1 (5%)</th><th>Level 2 (2%)</th><th>Level 3 (1%)</th><th>Total (8%)</th></tr></thead><tbody id="commissionRows"></tbody></table></div>
-  <p class="muted small">These examples are arithmetic illustrations only. Actual referral arrangements require clear terms and appropriate compliance checks.</p>
+  <p class="muted small">These are arithmetic illustrations only. No commission is being earned or credited by this page.</p>
 </section>
 
 <section class="page" id="page-history">
-  <div class="heading"><div><div class="eyebrow">Account records</div><h1>Transaction history</h1><p class="muted small">Activity from this browser session.</p></div><button class="btn" onclick="clearDemoHistory()">Clear demo history</button></div>
-  <div class="card table-wrap"><table><thead><tr><th>Activity</th><th>Amount</th><th>Status</th><th>Date</th></tr></thead><tbody id="historyRows"></tbody></table><div id="historyEmpty" class="empty">No demo transactions yet.</div></div>
-  <p class="muted small">These records are temporary and are not secure financial records.</p>
+  <div class="heading"><div><div class="eyebrow">Account records</div><h1>Transaction history</h1><p class="muted small">Financial transaction records loaded from Supabase.</p></div><button class="btn" onclick="refreshAccountData()">Refresh history</button></div>
+  <div class="card table-wrap"><table><thead><tr><th>Activity</th><th>Amount</th><th>Status</th><th>Date</th></tr></thead><tbody id="historyRows"></tbody></table><div id="historyEmpty" class="empty">Sign in to load your transaction history.</div></div>
+  <p class="muted small">Only transactions visible to your authenticated account will be displayed.</p>
 </section>
 
 <section class="page" id="page-profile">
-  <div class="heading"><div><div class="eyebrow">Account settings</div><h1>My profile</h1><p class="muted small">Local demo profile.</p></div></div>
+  <div class="heading"><div><div class="eyebrow">Account settings</div><h1>My profile</h1><p class="muted small">Your account details are stored in Supabase.</p></div></div>
   <div class="grid two-col">
     <div class="card"><h2>Member details</h2>
       <form id="profileForm" class="form">
         <div class="field"><label for="profileName">Full name</label><input id="profileName" required placeholder="Your full name"></div>
-        <div class="field"><label for="profileEmail">Email address</label><input id="profileEmail" type="email" placeholder="you@example.com"></div>
+        <div class="field"><label for="profileEmail">Email address</label><input id="profileEmail" type="email" readonly placeholder="Sign in to view email"></div>
         <div class="field"><label for="profilePhone">Phone number</label><input id="profilePhone" type="tel" placeholder="Your phone number"></div>
-        <button class="btn btn-gold" type="submit">Save demo profile</button>
+        <button class="btn btn-gold" type="submit">Save profile</button>
       </form>
-      <button class="btn" style="width:100%;margin-top:12px" onclick="openAuth('register')">Create demo account</button>
     </div>
     <div class="card"><h2>Platform status</h2><div class="line"></div>
       <div class="row"><span>Environment</span><strong>Prototype</strong></div>
-      <div class="row"><span>Backend</span><strong>Not connected</strong></div>
+      <div class="row"><span>Account backend</span><strong id="backendStatus">Connecting…</strong></div>
+      <div class="row"><span>Authentication</span><strong id="authStatus">Signed out</strong></div>
       <div class="row"><span>Installation</span><strong>PWA</strong></div><div class="line"></div>
-      <button class="btn" onclick="logoutDemo()">Reset demo session</button>
+      <button class="btn" id="profileSignOutButton" onclick="signOutEliteVest()">Sign out</button>
     </div>
   </div>
 </section>
 
-<div class="footer"><strong>ELITEVEST</strong><br>Invest Today · Grow Tomorrow<br>Prototype only. Projected returns are not guaranteed. This is not a live investment service.</div>
+<div class="footer"><strong>ELITEVEST</strong><br>Invest Today · Grow Tomorrow<br>Prototype only. Projected returns are not guaranteed. Deposits, investment activation, and withdrawals are not enabled.</div>
 </main>
 </div>
 
@@ -407,251 +294,779 @@ td{color:#e6e1d9}
 </nav>
 </div>
 
-<div class="modal-backdrop" id="authModal" role="dialog" aria-modal="true">
+<div class="modal-backdrop" id="authModal" role="dialog" aria-modal="true" aria-labelledby="authTitle">
   <div class="modal">
-    <div class="modal-head"><div><div class="eyebrow">Welcome to EliteVest</div><h2 id="authTitle">Create demo account</h2></div><button class="close" onclick="closeModal('authModal')" aria-label="Close">×</button></div>
-    <div class="notice">Demo only. No real account is created and no password is stored. Do not use a password from another service.</div>
+    <div class="modal-head"><div><div class="eyebrow">Welcome to EliteVest</div><h2 id="authTitle">Create account</h2></div><button class="close" onclick="closeModal('authModal')" aria-label="Close">×</button></div>
+    <div class="notice">Your account is handled by Supabase authentication. Use a strong, unique password.</div>
     <div class="auth-tabs"><button id="tabRegister" class="active" onclick="setAuthMode('register')">Create account</button><button id="tabLogin" onclick="setAuthMode('login')">Sign in</button></div>
     <form id="authForm" class="form">
       <div class="field" id="nameField"><label for="authName">Full name</label><input id="authName" autocomplete="name" placeholder="Your full name"></div>
       <div class="field"><label for="authEmail">Email address</label><input id="authEmail" type="email" autocomplete="email" placeholder="you@example.com" required></div>
       <div class="field" id="phoneField"><label for="authPhone">Phone number</label><input id="authPhone" type="tel" autocomplete="tel" placeholder="07XXXXXXXX"></div>
-      <div class="field"><label for="authPassword">Password (demo only)</label><input id="authPassword" type="password" autocomplete="off" minlength="4" placeholder="Demo password" required></div>
-      <button class="btn btn-gold" id="authSubmit" type="submit">Create demo account</button>
+      <div class="field"><label for="authPassword">Password</label><input id="authPassword" type="password" autocomplete="current-password" minlength="8" placeholder="At least 8 characters" required></div>
+      <button class="btn btn-gold" id="authSubmit" type="submit">Create account</button>
     </form>
   </div>
 </div>
 
-<div class="modal-backdrop" id="packageModal" role="dialog" aria-modal="true">
+<div class="modal-backdrop" id="packageModal" role="dialog" aria-modal="true" aria-labelledby="packageModalTitle">
   <div class="modal">
     <div class="modal-head"><div><div class="eyebrow">Package preview</div><h2 id="packageModalTitle">Package</h2></div><button class="close" onclick="closeModal('packageModal')" aria-label="Close">×</button></div>
     <div id="packageModalBody"></div>
-    <div class="notice" style="margin:15px 0">This adds a demo record only. No money is taken or transferred.</div>
-    <button class="btn btn-gold" style="width:100%" id="confirmPackage">Confirm demo selection</button>
+    <div class="notice" style="margin:15px 0">This is a package preview only. No investment is activated and no money is taken.</div>
+    <button class="btn btn-gold" style="width:100%" id="confirmPackage">Add demo selection</button>
   </div>
 </div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
+<!-- Supabase JavaScript client -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
 "use strict";
 
-const PACKAGES=[
- {name:"Bronze",amount:20000,daily:1000,tag:"Starter"},
- {name:"Silver",amount:50000,daily:2500,tag:"Growth"},
- {name:"Gold",amount:100000,daily:5000,tag:"Popular"},
- {name:"Platinum",amount:200000,daily:10000,tag:"Premium"},
- {name:"Diamond",amount:500000,daily:25000,tag:"Advanced"},
- {name:"VIP",amount:1000000,daily:50000,tag:"VIP"},
- {name:"Mega",amount:2000000,daily:100000,tag:"Exclusive"},
- {name:"Elite",amount:5000000,daily:250000,tag:"Elite"}
-].map(p=>({...p,days:30,profit:p.daily*30,total:p.amount+p.daily*30}));
+/*
+ * ELITEVEST SUPABASE CONFIGURATION
+ * This is the publishable/browser key. Never place a service_role key here.
+ */
+const SUPABASE_URL = "https://xasbwwafhgcrnlmyaziw.supabase.co";
+const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_ELGADkZOF3urSGO8VquBOA_XC8u3w1j";
 
-const state={profile:null,activePackages:[],history:[],pendingPackage:null,authMode:"register"};
-const money=n=>"UGX "+Math.round(Number(n)||0).toLocaleString("en-UG");
-const today=()=>new Date().toLocaleDateString("en-UG",{year:"numeric",month:"short",day:"numeric"});
-const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+let supabaseClient = null;
+let currentUser = null;
+let currentSession = null;
+let packagesLoading = false;
+let accountLoading = false;
 
+const FALLBACK_PACKAGES = [
+ {name:"Bronze",principal_amount:20000,daily_projection:1000,duration_days:30,display_tag:"Starter"},
+ {name:"Silver",principal_amount:50000,daily_projection:2500,duration_days:30,display_tag:"Growth"},
+ {name:"Gold",principal_amount:100000,daily_projection:5000,duration_days:30,display_tag:"Popular"},
+ {name:"Platinum",principal_amount:200000,daily_projection:10000,duration_days:30,display_tag:"Premium"},
+ {name:"Diamond",principal_amount:500000,daily_projection:25000,duration_days:30,display_tag:"Advanced"},
+ {name:"VIP",principal_amount:1000000,daily_projection:50000,duration_days:30,display_tag:"VIP"},
+ {name:"Mega",principal_amount:2000000,daily_projection:100000,duration_days:30,display_tag:"Exclusive"},
+ {name:"Elite",principal_amount:5000000,daily_projection:250000,duration_days:30,display_tag:"Elite"}
+];
+
+const state = {
+  profile:null,
+  activePackages:[],
+  transactions:[],
+  demoHistory:[],
+  pendingPackage:null,
+  authMode:"register",
+  packageSource:"fallback"
+};
+
+function money(value,currency="UGX"){
+  const n=Number(value)||0;
+  return currency+" "+Math.round(n).toLocaleString("en-UG");
+}
+function esc(value){
+  return String(value??"").replace(/[&<>"']/g,c=>({
+    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+  }[c]));
+}
+function niceDate(value){
+  if(!value)return "—";
+  const d=new Date(value);
+  return Number.isNaN(d.getTime())?String(value):d.toLocaleDateString("en-UG",{year:"numeric",month:"short",day:"numeric"});
+}
 function toast(message){
- const el=document.getElementById("toast");
- el.textContent=message;el.classList.add("show");
- clearTimeout(toast.timer);toast.timer=setTimeout(()=>el.classList.remove("show"),3300);
+  const el=document.getElementById("toast");
+  el.textContent=message;
+  el.classList.add("show");
+  clearTimeout(toast.timer);
+  toast.timer=setTimeout(()=>el.classList.remove("show"),3500);
+}
+function setBackendStatus(message){
+  document.getElementById("backendStatus").textContent=message;
 }
 function showPage(name){
- const page=document.getElementById("page-"+name);if(!page)return;
- document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
- page.classList.add("active");
- document.querySelectorAll("[data-page]").forEach(b=>b.classList.toggle("active",b.dataset.page===name));
- window.scrollTo({top:0,behavior:"smooth"});
- if(name==="wallet"||name==="history")renderHistory();
- if(name==="profile")fillProfile();
+  const page=document.getElementById("page-"+name);
+  if(!page)return;
+  document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
+  page.classList.add("active");
+  document.querySelectorAll("[data-page]").forEach(b=>b.classList.toggle("active",b.dataset.page===name));
+  window.scrollTo({top:0,behavior:"smooth"});
+  if(name==="wallet"||name==="history")renderHistory();
+  if(name==="profile")fillProfile();
 }
-function openAuth(mode="register"){setAuthMode(mode);document.getElementById("authModal").classList.add("show")}
-function closeModal(id){document.getElementById(id).classList.remove("show")}
+function openAuth(mode="register"){
+  if(currentUser){
+    toast("You are already signed in.");
+    showPage("profile");
+    return;
+  }
+  setAuthMode(mode);
+  document.getElementById("authModal").classList.add("show");
+}
+function closeModal(id){
+  document.getElementById(id).classList.remove("show");
+}
 function setAuthMode(mode){
- state.authMode=mode;const reg=mode==="register";
- document.getElementById("authTitle").textContent=reg?"Create demo account":"Sign in to demo";
- document.getElementById("authSubmit").textContent=reg?"Create demo account":"Continue to demo";
- document.getElementById("nameField").classList.toggle("hidden",!reg);
- document.getElementById("phoneField").classList.toggle("hidden",!reg);
- document.getElementById("authName").required=reg;
- document.getElementById("authPhone").required=reg;
- document.getElementById("tabRegister").classList.toggle("active",reg);
- document.getElementById("tabLogin").classList.toggle("active",!reg);
+  state.authMode=mode;
+  const registering=mode==="register";
+  document.getElementById("authTitle").textContent=registering?"Create your account":"Sign in to EliteVest";
+  document.getElementById("authSubmit").textContent=registering?"Create account":"Sign in";
+  document.getElementById("nameField").classList.toggle("hidden",!registering);
+  document.getElementById("phoneField").classList.toggle("hidden",!registering);
+  document.getElementById("authName").required=registering;
+  document.getElementById("authPhone").required=false;
+  document.getElementById("authPassword").autocomplete=registering?"new-password":"current-password";
+  document.getElementById("tabRegister").classList.toggle("active",registering);
+  document.getElementById("tabLogin").classList.toggle("active",!registering);
 }
+
+function normalizePackage(row){
+  const amount=Number(row.principal_amount)||0;
+  const daily=Number(row.daily_projection)||0;
+  const days=Number(row.duration_days)||30;
+  return {
+    id:row.id||null,
+    name:row.name||"Package",
+    amount,
+    daily,
+    days,
+    profit:daily*days,
+    total:amount+(daily*days),
+    tag:row.display_tag||row.name||"Package"
+  };
+}
+
 function packageCard(p,index){
- return `<article class="package ${index===2?"featured":""}">
- <div class="package-top"><div class="package-name">${esc(p.name)}</div><span class="tag">${esc(p.tag)}</span></div>
- <div class="package-price">${money(p.amount)}</div><div class="package-sub">Sample principal amount</div>
- <div class="line"></div>
- <div class="row"><span>Daily projection</span><strong>${money(p.daily)}</strong></div>
- <div class="row"><span>Duration</span><strong>30 days</strong></div>
- <div class="row"><span>Projected earnings</span><strong>${money(p.profit)}</strong></div>
- <div class="row"><span>Principal + projection</span><strong>${money(p.total)}</strong></div>
- <button class="btn ${index===2?"btn-gold":""}" onclick="openPackage('${p.name}')">View package</button></article>`;
+  return `<article class="package ${index===2?"featured":""}">
+    <div class="package-top"><div class="package-name">${esc(p.name)}</div><span class="tag">${esc(p.tag)}</span></div>
+    <div class="package-price">${money(p.amount)}</div>
+    <div class="package-sub">Displayed package amount</div>
+    <div class="line"></div>
+    <div class="row"><span>Daily projection</span><strong>${money(p.daily)}</strong></div>
+    <div class="row"><span>Duration</span><strong>${esc(p.days)} days</strong></div>
+    <div class="row"><span>Projected earnings</span><strong>${money(p.profit)}</strong></div>
+    <div class="row"><span>Principal + projection</span><strong>${money(p.total)}</strong></div>
+    <button class="btn ${index===2?"btn-gold":""}" onclick="openPackage('${esc(p.name).replace(/'/g,"\\'")}')">View package</button>
+  </article>`;
 }
+
+async function loadPackages(){
+  if(!supabaseClient){
+    state.packages=FALLBACK_PACKAGES.map(normalizePackage);
+    state.packageSource="fallback";
+    renderPackages();
+    return;
+  }
+
+  packagesLoading=true;
+  try{
+    const {data,error}=await supabaseClient
+      .from("packages")
+      .select("id,name,principal_amount,daily_projection,duration_days,is_active")
+      .eq("is_active",true)
+      .order("principal_amount",{ascending:true});
+
+    if(error)throw error;
+
+    if(Array.isArray(data)&&data.length){
+      state.packages=data.map(normalizePackage);
+      state.packageSource="supabase";
+    }else{
+      state.packages=FALLBACK_PACKAGES.map(normalizePackage);
+      state.packageSource="fallback";
+    }
+  }catch(error){
+    console.error("Could not load packages:",error);
+    state.packages=FALLBACK_PACKAGES.map(normalizePackage);
+    state.packageSource="fallback";
+  }finally{
+    packagesLoading=false;
+    renderPackages();
+  }
+}
+
 function renderPackages(){
- document.getElementById("allPackages").innerHTML=PACKAGES.map(packageCard).join("");
- document.getElementById("featuredPackages").innerHTML=PACKAGES.slice(0,4).map(packageCard).join("");
- document.getElementById("commissionRows").innerHTML=PACKAGES.map(p=>`<tr><td>${money(p.amount)}</td><td>${money(p.amount*.05)}</td><td>${money(p.amount*.02)}</td><td>${money(p.amount*.01)}</td><td>${money(p.amount*.08)}</td></tr>`).join("");
+  const packages=state.packages||FALLBACK_PACKAGES.map(normalizePackage);
+  document.getElementById("allPackages").innerHTML=packages.length
+    ?packages.map(packageCard).join("")
+    :'<div class="empty">No active packages are available.</div>';
+
+  document.getElementById("featuredPackages").innerHTML=packages.length
+    ?packages.slice(0,4).map(packageCard).join("")
+    :'<div class="empty">No active packages are available.</div>';
+
+  document.getElementById("commissionRows").innerHTML=packages.map(p=>
+    `<tr><td>${money(p.amount)}</td><td>${money(p.amount*.05)}</td><td>${money(p.amount*.02)}</td><td>${money(p.amount*.01)}</td><td>${money(p.amount*.08)}</td></tr>`
+  ).join("");
 }
+
 function openPackage(name){
- const p=PACKAGES.find(x=>x.name===name);if(!p)return;
- state.pendingPackage=p;
- document.getElementById("packageModalTitle").textContent=p.name+" package";
- document.getElementById("packageModalBody").innerHTML=`
- <div class="row"><span>Principal (sample)</span><strong>${money(p.amount)}</strong></div>
- <div class="row"><span>Daily projection</span><strong>${money(p.daily)}</strong></div>
- <div class="row"><span>Duration</span><strong>30 days</strong></div>
- <div class="row"><span>Projected earnings</span><strong>${money(p.profit)}</strong></div>
- <div class="row"><span>Principal + projection</span><strong>${money(p.total)}</strong></div>`;
- document.getElementById("packageModal").classList.add("show");
+  const p=(state.packages||[]).find(x=>x.name===name);
+  if(!p)return;
+  state.pendingPackage=p;
+  document.getElementById("packageModalTitle").textContent=p.name+" package";
+  document.getElementById("packageModalBody").innerHTML=`
+    <div class="row"><span>Package amount</span><strong>${money(p.amount)}</strong></div>
+    <div class="row"><span>Daily projection</span><strong>${money(p.daily)}</strong></div>
+    <div class="row"><span>Duration</span><strong>${esc(p.days)} days</strong></div>
+    <div class="row"><span>Projected earnings</span><strong>${money(p.profit)}</strong></div>
+    <div class="row"><span>Principal + projection</span><strong>${money(p.total)}</strong></div>`;
+  document.getElementById("packageModal").classList.add("show");
 }
+
 document.getElementById("confirmPackage").addEventListener("click",()=>{
- const p=state.pendingPackage;if(!p)return;
- state.activePackages.push({...p});
- state.history.unshift({type:"Demo package selection · "+p.name,amount:p.amount,status:"Demo only",date:today()});
- closeModal("packageModal");renderAll();
- toast(p.name+" selected. No money was taken.");
+  const p=state.pendingPackage;
+  if(!p)return;
+
+  // This is only a browser-session selection, NOT a database investment.
+  state.activePackages.push({...p});
+  state.demoHistory.unshift({
+    type:"Demo package preview · "+p.name,
+    amount:p.amount,
+    status:"Demo only",
+    date:new Date().toISOString(),
+    source:"demo"
+  });
+
+  closeModal("packageModal");
+  renderAll();
+  toast("Demo selection added. No money was taken or investment created.");
 });
+
 function renderStats(){
- const invested=state.activePackages.reduce((s,p)=>s+p.amount,0);
- const profit=state.activePackages.reduce((s,p)=>s+p.profit,0);
- document.getElementById("statBalance").textContent=money(0);
- document.getElementById("statActive").textContent=state.activePackages.length;
- document.getElementById("statEarnings").textContent=money(profit);
- document.getElementById("statReferral").textContent=money(0);
- document.getElementById("walletBalance").textContent=money(0);
- document.getElementById("walletInvested").textContent=money(invested);
+  const selectedValue=state.activePackages.reduce((sum,p)=>sum+p.amount,0);
+  const projected=state.activePackages.reduce((sum,p)=>sum+p.profit,0);
+  const walletCurrency=state.wallet?.currency||"UGX";
+  const balance=state.wallet?Number(state.wallet.available_balance)||0:0;
+
+  document.getElementById("statBalance").textContent=money(balance,walletCurrency);
+  document.getElementById("statActive").textContent=String(state.activePackages.length);
+  document.getElementById("statEarnings").textContent=money(projected);
+  document.getElementById("statReferral").textContent=money(0);
+  document.getElementById("walletBalance").textContent=money(balance,walletCurrency);
+  document.getElementById("walletInvested").textContent=money(selectedValue);
+  document.getElementById("balanceFoot").textContent=currentUser?"Read from your wallet":"Sign in to load balance";
+  document.getElementById("walletFoot").textContent=currentUser?"Read-only wallet":"Sign in to load wallet";
 }
+
+function displayTransaction(row){
+  const amount=Number(row.amount)||0;
+  const direction=row.direction?(" · "+row.direction):"";
+  return {
+    type:(row.description||row.transaction_type||"Transaction")+direction,
+    amount,
+    status:row.status||"Recorded",
+    date:row.created_at,
+    source:"supabase"
+  };
+}
+
 function rowsHTML(rows){
- return rows.map(r=>`<tr><td>${esc(r.type)}</td><td>${money(r.amount)}</td><td><span class="status">${esc(r.status)}</span></td><td>${esc(r.date)}</td></tr>`).join("");
+  return rows.map(r=>`<tr>
+    <td>${esc(r.type)}</td>
+    <td>${money(r.amount)}</td>
+    <td><span class="status">${esc(r.status)}</span></td>
+    <td>${esc(niceDate(r.date))}</td>
+  </tr>`).join("");
 }
+
 function renderHistory(){
- const recent=state.history.slice(0,5);
- document.getElementById("recentRows").innerHTML=rowsHTML(recent);
- document.getElementById("recentEmpty").classList.toggle("hidden",recent.length>0);
- document.getElementById("historyRows").innerHTML=rowsHTML(state.history);
- document.getElementById("historyEmpty").classList.toggle("hidden",state.history.length>0);
- document.getElementById("walletRows").innerHTML=rowsHTML(state.history.filter(r=>r.type.toLowerCase().includes("wallet")));
- document.getElementById("walletEmpty").classList.toggle("hidden",state.history.some(r=>r.type.toLowerCase().includes("wallet")));
+  const combined=[...(state.transactions||[]),...(state.demoHistory||[])];
+  const recent=combined.slice(0,5);
+
+  document.getElementById("recentRows").innerHTML=rowsHTML(recent);
+  document.getElementById("recentEmpty").classList.toggle("hidden",recent.length>0);
+  document.getElementById("recentEmpty").textContent=currentUser
+    ?"No transactions were found."
+    :"Sign in to load your transaction history.";
+
+  document.getElementById("historyRows").innerHTML=rowsHTML(combined);
+  document.getElementById("historyEmpty").classList.toggle("hidden",combined.length>0);
+  document.getElementById("historyEmpty").textContent=currentUser
+    ?"No transactions were found."
+    :"Sign in to load your transaction history.";
+
+  const walletTransactions=combined.filter(r=>
+    /wallet|deposit|withdraw|earning|investment/i.test(r.type)
+  );
+  document.getElementById("walletRows").innerHTML=rowsHTML(walletTransactions);
+  document.getElementById("walletEmpty").classList.toggle("hidden",walletTransactions.length>0);
+  document.getElementById("walletEmpty").textContent=currentUser
+    ?"No wallet transactions were found."
+    :"Sign in to load your wallet transactions.";
 }
-function renderAll(){renderStats();renderHistory();updateReferral()}
+
+function renderAll(){
+  renderStats();
+  renderHistory();
+  updateReferral();
+}
+
 function updateReferral(){
- const base=location.href.split("?")[0];
- document.getElementById("refLink").value=base+"?ref="+encodeURIComponent(state.profile?.id||"DEMO");
+  const base=location.href.split("?")[0];
+  const code=state.profile?.referral_code||"PREVIEW";
+  document.getElementById("refLink").value=base+"?ref="+encodeURIComponent(code);
 }
+
 async function copyReferral(){
- const input=document.getElementById("refLink");
- try{await navigator.clipboard.writeText(input.value);toast("Demo referral link copied.");}
- catch(e){input.focus();input.select();toast("Select and copy the referral link.");}
+  const input=document.getElementById("refLink");
+  try{
+    await navigator.clipboard.writeText(input.value);
+    toast("Preview link copied. Referral tracking is not active yet.");
+  }catch(error){
+    input.focus();
+    input.select();
+    toast("Select and copy the preview link.");
+  }
 }
+
 function fillProfile(){
- document.getElementById("profileName").value=state.profile?.name||"";
- document.getElementById("profileEmail").value=state.profile?.email||"";
- document.getElementById("profilePhone").value=state.profile?.phone||"";
+  document.getElementById("profileName").value=state.profile?.full_name||"";
+  document.getElementById("profileEmail").value=currentUser?.email||"";
+  document.getElementById("profilePhone").value=state.profile?.phone||"";
 }
-document.getElementById("authForm").addEventListener("submit",event=>{
- event.preventDefault();
- const email=document.getElementById("authEmail").value.trim();
- if(state.authMode==="register"){
-  state.profile={id:"EV"+Math.random().toString(36).slice(2,9).toUpperCase(),name:document.getElementById("authName").value.trim(),email,phone:document.getElementById("authPhone").value.trim()};
- }else if(!state.profile||state.profile.email.toLowerCase()!==email.toLowerCase()){
-  toast("No matching demo profile in this session. Create a demo account first.");return;
- }
- closeModal("authModal");document.getElementById("authPassword").value="";
- fillProfile();updateReferral();showPage("overview");
- toast("Demo session ready. No real account was created.");
+
+function updateAuthButtons(){
+  const signedIn=!!currentUser;
+  document.getElementById("signInButton").classList.toggle("hidden",signedIn);
+  document.getElementById("joinButton").classList.toggle("hidden",signedIn);
+  document.getElementById("signOutButton").classList.toggle("hidden",!signedIn);
+  document.getElementById("profileSignOutButton").classList.toggle("hidden",!signedIn);
+  document.getElementById("authStatus").textContent=signedIn?"Signed in":"Signed out";
+  document.getElementById("welcomeTitle").textContent=signedIn
+    ?"Welcome, "+(state.profile?.full_name||currentUser.email||"Member")
+    :"Welcome to EliteVest";
+  document.getElementById("welcomeSubtitle").textContent=signedIn
+    ?"Your account dashboard.":"Sign in to view your account.";
+}
+
+async function loadProfile(){
+  if(!currentUser||!supabaseClient){
+    state.profile=null;
+    fillProfile();
+    updateReferral();
+    return;
+  }
+
+  try{
+    const {data,error}=await supabaseClient
+      .from("profiles")
+      .select("id,full_name,phone,referral_code")
+      .eq("id",currentUser.id)
+      .maybeSingle();
+
+    if(error)throw error;
+
+    state.profile=data||{
+      id:currentUser.id,
+      full_name:currentUser.user_metadata?.full_name||"",
+      phone:currentUser.user_metadata?.phone||"",
+      referral_code:null
+    };
+  }catch(error){
+    console.error("Profile loading error:",error);
+    state.profile={
+      id:currentUser.id,
+      full_name:currentUser.user_metadata?.full_name||"",
+      phone:currentUser.user_metadata?.phone||"",
+      referral_code:null
+    };
+    toast("Signed in, but the profile could not be fully loaded.");
+  }
+
+  fillProfile();
+  updateReferral();
+  updateAuthButtons();
+}
+
+async function loadWallet(){
+  state.wallet=null;
+  if(!currentUser||!supabaseClient)return;
+
+  try{
+    const {data,error}=await supabaseClient
+      .from("wallets")
+      .select("available_balance,currency")
+      .eq("user_id",currentUser.id)
+      .maybeSingle();
+
+    if(error)throw error;
+    state.wallet=data||null;
+  }catch(error){
+    console.error("Wallet loading error:",error);
+    state.wallet=null;
+    toast("Your wallet could not be loaded. Check your Supabase wallet policy.");
+  }
+}
+
+async function loadTransactions(){
+  state.transactions=[];
+  if(!currentUser||!supabaseClient){
+    renderHistory();
+    return;
+  }
+
+  try{
+    const {data,error}=await supabaseClient
+      .from("wallet_transactions")
+      .select("transaction_type,direction,amount,currency,status,created_at,description")
+      .eq("user_id",currentUser.id)
+      .order("created_at",{ascending:false})
+      .limit(50);
+
+    if(error)throw error;
+    state.transactions=(data||[]).map(displayTransaction);
+  }catch(error){
+    console.error("Transaction loading error:",error);
+    state.transactions=[];
+    toast("Transaction history could not be loaded. Check your Supabase policies.");
+  }
+
+  renderHistory();
+}
+
+async function refreshAccountData(){
+  if(!currentUser){
+    toast("Please sign in first.");
+    openAuth("login");
+    return;
+  }
+  if(accountLoading)return;
+
+  accountLoading=true;
+  try{
+    await Promise.all([loadProfile(),loadWallet(),loadTransactions()]);
+    renderAll();
+    toast("Account data refreshed.");
+  }finally{
+    accountLoading=false;
+  }
+}
+
+document.getElementById("authForm").addEventListener("submit",async event=>{
+  event.preventDefault();
+  if(!supabaseClient){
+    toast("Supabase is not available. Check your connection.");
+    return;
+  }
+
+  const submit=document.getElementById("authSubmit");
+  const email=document.getElementById("authEmail").value.trim();
+  const password=document.getElementById("authPassword").value;
+  const fullName=document.getElementById("authName").value.trim();
+  const phone=document.getElementById("authPhone").value.trim();
+
+  submit.disabled=true;
+  submit.textContent="Please wait…";
+
+  try{
+    if(state.authMode==="register"){
+      if(password.length<8){
+        toast("Use a password with at least 8 characters.");
+        return;
+      }
+
+      const {data,error}=await supabaseClient.auth.signUp({
+        email,
+        password,
+        options:{
+          data:{
+            full_name:fullName,
+            phone:phone
+          }
+        }
+      });
+
+      if(error)throw error;
+
+      if(data.session){
+        currentSession=data.session;
+        currentUser=data.user;
+        closeModal("authModal");
+        await handleSignedInUser(data.user);
+        toast("Your EliteVest account has been created.");
+      }else{
+        toast("Registration received. Check your email to confirm your account, then sign in.");
+        setAuthMode("login");
+      }
+    }else{
+      const {data,error}=await supabaseClient.auth.signInWithPassword({
+        email,
+        password
+      });
+
+      if(error)throw error;
+
+      currentSession=data.session;
+      currentUser=data.user;
+      closeModal("authModal");
+      await handleSignedInUser(data.user);
+      toast("You are signed in to EliteVest.");
+    }
+  }catch(error){
+    console.error("Authentication error:",error);
+    const message=error?.message||"Authentication failed.";
+    toast(message);
+  }finally{
+    submit.disabled=false;
+    submit.textContent=state.authMode==="register"?"Create account":"Sign in";
+    document.getElementById("authPassword").value="";
+  }
 });
-document.getElementById("profileForm").addEventListener("submit",event=>{
- event.preventDefault();
- state.profile=state.profile||{id:"EV"+Math.random().toString(36).slice(2,9).toUpperCase()};
- state.profile.name=document.getElementById("profileName").value.trim();
- state.profile.email=document.getElementById("profileEmail").value.trim();
- state.profile.phone=document.getElementById("profilePhone").value.trim();
- updateReferral();toast("Demo profile updated for this session.");
+
+async function handleSignedInUser(user){
+  currentUser=user;
+  updateAuthButtons();
+  await loadProfile();
+  await loadWallet();
+  await loadTransactions();
+  renderAll();
+  fillProfile();
+}
+
+document.getElementById("profileForm").addEventListener("submit",async event=>{
+  event.preventDefault();
+
+  if(!currentUser||!supabaseClient){
+    toast("Please sign in before saving your profile.");
+    openAuth("login");
+    return;
+  }
+
+  const fullName=document.getElementById("profileName").value.trim();
+  const phone=document.getElementById("profilePhone").value.trim();
+
+  if(!fullName){
+    toast("Please enter your full name.");
+    return;
+  }
+
+  const submit=event.submitter;
+  if(submit)submit.disabled=true;
+
+  try{
+    // Only update columns permitted by the current database grant.
+    const {data,error}=await supabaseClient
+      .from("profiles")
+      .update({full_name:fullName,phone:phone||null})
+      .eq("id",currentUser.id)
+      .select("id,full_name,phone,referral_code")
+      .maybeSingle();
+
+    if(error)throw error;
+
+    if(data){
+      state.profile=data;
+    }else{
+      // A missing profile row may mean the signup trigger has not created it.
+      toast("No profile row was updated. Check that your profile trigger ran.");
+      return;
+    }
+
+    fillProfile();
+    updateAuthButtons();
+    updateReferral();
+    toast("Your profile has been updated.");
+  }catch(error){
+    console.error("Profile update error:",error);
+    toast(error?.message||"Could not save profile. Check your Supabase profile policy.");
+  }finally{
+    if(submit)submit.disabled=false;
+  }
 });
+
+async function signOutEliteVest(){
+  if(!supabaseClient||!currentUser){
+    toast("You are already signed out.");
+    return;
+  }
+
+  try{
+    const {error}=await supabaseClient.auth.signOut();
+    if(error)throw error;
+
+    currentUser=null;
+    currentSession=null;
+    state.profile=null;
+    state.wallet=null;
+    state.transactions=[];
+    state.activePackages=[];
+    state.demoHistory=[];
+
+    updateAuthButtons();
+    fillProfile();
+    renderAll();
+    showPage("overview");
+    toast("You have signed out.");
+  }catch(error){
+    console.error("Sign-out error:",error);
+    toast(error?.message||"Could not sign out.");
+  }
+}
+
 document.getElementById("withdrawForm").addEventListener("submit",event=>{
- event.preventDefault();
- const amount=Number(document.getElementById("withdrawAmount").value);
- const network=document.getElementById("withdrawNetwork").value;
- const phone=document.getElementById("withdrawPhone").value.trim();
- if(!Number.isFinite(amount)||amount<=0||!network||!phone){toast("Please complete all fields correctly.");return;}
- const day=new Date().getDay();
- if(day===0||day===6){toast("The planned withdrawal service is closed on weekends.");return;}
- toast("Demo only: no withdrawal was sent or submitted.");
+  event.preventDefault();
+  const amount=Number(document.getElementById("withdrawAmount").value);
+  const network=document.getElementById("withdrawNetwork").value;
+  const phone=document.getElementById("withdrawPhone").value.trim();
+
+  if(!Number.isFinite(amount)||amount<=0||!network||!phone){
+    toast("Please complete all fields correctly.");
+    return;
+  }
+
+  toast("Preview only: withdrawal processing is not connected.");
 });
+
 function clearDemoHistory(){
- if(!confirm("Clear all demo activity?"))return;
- state.history=[];state.activePackages=[];renderAll();toast("Demo activity cleared.");
+  if(!confirm("Clear only the temporary demo selections in this browser? Supabase transactions will not be deleted."))return;
+  state.demoHistory=[];
+  state.activePackages=[];
+  renderAll();
+  toast("Temporary demo selections cleared.");
 }
-function logoutDemo(){
- state.profile=null;state.activePackages=[];state.history=[];
- renderAll();fillProfile();updateReferral();showPage("overview");toast("Demo session reset.");
-}
-document.querySelectorAll(".modal-backdrop").forEach(backdrop=>backdrop.addEventListener("click",e=>{
- if(e.target===backdrop)backdrop.classList.remove("show");
-}));
-document.addEventListener("keydown",e=>{
- if(e.key==="Escape")document.querySelectorAll(".modal-backdrop").forEach(m=>m.classList.remove("show"));
+
+document.querySelectorAll(".modal-backdrop").forEach(backdrop=>{
+  backdrop.addEventListener("click",event=>{
+    if(event.target===backdrop)backdrop.classList.remove("show");
+  });
+});
+document.addEventListener("keydown",event=>{
+  if(event.key==="Escape"){
+    document.querySelectorAll(".modal-backdrop").forEach(m=>m.classList.remove("show"));
+  }
 });
 
 /* INSTALLABLE WEB APP */
 let eliteVestInstallPrompt=null;
 
 window.addEventListener("beforeinstallprompt",event=>{
- event.preventDefault();
- eliteVestInstallPrompt=event;
+  event.preventDefault();
+  eliteVestInstallPrompt=event;
 });
 
 window.addEventListener("appinstalled",()=>{
- eliteVestInstallPrompt=null;
- toast("EliteVest has been installed.");
+  eliteVestInstallPrompt=null;
+  toast("EliteVest has been installed.");
 });
 
 async function installEliteVest(){
- if(window.matchMedia("(display-mode: standalone)").matches){
-  toast("EliteVest is already installed.");
-  return;
- }
-
- if(eliteVestInstallPrompt){
-  eliteVestInstallPrompt.prompt();
-  await eliteVestInstallPrompt.userChoice;
-  eliteVestInstallPrompt=null;
-  return;
- }
-
- const ua=navigator.userAgent||"";
- const isIOS=/iphone|ipad|ipod/i.test(ua);
- const isAndroid=/android/i.test(ua);
- const isSafari=isIOS&&/safari/i.test(ua)&&!/crios|fxios|edgios/i.test(ua);
-
- if(isIOS){
-  if(isSafari){
-   alert("INSTALL ELITEVEST ON YOUR IPHONE\n\n1. Tap the Share button in Safari.\n2. Scroll down and tap 'Add to Home Screen'.\n3. If shown, enable 'Open as Web App'.\n4. Tap 'Add'.\n\nEliteVest will appear on your Home Screen.");
-  }else{
-   alert("To install EliteVest on iPhone, open this website in Safari, tap Share, choose 'Add to Home Screen', then tap Add.");
+  if(window.matchMedia("(display-mode: standalone)").matches){
+    toast("EliteVest is already installed.");
+    return;
   }
-  return;
- }
 
- if(isAndroid){
-  alert("INSTALL ELITEVEST ON ANDROID\n\n1. Open this website in Chrome.\n2. Tap the three-dot menu (⋮).\n3. Choose 'Install app' or 'Add to Home screen'.\n4. Follow the on-screen instructions.\n\nIf the install option is missing, check that the website is published over HTTPS and its PWA files are available.");
-  return;
- }
+  if(eliteVestInstallPrompt){
+    eliteVestInstallPrompt.prompt();
+    await eliteVestInstallPrompt.userChoice;
+    eliteVestInstallPrompt=null;
+    return;
+  }
 
- alert("To install EliteVest, open the website in a supported mobile browser and choose Install app or Add to Home Screen.");
+  const ua=navigator.userAgent||"";
+  const isIOS=/iphone|ipad|ipod/i.test(ua);
+  const isAndroid=/android/i.test(ua);
+  const isSafari=isIOS&&/safari/i.test(ua)&&!/crios|fxios|edgios/i.test(ua);
+
+  if(isIOS){
+    alert(isSafari
+      ?"INSTALL ELITEVEST ON YOUR IPHONE\n\n1. Tap Share in Safari.\n2. Choose Add to Home Screen.\n3. Tap Add."
+      :"Open EliteVest in Safari, tap Share, choose Add to Home Screen, then tap Add.");
+    return;
+  }
+
+  if(isAndroid){
+    alert("INSTALL ELITEVEST ON ANDROID\n\n1. Open the site in Chrome.\n2. Tap the three-dot menu (⋮).\n3. Choose Install app or Add to Home screen.\n4. Follow the instructions.");
+    return;
+  }
+
+  alert("Open the website in a supported browser and choose Install app or Add to Home Screen.");
+}
+
+/* INITIALIZE SUPABASE AND RESTORE THE LOGIN SESSION */
+async function initializeEliteVest(){
+  if(!window.supabase||typeof window.supabase.createClient!=="function"){
+    setBackendStatus("Client library unavailable");
+    toast("Supabase library could not load. Check your internet connection.");
+    state.packages=FALLBACK_PACKAGES.map(normalizePackage);
+    renderPackages();
+    renderAll();
+    return;
+  }
+
+  try{
+    supabaseClient=window.supabase.createClient(
+      SUPABASE_URL,
+      SUPABASE_PUBLISHABLE_KEY,
+      {
+        auth:{
+          persistSession:true,
+          autoRefreshToken:true,
+          detectSessionInUrl:true
+        }
+      }
+    );
+
+    setBackendStatus("Connected");
+    await loadPackages();
+
+    const {data,error}=await supabaseClient.auth.getSession();
+    if(error)throw error;
+
+    currentSession=data.session;
+    currentUser=data.session?.user||null;
+
+    if(currentUser){
+      await handleSignedInUser(currentUser);
+    }else{
+      state.profile=null;
+      state.wallet=null;
+      state.transactions=[];
+      updateAuthButtons();
+      fillProfile();
+      renderAll();
+    }
+
+    supabaseClient.auth.onAuthStateChange((event,session)=>{
+      currentSession=session;
+      currentUser=session?.user||null;
+
+      // Defer database calls so the auth callback can finish first.
+      setTimeout(async()=>{
+        if(currentUser){
+          await handleSignedInUser(currentUser);
+        }else{
+          state.profile=null;
+          state.wallet=null;
+          state.transactions=[];
+          state.activePackages=[];
+          state.demoHistory=[];
+          updateAuthButtons();
+          fillProfile();
+          renderAll();
+        }
+      },0);
+    });
+  }catch(error){
+    console.error("EliteVest initialization error:",error);
+    setBackendStatus("Connection error");
+    toast("Could not initialize EliteVest. Check your Supabase URL and publishable key.");
+    state.packages=FALLBACK_PACKAGES.map(normalizePackage);
+    renderPackages();
+    renderAll();
+  }
 }
 
 renderPackages();
 renderAll();
 fillProfile();
-updateReferral();
+updateAuthButtons();
 
-if("serviceWorker" in navigator && location.protocol==="https:"){
- window.addEventListener("load",()=>{
-  navigator.serviceWorker.register("./sw.js").catch(error=>console.warn("Service worker registration failed:",error));
- });
+initializeEliteVest();
+
+if("serviceWorker" in navigator&&location.protocol==="https:"){
+  window.addEventListener("load",()=>{
+    navigator.serviceWorker.register("./sw.js")
+      .catch(error=>console.warn("Service worker registration failed:",error));
+  });
 }
 </script>
 </body>
