@@ -1,56 +1,1619 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#0b0b0d"><meta name="description" content="EliteVest — Invest Today, Grow Tomorrow."><title>EliteVest | Invest Today, Grow Tomorrow</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b0b0d">
+<meta name="description" content="EliteVest — Invest Today, Grow Tomorrow.">
+<title>EliteVest | Invest Today, Grow Tomorrow</title>
+
 <style>
-:root{--bg:#09090b;--panel:#131316;--panel2:#1b1a1e;--gold:#d8b46a;--gold2:#f4dca4;--text:#f5f3ee;--muted:#a7a3a0;--border:rgba(216,180,106,.22);--green:#68d9a0;--red:#ff7777}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif;min-height:100vh}button,input,select{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--gold);outline-offset:2px}.app{max-width:1450px;margin:auto}.topbar{position:sticky;top:0;z-index:20;min-height:68px;display:flex;align-items:center;justify-content:space-between;gap:15px;padding:12px 20px;background:rgba(9,9,11,.97);border-bottom:1px solid var(--border)}.brand{display:flex;align-items:center;gap:10px;color:var(--text);text-decoration:none}.brand-icon{width:40px;height:40px;display:grid;place-items:center;border:1px solid var(--gold);border-radius:12px;color:var(--gold);font-size:24px;font-weight:900}.brand-name{font-weight:900;letter-spacing:1px}.brand-sub{font-size:9px;color:var(--muted);letter-spacing:1px;margin-top:4px}.top-actions{display:flex;gap:8px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;border:1px solid var(--border);border-radius:10px;padding:10px 13px;color:var(--text);background:var(--panel2);font-weight:700}.btn:hover{border-color:var(--gold)}.btn:disabled{opacity:.6;cursor:not-allowed}.gold{color:#18130a;background:linear-gradient(135deg,var(--gold2),var(--gold));border-color:transparent}.smallbtn{padding:8px 10px;font-size:12px}.layout{display:grid;grid-template-columns:220px minmax(0,1fr)}.sidebar{padding:22px 13px;border-right:1px solid var(--border);min-height:calc(100vh - 68px);background:#0c0c0f}.side-label{color:#77747a;font-size:10px;letter-spacing:1.5px;margin:8px 10px 13px;text-transform:uppercase}.nav{display:grid;gap:5px}.nav button{width:100%;text-align:left;padding:12px;border-radius:10px;background:transparent;border:1px solid transparent;color:#b7b3b0}.nav button.active,.nav button:hover{background:rgba(216,180,106,.09);border-color:var(--border);color:var(--gold2)}main{padding:25px;min-width:0}.page{display:none}.page.active{display:block}.heading{display:flex;align-items:flex-start;justify-content:space-between;gap:15px;margin-bottom:20px}.eyebrow{color:var(--gold);font-size:11px;letter-spacing:1.5px;text-transform:uppercase}h1{font-size:clamp(25px,3vw,35px);margin:8px 0}h2{font-size:19px;margin:0 0 10px}h3{font-size:15px;margin:0 0 8px}p{line-height:1.6}.muted{color:var(--muted)}.small{font-size:12px}.grid{display:grid;gap:14px}.stats{grid-template-columns:repeat(4,minmax(0,1fr));margin-bottom:18px}.card{min-width:0;padding:18px;border:1px solid var(--border);border-radius:15px;background:linear-gradient(145deg,#17171b,#101013)}.stat-label{font-size:12px;color:var(--muted)}.stat-value{font-size:clamp(19px,2vw,27px);font-weight:850;margin:11px 0;overflow-wrap:anywhere}.stat-foot{font-size:11px;color:var(--gold)}.hero{padding:27px;border:1px solid rgba(216,180,106,.35);border-radius:19px;margin-bottom:19px;background:radial-gradient(ellipse at 90% 15%,rgba(216,180,106,.17),transparent 42%),linear-gradient(125deg,#211c13,#111114 65%,#19150e)}.hero-content{max-width:650px}.hero h1{font-size:clamp(29px,4vw,43px);line-height:1.12}.hero p{font-size:14px;color:#c8c2b8;max-width:550px}.hero-buttons{display:flex;gap:9px;flex-wrap:wrap;margin-top:18px}.section-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:24px 0 13px}.section-head h2{margin:0}.package-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.package{padding:16px;border:1px solid var(--border);border-radius:15px;background:linear-gradient(150deg,#19191d,#101013);min-width:0}.package.featured{border-color:rgba(216,180,106,.65);background:#201b12}.package-top{display:flex;justify-content:space-between;align-items:center;gap:7px}.package-name{font-size:16px;font-weight:800}.tag,.status{display:inline-block;color:var(--gold2);border:1px solid var(--border);border-radius:20px;padding:5px 7px;font-size:10px}.price{font-size:22px;font-weight:850;margin:16px 0 4px;overflow-wrap:anywhere}.line{height:1px;background:var(--border);margin:13px 0}.row{display:flex;justify-content:space-between;gap:8px;font-size:12px;margin:10px 0}.row span:first-child{color:var(--muted)}.row strong{text-align:right}.package .btn{margin-top:10px;width:100%}.two-col{grid-template-columns:1.2fr .8fr}.notice{border:1px solid var(--border);border-radius:11px;padding:12px 13px;background:rgba(216,180,106,.05);font-size:12px;line-height:1.7;color:#c8c0b2}.table-wrap{overflow-x:auto}table{width:100%;border-collapse:collapse;min-width:480px}th,td{padding:12px 10px;text-align:left;border-bottom:1px solid var(--border);font-size:12px}th{color:var(--muted);font-weight:600}td{color:#e6e1d9}.empty{text-align:center;padding:22px 10px;color:var(--muted);font-size:13px}.form{display:grid;gap:13px}.field{display:grid;gap:7px}.field label{font-size:12px;color:#c8c2bb}.field input,.field select{width:100%;padding:12px;border:1px solid #37343a;border-radius:9px;background:#0c0c0f;color:var(--text)}.form>.btn{width:100%}.ref-link{display:flex;gap:8px;margin-top:13px}.ref-link input{flex:1;min-width:0;padding:10px;border-radius:9px;border:1px solid #37343a;background:#0c0c0f;color:#eee}.modal-backdrop{display:none;position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.8);padding:16px;align-items:center;justify-content:center;overflow:auto}.modal-backdrop.show{display:flex}.modal{width:min(100%,450px);max-height:92vh;overflow:auto;padding:21px;border:1px solid var(--border);border-radius:17px;background:#141417}.modal-head{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:15px}.close{width:34px;height:34px;border:0;border-radius:9px;background:#29272c;color:white;font-size:21px}.auth-tabs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:16px 0}.auth-tabs button{padding:10px;border:1px solid var(--border);border-radius:9px;background:#0c0c0f;color:#aaa}.auth-tabs button.active{color:var(--gold2);background:#282116}.toast{position:fixed;z-index:100;bottom:25px;left:50%;transform:translate(-50%,15px);background:#26231c;border:1px solid var(--border);padding:12px 16px;border-radius:11px;font-size:13px;max-width:92vw;opacity:0;pointer-events:none;transition:.2s}.toast.show{opacity:1;transform:translate(-50%,0)}.hidden{display:none!important}.footer{text-align:center;margin:28px 0 5px;color:#77747a;font-size:11px;line-height:1.8}.mobile-nav{display:none}.pill{font-size:11px;border:1px solid var(--border);border-radius:20px;padding:5px 8px;color:var(--gold2)}.avatar{width:64px;height:64px;display:grid;place-items:center;border-radius:50%;border:1px solid var(--gold);background:#241e12;color:var(--gold2);font-size:24px;font-weight:800;margin-bottom:14px}.member-count{color:var(--gold);font-size:12px;margin-top:8px}.member-active{color:var(--green);border-color:rgba(104,217,160,.35)}.member-suspended{color:var(--red);border-color:rgba(255,119,119,.35)}
-@media(max-width:1050px){.package-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:760px){.topbar{padding:10px 12px;min-height:62px}.brand-icon{width:35px;height:35px}.brand-name{font-size:15px}.brand-sub{font-size:8px}.layout{display:block}.sidebar{display:none}main{padding:18px 12px 95px}.top-actions{gap:5px}.top-actions .btn{font-size:10px;padding:8px 7px}.hero{padding:21px 16px}.two-col{grid-template-columns:1fr}.mobile-nav{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:30;padding:7px 3px calc(7px + env(safe-area-inset-bottom));background:rgba(12,12,15,.98);border-top:1px solid var(--border);justify-content:space-around}.mobile-nav button{flex:1;min-width:0;display:flex;flex-direction:column;gap:4px;align-items:center;padding:5px 1px;background:transparent;border:0;color:#aaa5aa;font-size:9px}.mobile-nav button span{font-size:17px}.mobile-nav button.active{color:var(--gold2)}.heading{flex-wrap:wrap}}@media(max-width:420px){.package-grid{grid-template-columns:1fr}.stats{gap:8px}.card{padding:13px}.stat-value{font-size:19px}.brand-sub{letter-spacing:.3px}}
-</style></head>
-<body><div class="app">
-<header class="topbar"><a href="#" class="brand" onclick="showPage('overview');return false"><div class="brand-icon">E</div><div><div class="brand-name">ELITEVEST</div><div class="brand-sub">INVEST TODAY · GROW TOMORROW</div></div></a><div class="top-actions"><button class="btn smallbtn" onclick="installEliteVest()">⬇ Install</button><button class="btn smallbtn" id="signInButton" onclick="openAuth('login')">Sign in</button><button class="btn gold smallbtn" id="joinButton" onclick="openAuth('register')">Join now</button><button class="btn smallbtn hidden" id="signOutButton" onclick="signOutEliteVest()">Sign out</button></div></header>
-<div class="layout"><aside class="sidebar"><div class="side-label">Workspace</div><nav class="nav" id="sideNav"><button class="active" data-page="overview" onclick="showPage('overview')">⌂ &nbsp; Overview</button><button data-page="packages" onclick="showPage('packages')">◇ &nbsp; Packages</button><button data-page="wallet" onclick="showPage('wallet')">▣ &nbsp; My wallet</button><button data-page="withdraw" onclick="showPage('withdraw')">↗ &nbsp; Withdraw</button><button data-page="referrals" onclick="showPage('referrals')">♧ &nbsp; Referrals</button><button data-page="history" onclick="showPage('history')">◷ &nbsp; Transactions</button><button data-page="profile" onclick="showPage('profile')">◎ &nbsp; My profile</button><button class="hidden" id="adminNav" data-page="admin" onclick="showPage('admin')">⚙ &nbsp; Admin dashboard</button></nav><div class="notice" style="margin-top:20px">Prototype mode: deposits, package activation, and payouts are not enabled.</div></aside>
+:root{
+--bg:#09090b;
+--panel:#131316;
+--panel2:#1b1a1e;
+--gold:#d8b46a;
+--gold2:#f4dca4;
+--text:#f5f3ee;
+--muted:#a7a3a0;
+--border:rgba(216,180,106,.22);
+--green:#68d9a0;
+--red:#ff7777
+}
+*{box-sizing:border-box}
+body{
+margin:0;background:var(--bg);color:var(--text);
+font-family:Arial,Helvetica,sans-serif;min-height:100vh
+}
+button,input,select{font:inherit}
+button{cursor:pointer}
+button:focus-visible,input:focus-visible,select:focus-visible{
+outline:2px solid var(--gold);outline-offset:2px
+}
+.app{max-width:1450px;margin:auto}
+.topbar{
+position:sticky;top:0;z-index:20;min-height:68px;
+display:flex;align-items:center;justify-content:space-between;
+gap:15px;padding:12px 20px;background:rgba(9,9,11,.97);
+border-bottom:1px solid var(--border)
+}
+.brand{display:flex;align-items:center;gap:10px;color:var(--text);text-decoration:none}
+.brand-icon{
+width:40px;height:40px;display:grid;place-items:center;
+border:1px solid var(--gold);border-radius:12px;
+color:var(--gold);font-size:24px;font-weight:900
+}
+.brand-name{font-weight:900;letter-spacing:1px}
+.brand-sub{font-size:9px;color:var(--muted);letter-spacing:1px;margin-top:4px}
+.top-actions{display:flex;gap:8px;flex-wrap:wrap}
+.btn{
+display:inline-flex;align-items:center;justify-content:center;gap:7px;
+border:1px solid var(--border);border-radius:10px;padding:10px 13px;
+color:var(--text);background:var(--panel2);font-weight:700
+}
+.btn:hover{border-color:var(--gold)}
+.btn:disabled{opacity:.6;cursor:not-allowed}
+.gold{
+color:#18130a;background:linear-gradient(135deg,var(--gold2),var(--gold));
+border-color:transparent
+}
+.smallbtn{padding:8px 10px;font-size:12px}
+.layout{display:grid;grid-template-columns:220px minmax(0,1fr)}
+.sidebar{
+padding:22px 13px;border-right:1px solid var(--border);
+min-height:calc(100vh - 68px);background:#0c0c0f
+}
+.side-label{
+color:#77747a;font-size:10px;letter-spacing:1.5px;
+margin:8px 10px 13px;text-transform:uppercase
+}
+.nav{display:grid;gap:5px}
+.nav button{
+width:100%;text-align:left;padding:12px;border-radius:10px;
+background:transparent;border:1px solid transparent;color:#b7b3b0
+}
+.nav button.active,.nav button:hover{
+background:rgba(216,180,106,.09);border-color:var(--border);color:var(--gold2)
+}
+main{padding:25px;min-width:0}
+.page{display:none}
+.page.active{display:block}
+.heading{
+display:flex;align-items:flex-start;justify-content:space-between;
+gap:15px;margin-bottom:20px
+}
+.eyebrow{color:var(--gold);font-size:11px;letter-spacing:1.5px;text-transform:uppercase}
+h1{font-size:clamp(25px,3vw,35px);margin:8px 0}
+h2{font-size:19px;margin:0 0 10px}
+h3{font-size:15px;margin:0 0 8px}
+p{line-height:1.6}
+.muted{color:var(--muted)}
+.small{font-size:12px}
+.grid{display:grid;gap:14px}
+.stats{grid-template-columns:repeat(4,minmax(0,1fr));margin-bottom:18px}
+.card{
+min-width:0;padding:18px;border:1px solid var(--border);
+border-radius:15px;background:linear-gradient(145deg,#17171b,#101013)
+}
+.stat-label{font-size:12px;color:var(--muted)}
+.stat-value{
+font-size:clamp(19px,2vw,27px);font-weight:850;margin:11px 0;
+overflow-wrap:anywhere
+}
+.stat-foot{font-size:11px;color:var(--gold)}
+.hero{
+padding:27px;border:1px solid rgba(216,180,106,.35);border-radius:19px;
+margin-bottom:19px;
+background:radial-gradient(ellipse at 90% 15%,rgba(216,180,106,.17),transparent 42%),
+linear-gradient(125deg,#211c13,#111114 65%,#19150e)
+}
+.hero-content{max-width:650px}
+.hero h1{font-size:clamp(29px,4vw,43px);line-height:1.12}
+.hero p{font-size:14px;color:#c8c2b8;max-width:550px}
+.hero-buttons{display:flex;gap:9px;flex-wrap:wrap;margin-top:18px}
+.section-head{
+display:flex;align-items:center;justify-content:space-between;
+gap:10px;margin:24px 0 13px
+}
+.section-head h2{margin:0}
+.package-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.package{
+padding:16px;border:1px solid var(--border);border-radius:15px;
+background:linear-gradient(150deg,#19191d,#101013);min-width:0
+}
+.package.featured{border-color:rgba(216,180,106,.65);background:#201b12}
+.package-top{display:flex;justify-content:space-between;align-items:center;gap:7px}
+.package-name{font-size:16px;font-weight:800}
+.tag,.status{
+display:inline-block;color:var(--gold2);border:1px solid var(--border);
+border-radius:20px;padding:5px 7px;font-size:10px
+}
+.price{font-size:22px;font-weight:850;margin:16px 0 4px;overflow-wrap:anywhere}
+.line{height:1px;background:var(--border);margin:13px 0}
+.row{display:flex;justify-content:space-between;gap:8px;font-size:12px;margin:10px 0}
+.row span:first-child{color:var(--muted)}
+.row strong{text-align:right}
+.package .btn{margin-top:10px;width:100%}
+.two-col{grid-template-columns:1.2fr .8fr}
+.notice{
+border:1px solid var(--border);border-radius:11px;padding:12px 13px;
+background:rgba(216,180,106,.05);font-size:12px;line-height:1.7;color:#c8c0b2
+}
+.table-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;min-width:480px}
+th,td{padding:12px 10px;text-align:left;border-bottom:1px solid var(--border);font-size:12px}
+th{color:var(--muted);font-weight:600}
+td{color:#e6e1d9}
+.empty{text-align:center;padding:22px 10px;color:var(--muted);font-size:13px}
+.form{display:grid;gap:13px}
+.field{display:grid;gap:7px}
+.field label{font-size:12px;color:#c8c2bb}
+.field input,.field select{
+width:100%;padding:12px;border:1px solid #37343a;border-radius:9px;
+background:#0c0c0f;color:var(--text)
+}
+.form>.btn{width:100%}
+.ref-link{display:flex;gap:8px;margin-top:13px}
+.ref-link input{
+flex:1;min-width:0;padding:10px;border-radius:9px;
+border:1px solid #37343a;background:#0c0c0f;color:#eee
+}
+.modal-backdrop{
+display:none;position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.8);
+padding:16px;align-items:center;justify-content:center;overflow:auto
+}
+.modal-backdrop.show{display:flex}
+.modal{
+width:min(100%,450px);max-height:92vh;overflow:auto;padding:21px;
+border:1px solid var(--border);border-radius:17px;background:#141417
+}
+.modal-head{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:15px}
+.close{
+width:34px;height:34px;border:0;border-radius:9px;
+background:#29272c;color:white;font-size:21px
+}
+.auth-tabs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:16px 0}
+.auth-tabs button{
+padding:10px;border:1px solid var(--border);border-radius:9px;
+background:#0c0c0f;color:#aaa
+}
+.auth-tabs button.active{color:var(--gold2);background:#282116}
+.toast{
+position:fixed;z-index:100;bottom:25px;left:50%;
+transform:translate(-50%,15px);background:#26231c;
+border:1px solid var(--border);padding:12px 16px;border-radius:11px;
+font-size:13px;max-width:92vw;opacity:0;pointer-events:none;transition:.2s
+}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.hidden{display:none!important}
+.footer{text-align:center;margin:28px 0 5px;color:#77747a;font-size:11px;line-height:1.8}
+.mobile-nav{display:none}
+.pill{font-size:11px;border:1px solid var(--border);border-radius:20px;padding:5px 8px;color:var(--gold2)}
+.avatar{
+width:64px;height:64px;display:grid;place-items:center;border-radius:50%;
+border:1px solid var(--gold);background:#241e12;color:var(--gold2);
+font-size:24px;font-weight:800;margin-bottom:14px
+}
+.member-count{color:var(--gold);font-size:12px;margin-top:8px}
+.member-active{color:var(--green);border-color:rgba(104,217,160,.35)}
+.member-suspended{color:var(--red);border-color:rgba(255,119,119,.35)}
+@media(max-width:1050px){
+.package-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:760px){
+.topbar{padding:10px 12px;min-height:62px}
+.brand-icon{width:35px;height:35px}
+.brand-name{font-size:15px}
+.brand-sub{font-size:8px}
+.layout{display:block}
+.sidebar{display:none}
+main{padding:18px 12px 95px}
+.top-actions{gap:5px}
+.top-actions .btn{font-size:10px;padding:8px 7px}
+.hero{padding:21px 16px}
+.two-col{grid-template-columns:1fr}
+.mobile-nav{
+display:flex;position:fixed;bottom:0;left:0;right:0;z-index:30;
+padding:7px 3px calc(7px + env(safe-area-inset-bottom));
+background:rgba(12,12,15,.98);border-top:1px solid var(--border);
+justify-content:space-around
+}
+.mobile-nav button{
+flex:1;min-width:0;display:flex;flex-direction:column;gap:4px;
+align-items:center;padding:5px 1px;background:transparent;
+border:0;color:#aaa5aa;font-size:9px
+}
+.mobile-nav button span{font-size:17px}
+.mobile-nav button.active{color:var(--gold2)}
+.heading{flex-wrap:wrap}
+}
+@media(max-width:420px){
+.package-grid{grid-template-columns:1fr}
+.stats{gap:8px}
+.card{padding:13px}
+.stat-value{font-size:19px}
+.brand-sub{letter-spacing:.3px}
+}
+</style>
+</head>
+
+<body>
+<div class="app">
+
+<header class="topbar">
+<a href="#" class="brand" onclick="showPage('overview');return false">
+<div class="brand-icon">E</div>
+<div>
+<div class="brand-name">ELITEVEST</div>
+<div class="brand-sub">INVEST TODAY · GROW TOMORROW</div>
+</div>
+</a>
+<div class="top-actions">
+<button class="btn smallbtn" onclick="installEliteVest()">⬇ Install</button>
+<button class="btn smallbtn" id="signInButton" onclick="openAuth('login')">Sign in</button>
+<button class="btn gold smallbtn" id="joinButton" onclick="openAuth('register')">Join now</button>
+<button class="btn smallbtn hidden" id="signOutButton" onclick="signOutEliteVest()">Sign out</button>
+</div>
+</header>
+
+<div class="layout">
+<aside class="sidebar">
+<div class="side-label">Workspace</div>
+<nav class="nav" id="sideNav">
+<button class="active" data-page="overview" onclick="showPage('overview')">⌂ &nbsp; Overview</button>
+<button data-page="packages" onclick="showPage('packages')">◇ &nbsp; Packages</button>
+<button data-page="wallet" onclick="showPage('wallet')">▣ &nbsp; My wallet</button>
+<button data-page="withdraw" onclick="showPage('withdraw')">↗ &nbsp; Withdraw</button>
+<button data-page="referrals" onclick="showPage('referrals')">♧ &nbsp; Referrals</button>
+<button data-page="history" onclick="showPage('history')">◷ &nbsp; Transactions</button>
+<button data-page="profile" onclick="showPage('profile')">◎ &nbsp; My profile</button>
+<button class="hidden" id="adminNav" data-page="admin" onclick="showPage('admin')">⚙ &nbsp; Admin dashboard</button>
+</nav>
+<div class="notice" style="margin-top:20px">
+Payment requests require a verified provider response. Package activation is subject to server-side payment confirmation.
+</div>
+</aside>
+
 <main>
-<section class="page active" id="page-overview"><div class="heading"><div><div class="eyebrow">Member dashboard</div><h1 id="welcomeTitle">Welcome to EliteVest</h1><div class="muted small" id="welcomeSubtitle">Sign in to view your account.</div></div><button class="btn gold" onclick="showPage('packages')">＋ Explore packages</button></div><div class="hero"><div class="eyebrow">Invest today · Grow tomorrow</div><h1>Plan your financial future.</h1><p>Explore package information and manage your account in this mobile-friendly dashboard.</p><div class="hero-buttons"><button class="btn gold" onclick="showPage('packages')">View packages</button><button class="btn" onclick="openAuth('register')">Create account</button></div></div><div class="grid stats"><div class="card"><div class="stat-label">Wallet balance</div><div class="stat-value" id="statBalance">UGX 0</div><div class="stat-foot" id="balanceFoot">Sign in to load balance</div></div><div class="card"><div class="stat-label">Demo selections</div><div class="stat-value" id="statActive">0</div><div class="stat-foot">Not actual investments</div></div><div class="card"><div class="stat-label">Illustrative projection</div><div class="stat-value" id="statEarnings">UGX 0</div><div class="stat-foot">Not guaranteed</div></div><div class="card"><div class="stat-label">Referral earnings</div><div class="stat-value">UGX 0</div><div class="stat-foot">Not activated</div></div></div><div class="notice"><b>Important:</b> Projected figures are illustrative only. This prototype does not accept deposits, activate investments, or make payouts.</div><div class="section-head"><h2>Popular packages</h2><button class="btn smallbtn" onclick="showPage('packages')">View all →</button></div><div class="grid package-grid" id="featuredPackages"></div><div class="section-head"><h2>Recent activity</h2><button class="btn smallbtn" onclick="showPage('history')">History →</button></div><div class="card table-wrap"><table><thead><tr><th>Activity</th><th>Amount</th><th>Status</th><th>Date</th></tr></thead><tbody id="recentRows"></tbody></table><div id="recentEmpty" class="empty">Sign in to load your transaction history.</div></div></section>
-<section class="page" id="page-packages"><div class="heading"><div><div class="eyebrow">Explore opportunities</div><h1>Investment packages</h1><p class="muted small">Package details load from Supabase when available.</p></div></div><div class="notice">Figures are projections, not promises. Viewing a package does not activate an investment.</div><div class="section-head"><h2>Available packages</h2><span class="muted small">UGX</span></div><div class="grid package-grid" id="allPackages"></div></section>
-<section class="page" id="page-wallet"><div class="heading"><div><div class="eyebrow">Account summary</div><h1>My wallet</h1><p class="muted small">Wallet information is read from your account.</p></div><button class="btn" onclick="refreshAccountData()">Refresh</button></div><div class="grid stats" style="grid-template-columns:repeat(2,minmax(0,1fr))"><div class="card"><div class="stat-label">Available balance</div><div class="stat-value" id="walletBalance">UGX 0</div><div class="stat-foot" id="walletFoot">Sign in to load wallet</div></div><div class="card"><div class="stat-label">Demo package selections</div><div class="stat-value" id="walletInvested">UGX 0</div><div class="stat-foot">Temporary browser data</div></div></div><div class="notice">Wallet is read-only. This page cannot add funds or transfer money to mobile money.</div><div class="section-head"><h2>Wallet transactions</h2></div><div class="card table-wrap"><table><thead><tr><th>Activity</th><th>Amount</th><th>Status</th><th>Date</th></tr></thead><tbody id="walletRows"></tbody></table><div id="walletEmpty" class="empty">Sign in to load transactions.</div></div></section>
-<section class="page" id="page-withdraw"><div class="heading"><div><div class="eyebrow">Payout interface</div><h1>Withdraw funds</h1><p class="muted small">Withdrawal processing is not connected.</p></div></div><div class="grid two-col"><div class="card"><h2>Withdrawal request preview</h2><form class="form" id="withdrawForm"><div class="field"><label for="withdrawAmount">Amount (UGX)</label><input id="withdrawAmount" type="number" min="1" required placeholder="Enter amount"></div><div class="field"><label for="withdrawNetwork">Mobile money network</label><select id="withdrawNetwork" required><option value="">Select network</option><option>MTN Mobile Money</option><option>Airtel Money</option></select></div><div class="field"><label for="withdrawPhone">Phone number</label><input id="withdrawPhone" type="tel" required placeholder="07XXXXXXXX"></div><button class="btn gold" type="submit">Check demo form</button></form><p class="muted small">No real request is submitted and no money is sent.</p></div><div class="card"><h2>Withdrawal information</h2><div class="line"></div><div class="row"><span>Mobile money</span><strong>Not connected</strong></div><div class="row"><span>Balance verification</span><strong>Not enabled</strong></div><div class="row"><span>Status</span><strong>Preview only</strong></div><div class="line"></div><div class="notice">Live withdrawals require secure server-side balance checks, transaction records, authorization, and a verified payment provider.</div></div></div></section>
-<section class="page" id="page-referrals"><div class="heading"><div><div class="eyebrow">Member network</div><h1>Referral programme</h1><p class="muted small">Referral tracking and commissions are not activated.</p></div></div><div class="hero"><div class="eyebrow">Share EliteVest</div><h1>Invite people to explore.</h1><p>This is a preview link. Referral tracking and commissions are not connected.</p><div class="ref-link"><input id="refLink" readonly><button class="btn gold" onclick="copyReferral()">Copy</button></div></div><div class="notice">Proposed commission illustrations only: Level 1 5%, Level 2 2%, Level 3 1%. No commission is earned or credited by this page.</div></section>
-<section class="page" id="page-history"><div class="heading"><div><div class="eyebrow">Account records</div><h1>Transaction history</h1><p class="muted small">Transactions visible to your authenticated account.</p></div><button class="btn" onclick="refreshAccountData()">Refresh history</button></div><div class="card table-wrap"><table><thead><tr><th>Activity</th><th>Amount</th><th>Status</th><th>Date</th></tr></thead><tbody id="historyRows"></tbody></table><div id="historyEmpty" class="empty">Sign in to load your transaction history.</div></div></section>
-<section class="page" id="page-profile"><div class="heading"><div><div class="eyebrow">Account settings</div><h1>My profile</h1><p class="muted small">Review and update your account details.</p></div></div><div class="grid two-col"><div class="card"><div class="avatar" id="profileAvatar">E</div><h2 id="profileDisplayName">Your profile</h2><p class="muted small">Your profile details are associated with your signed-in account.</p><form id="profileForm" class="form"><div class="field"><label for="profileName">Full name</label><input id="profileName" required placeholder="Your full name"></div><div class="field"><label for="profileEmail">Email address</label><input id="profileEmail" type="email" readonly placeholder="Sign in to view email"></div><div class="field"><label for="profilePhone">Phone number</label><input id="profilePhone" type="tel" placeholder="Your phone number"></div><button class="btn gold" type="submit">Save profile</button></form><p class="muted small">If saving fails, check that your profiles table has an id column linked to the user's auth ID and that its RLS policies permit the user to insert/update their own profile.</p></div><div class="card"><h2>Account status</h2><div class="line"></div><div class="row"><span>Account email</span><strong id="profileStatusEmail">—</strong></div><div class="row"><span>Authentication</span><strong id="authStatus">Signed out</strong></div><div class="row"><span>Environment</span><strong>Prototype</strong></div><div class="row"><span>Backend</span><strong id="backendStatus">Connecting…</strong></div><div class="row"><span>Member since</span><strong id="profileCreated">—</strong></div><div class="line"></div><button class="btn" onclick="refreshAccountData()">Refresh account</button> <button class="btn" onclick="signOutEliteVest()">Sign out</button></div></div></section>
-<section class="page" id="page-admin"><div class="heading"><div><div class="eyebrow">Restricted workspace</div><h1>Admin dashboard</h1><p class="muted small">Signed-in account: <span id="adminEmail"></span></p></div><span class="pill">ADMIN UI</span></div><div class="notice"><b>Security note:</b> Admin visibility in this page is a convenience check only. Protect administrative data and actions with server-side authorization and Supabase Row Level Security. This page does not approve deposits, change balances, suspend accounts, or process payouts.</div><div class="grid stats" style="margin-top:16px"><div class="card"><div class="stat-label">Signed-in user</div><div class="stat-value" style="font-size:16px" id="adminUserId">—</div><div class="stat-foot">Supabase Auth</div></div><div class="card"><div class="stat-label">Package source</div><div class="stat-value" style="font-size:18px" id="adminPackageSource">—</div><div class="stat-foot">Package display only</div></div><div class="card"><div class="stat-label">Transactions loaded</div><div class="stat-value" id="adminTxnCount">0</div><div class="stat-foot">Visible to current session</div></div><div class="card"><div class="stat-label">Backend</div><div class="stat-value" style="font-size:18px" id="adminBackend">—</div><div class="stat-foot">Connection status</div></div></div>
-<div class="section-head"><h2>Member management</h2><button class="btn smallbtn" onclick="loadAdminMembers()">↻ Refresh members</button></div><div class="card"><div class="field"><label for="adminMemberSearch">Search by name, phone, or user ID</label><input id="adminMemberSearch" type="search" placeholder="Search members…" oninput="filterAdminMembers()"></div><div class="member-count" id="adminMemberCount">Members: —</div><div class="table-wrap" style="margin-top:12px"><table><thead><tr><th>Member</th><th>Phone</th><th>Account status</th><th>Controls</th><th>User ID</th></tr></thead><tbody id="adminMemberRows"></tbody></table><div id="adminMemberEmpty" class="empty">Open this page to load member records.</div></div></div>
-<div class="section-head"><h2>Recent visible transactions</h2><button class="btn smallbtn" onclick="refreshAccountData()">Refresh</button></div><div class="card table-wrap"><table><thead><tr><th>Activity</th><th>Amount</th><th>Status</th><th>Date</th></tr></thead><tbody id="adminRows"></tbody></table><div id="adminEmpty" class="empty">No transactions loaded.</div></div></section>
-<div class="footer"><b>ELITEVEST</b><br>Invest Today · Grow Tomorrow<br>Prototype only. Returns are not guaranteed. Deposits, investment activation, and withdrawals are not enabled.</div></main></div>
-<nav class="mobile-nav" aria-label="Mobile navigation"><button class="active" data-page="overview" onclick="showPage('overview')"><span>⌂</span>Home</button><button data-page="packages" onclick="showPage('packages')"><span>◇</span>Packages</button><button data-page="wallet" onclick="showPage('wallet')"><span>▣</span>Wallet</button><button data-page="withdraw" onclick="showPage('withdraw')"><span>↗</span>Withdraw</button><button data-page="profile" onclick="showPage('profile')"><span>◎</span>Profile</button><button class="hidden" id="adminMobileNav" data-page="admin" onclick="showPage('admin')"><span>⚙</span>Admin</button></nav></div>
-<div class="modal-backdrop" id="authModal" role="dialog" aria-modal="true" aria-labelledby="authTitle"><div class="modal"><div class="modal-head"><div><div class="eyebrow">Welcome to EliteVest</div><h2 id="authTitle">Create account</h2></div><button class="close" onclick="closeModal('authModal')" aria-label="Close">×</button></div><div class="notice">Sign-in accepts the password already registered for your account. New registrations require at least 8 characters.</div><div class="auth-tabs"><button id="tabRegister" class="active" onclick="setAuthMode('register')">Create account</button><button id="tabLogin" onclick="setAuthMode('login')">Sign in</button></div><form id="authForm" class="form"><div class="field" id="nameField"><label for="authName">Full name</label><input id="authName" autocomplete="name" placeholder="Your full name"></div><div class="field"><label for="authEmail">Email address</label><input id="authEmail" type="email" autocomplete="email" placeholder="you@example.com" required></div><div class="field" id="phoneField"><label for="authPhone">Phone number (optional)</label><input id="authPhone" type="tel" autocomplete="tel" placeholder="07XXXXXXXX"></div><div class="field"><label for="authPassword">Password</label><input id="authPassword" type="password" autocomplete="new-password" placeholder="Enter your password" required></div><button class="btn gold" id="authSubmit" type="submit">Create account</button></form></div></div>
-<div class="modal-backdrop" id="packageModal" role="dialog" aria-modal="true" aria-labelledby="packageModalTitle"><div class="modal"><div class="modal-head"><div><div class="eyebrow">Package preview</div><h2 id="packageModalTitle">Package</h2></div><button class="close" onclick="closeModal('packageModal')" aria-label="Close">×</button></div><div id="packageModalBody"></div><div class="notice" style="margin:14px 0">Preview only. No investment is activated and no money is taken.</div><button class="btn gold" style="width:100%" id="confirmPackage">Add demo selection</button></div></div><div class="toast" id="toast" role="status" aria-live="polite"></div>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script>
+
+<section class="page active" id="page-overview">
+<div class="heading">
+<div>
+<div class="eyebrow">Member dashboard</div>
+<h1 id="welcomeTitle">Welcome to EliteVest</h1>
+<div class="muted small" id="welcomeSubtitle">Sign in to view your account.</div>
+</div>
+<button class="btn gold" onclick="showPage('packages')">＋ Explore packages</button>
+</div>
+
+<div class="hero">
+<div class="eyebrow">Invest today · Grow tomorrow</div>
+<h1>Plan your financial future.</h1>
+<p>Explore package information and manage your account in this mobile-friendly dashboard.</p>
+<div class="hero-buttons">
+<button class="btn gold" onclick="showPage('packages')">View packages</button>
+<button class="btn" onclick="openAuth('register')">Create account</button>
+</div>
+</div>
+
+<div class="grid stats">
+<div class="card">
+<div class="stat-label">Wallet balance</div>
+<div class="stat-value" id="statBalance">UGX 0</div>
+<div class="stat-foot" id="balanceFoot">Sign in to load balance</div>
+</div>
+<div class="card">
+<div class="stat-label">Demo selections</div>
+<div class="stat-value" id="statActive">0</div>
+<div class="stat-foot">Not actual investments</div>
+</div>
+<div class="card">
+<div class="stat-label">Illustrative projection</div>
+<div class="stat-value" id="statEarnings">UGX 0</div>
+<div class="stat-foot">Not guaranteed</div>
+</div>
+<div class="card">
+<div class="stat-label">Referral earnings</div>
+<div class="stat-value">UGX 0</div>
+<div class="stat-foot">Not activated</div>
+</div>
+</div>
+
+<div class="notice">
+<b>Important:</b> Any projected figures are illustrative and are not guaranteed returns. A payment request is not proof of successful payment. Package activation requires server-side verification.
+</div>
+
+<div class="section-head">
+<h2>Popular packages</h2>
+<button class="btn smallbtn" onclick="showPage('packages')">View all →</button>
+</div>
+<div class="grid package-grid" id="featuredPackages"></div>
+
+<div class="section-head">
+<h2>Recent activity</h2>
+<button class="btn smallbtn" onclick="showPage('history')">History →</button>
+</div>
+<div class="card table-wrap">
+<table>
+<thead><tr><th>Activity</th><th>Amount</th><th>Status</th><th>Date</th></tr></thead>
+<tbody id="recentRows"></tbody>
+</table>
+<div id="recentEmpty" class="empty">Sign in to load your transaction history.</div>
+</div>
+</section>
+
+<section class="page" id="page-packages">
+<div class="heading">
+<div>
+<div class="eyebrow">Explore opportunities</div>
+<h1>Investment packages</h1>
+<p class="muted small">Packages load from Supabase when available.</p>
+</div>
+</div>
+<div class="notice">
+Figures are projections, not promises. Viewing a package does not activate an investment. Payment is available only for packages linked to active Supabase records.
+</div>
+<div class="section-head"><h2>Available packages</h2><span class="muted small">UGX</span></div>
+<div class="grid package-grid" id="allPackages"></div>
+</section>
+
+<section class="page" id="page-wallet">
+<div class="heading">
+<div>
+<div class="eyebrow">Account summary</div>
+<h1>My wallet</h1>
+<p class="muted small">Wallet information is read from your account.</p>
+</div>
+<button class="btn" onclick="refreshAccountData()">Refresh</button>
+</div>
+<div class="grid stats" style="grid-template-columns:repeat(2,minmax(0,1fr))">
+<div class="card">
+<div class="stat-label">Available balance</div>
+<div class="stat-value" id="walletBalance">UGX 0</div>
+<div class="stat-foot" id="walletFoot">Sign in to load wallet</div>
+</div>
+<div class="card">
+<div class="stat-label">Demo package selections</div>
+<div class="stat-value" id="walletInvested">UGX 0</div>
+<div class="stat-foot">Temporary browser data</div>
+</div>
+</div>
+<div class="notice">Wallet is read-only. Deposits and transfers are not enabled here.</div>
+<div class="section-head"><h2>Wallet transactions</h2></div>
+<div class="card table-wrap">
+<table>
+<thead><tr><th>Activity</th><th>Amount</th><th>Status</th><th>Date</th></tr></thead>
+<tbody id="walletRows"></tbody>
+</table>
+<div id="walletEmpty" class="empty">Sign in to load transactions.</div>
+</div>
+</section>
+
+<section class="page" id="page-withdraw">
+<div class="heading">
+<div>
+<div class="eyebrow">Payout interface</div>
+<h1>Withdraw funds</h1>
+<p class="muted small">Withdrawal processing is not connected.</p>
+</div>
+</div>
+<div class="grid two-col">
+<div class="card">
+<h2>Withdrawal request preview</h2>
+<form class="form" id="withdrawForm">
+<div class="field">
+<label for="withdrawAmount">Amount (UGX)</label>
+<input id="withdrawAmount" type="number" min="1" required placeholder="Enter amount">
+</div>
+<div class="field">
+<label for="withdrawNetwork">Mobile money network</label>
+<select id="withdrawNetwork" required>
+<option value="">Select network</option>
+<option>MTN Mobile Money</option>
+<option>Airtel Money</option>
+</select>
+</div>
+<div class="field">
+<label for="withdrawPhone">Phone number</label>
+<input id="withdrawPhone" type="tel" required placeholder="07XXXXXXXX">
+</div>
+<button class="btn gold" type="submit">Check demo form</button>
+</form>
+<p class="muted small">No real request is submitted and no money is sent.</p>
+</div>
+<div class="card">
+<h2>Withdrawal information</h2>
+<div class="line"></div>
+<div class="row"><span>Mobile money</span><strong>Not connected</strong></div>
+<div class="row"><span>Balance verification</span><strong>Not enabled</strong></div>
+<div class="row"><span>Status</span><strong>Preview only</strong></div>
+<div class="line"></div>
+<div class="notice">Live withdrawals require secure server-side balance checks, transaction records, authorization, and a verified payment provider.</div>
+</div>
+</div>
+</section>
+
+<section class="page" id="page-referrals">
+<div class="heading">
+<div>
+<div class="eyebrow">Member network</div>
+<h1>Referral programme</h1>
+<p class="muted small">Referral tracking and commissions are not activated.</p>
+</div>
+</div>
+<div class="hero">
+<div class="eyebrow">Share EliteVest</div>
+<h1>Invite people to explore.</h1>
+<p>This is a preview link. Referral tracking and commissions are not connected.</p>
+<div class="ref-link">
+<input id="refLink" readonly>
+<button class="btn gold" onclick="copyReferral()">Copy</button>
+</div>
+</div>
+<div class="notice">Proposed commission illustrations only: Level 1 5%, Level 2 2%, Level 3 1%. No commission is earned or credited by this page.</div>
+</section>
+
+<section class="page" id="page-history">
+<div class="heading">
+<div>
+<div class="eyebrow">Account records</div>
+<h1>Transaction history</h1>
+<p class="muted small">Transactions visible to your authenticated account.</p>
+</div>
+<button class="btn" onclick="refreshAccountData()">Refresh history</button>
+</div>
+<div class="card table-wrap">
+<table>
+<thead><tr><th>Activity</th><th>Amount</th><th>Status</th><th>Date</th></tr></thead>
+<tbody id="historyRows"></tbody>
+</table>
+<div id="historyEmpty" class="empty">Sign in to load your transaction history.</div>
+</div>
+</section>
+
+<section class="page" id="page-profile">
+<div class="heading">
+<div>
+<div class="eyebrow">Account settings</div>
+<h1>My profile</h1>
+<p class="muted small">Review and update your account details.</p>
+</div>
+</div>
+<div class="grid two-col">
+<div class="card">
+<div class="avatar" id="profileAvatar">E</div>
+<h2 id="profileDisplayName">Your profile</h2>
+<p class="muted small">Your profile details are associated with your signed-in account.</p>
+<form id="profileForm" class="form">
+<div class="field">
+<label for="profileName">Full name</label>
+<input id="profileName" required placeholder="Your full name">
+</div>
+<div class="field">
+<label for="profileEmail">Email address</label>
+<input id="profileEmail" type="email" readonly placeholder="Sign in to view email">
+</div>
+<div class="field">
+<label for="profilePhone">Phone number</label>
+<input id="profilePhone" type="tel" placeholder="Your phone number">
+</div>
+<button class="btn gold" type="submit">Save profile</button>
+</form>
+<p class="muted small">Profile saving requires a profiles table with appropriate Row Level Security policies.</p>
+</div>
+<div class="card">
+<h2>Account status</h2>
+<div class="line"></div>
+<div class="row"><span>Account email</span><strong id="profileStatusEmail">—</strong></div>
+<div class="row"><span>Authentication</span><strong id="authStatus">Signed out</strong></div>
+<div class="row"><span>Environment</span><strong>Payment integration under testing</strong></div>
+<div class="row"><span>Backend</span><strong id="backendStatus">Connecting…</strong></div>
+<div class="row"><span>Member since</span><strong id="profileCreated">—</strong></div>
+<div class="line"></div>
+<button class="btn" onclick="refreshAccountData()">Refresh account</button>
+<button class="btn" onclick="signOutEliteVest()">Sign out</button>
+</div>
+</div>
+</section>
+
+<section class="page" id="page-admin">
+<div class="heading">
+<div>
+<div class="eyebrow">Restricted workspace</div>
+<h1>Admin dashboard</h1>
+<p class="muted small">Signed-in account: <span id="adminEmail"></span></p>
+</div>
+<span class="pill">ADMIN UI</span>
+</div>
+<div class="notice">
+<b>Security note:</b> Hiding this page in the frontend is not sufficient authorization. Protect administrative actions and data with server-side checks and Supabase Row Level Security. This page does not approve payments or process payouts.
+</div>
+<div class="grid stats" style="margin-top:16px">
+<div class="card">
+<div class="stat-label">Signed-in user</div>
+<div class="stat-value" style="font-size:16px" id="adminUserId">—</div>
+<div class="stat-foot">Supabase Auth</div>
+</div>
+<div class="card">
+<div class="stat-label">Package source</div>
+<div class="stat-value" style="font-size:18px" id="adminPackageSource">—</div>
+<div class="stat-foot">Package display</div>
+</div>
+<div class="card">
+<div class="stat-label">Transactions loaded</div>
+<div class="stat-value" id="adminTxnCount">0</div>
+<div class="stat-foot">Visible to current session</div>
+</div>
+<div class="card">
+<div class="stat-label">Backend</div>
+<div class="stat-value" style="font-size:18px" id="adminBackend">—</div>
+<div class="stat-foot">Connection status</div>
+</div>
+</div>
+
+<div class="section-head">
+<h2>Member management</h2>
+<button class="btn smallbtn" onclick="loadAdminMembers()">↻ Refresh members</button>
+</div>
+<div class="card">
+<div class="field">
+<label for="adminMemberSearch">Search by name, phone, or user ID</label>
+<input id="adminMemberSearch" type="search" placeholder="Search members…" oninput="filterAdminMembers()">
+</div>
+<div class="member-count" id="adminMemberCount">Members: —</div>
+<div class="table-wrap" style="margin-top:12px">
+<table>
+<thead><tr><th>Member</th><th>Phone</th><th>Account status</th><th>Controls</th><th>User ID</th></tr></thead>
+<tbody id="adminMemberRows"></tbody>
+</table>
+<div id="adminMemberEmpty" class="empty">Open this page to load member records.</div>
+</div>
+</div>
+
+<div class="section-head">
+<h2>Recent visible transactions</h2>
+<button class="btn smallbtn" onclick="refreshAccountData()">Refresh</button>
+</div>
+<div class="card table-wrap">
+<table>
+<thead><tr><th>Activity</th><th>Amount</th><th>Status</th><th>Date</th></tr></thead>
+<tbody id="adminRows"></tbody>
+</table>
+<div id="adminEmpty" class="empty">No transactions loaded.</div>
+</div>
+</section>
+
+<div class="footer">
+<b>ELITEVEST</b><br>
+Invest Today · Grow Tomorrow<br>
+Payment requests require verification. Returns are not guaranteed. Withdrawals are not enabled.
+</div>
+</main>
+</div>
+
+<nav class="mobile-nav" aria-label="Mobile navigation">
+<button class="active" data-page="overview" onclick="showPage('overview')"><span>⌂</span>Home</button>
+<button data-page="packages" onclick="showPage('packages')"><span>◇</span>Packages</button>
+<button data-page="wallet" onclick="showPage('wallet')"><span>▣</span>Wallet</button>
+<button data-page="withdraw" onclick="showPage('withdraw')"><span>↗</span>Withdraw</button>
+<button data-page="profile" onclick="showPage('profile')"><span>◎</span>Profile</button>
+<button class="hidden" id="adminMobileNav" data-page="admin" onclick="showPage('admin')"><span>⚙</span>Admin</button>
+</nav>
+</div>
+
+<!-- AUTHENTICATION MODAL -->
+<div class="modal-backdrop" id="authModal" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+<div class="modal">
+<div class="modal-head">
+<div><div class="eyebrow">Welcome to EliteVest</div><h2 id="authTitle">Create account</h2></div>
+<button class="close" onclick="closeModal('authModal')" aria-label="Close">×</button>
+</div>
+<div class="notice">New registrations require a password of at least 8 characters.</div>
+<div class="auth-tabs">
+<button id="tabRegister" class="active" onclick="setAuthMode('register')">Create account</button>
+<button id="tabLogin" onclick="setAuthMode('login')">Sign in</button>
+</div>
+<form id="authForm" class="form">
+<div class="field" id="nameField">
+<label for="authName">Full name</label>
+<input id="authName" autocomplete="name" placeholder="Your full name">
+</div>
+<div class="field">
+<label for="authEmail">Email address</label>
+<input id="authEmail" type="email" autocomplete="email" placeholder="you@example.com" required>
+</div>
+<div class="field" id="phoneField">
+<label for="authPhone">Phone number (optional)</label>
+<input id="authPhone" type="tel" autocomplete="tel" placeholder="07XXXXXXXX">
+</div>
+<div class="field">
+<label for="authPassword">Password</label>
+<input id="authPassword" type="password" autocomplete="new-password" placeholder="Enter your password" required>
+</div>
+<button class="btn gold" id="authSubmit" type="submit">Create account</button>
+</form>
+</div>
+</div>
+
+<!-- PACKAGE AND PAYMENT MODAL -->
+<div class="modal-backdrop" id="packageModal" role="dialog" aria-modal="true" aria-labelledby="packageModalTitle">
+<div class="modal">
+<div class="modal-head">
+<div><div class="eyebrow">Package details</div><h2 id="packageModalTitle">Package</h2></div>
+<button class="close" onclick="closeModal('packageModal')" aria-label="Close">×</button>
+</div>
+
+<div id="packageModalBody"></div>
+
+<div class="notice" style="margin:14px 0">
+A payment request does not guarantee payment success. Your package must remain inactive until the provider's successful-payment webhook is verified.
+</div>
+
+<form id="elitevestPaymentForm" class="form">
+<div class="field">
+<label for="paymentProvider">Mobile money network</label>
+<select id="paymentProvider" required>
+<option value="mtn">MTN Mobile Money</option>
+<option value="airtel">Airtel Money</option>
+</select>
+</div>
+
+<div class="field">
+<label for="paymentPhone">Mobile money phone number</label>
+<input id="paymentPhone" type="tel" autocomplete="tel" placeholder="07XXXXXXXX" required>
+<span class="muted small">Enter your Ugandan mobile money number.</span>
+</div>
+
+<button class="btn gold" id="payPackageButton" type="submit">Continue to payment</button>
+<p id="paymentMessage" class="muted small" aria-live="polite"></p>
+</form>
+</div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
 'use strict';
+
 const SUPABASE_URL='https://xasbwwafhgcrnlmyaziw.supabase.co';
 const SUPABASE_PUBLISHABLE_KEY='sb_publishable_ELGADkZOF3urSGO8VquBOA_XC8u3w1j';
 const ADMIN_EMAILS=['worldbridan3@gmail.com'];
-let supabaseClient=null,currentUser=null,currentSession=null,installPrompt=null,adminMembers=[];
-const FALLBACK_PACKAGES=[{name:'Bronze',principal_amount:20000,daily_projection:1000,duration_days:30,display_tag:'Starter'},{name:'Silver',principal_amount:50000,daily_projection:2500,duration_days:30,display_tag:'Growth'},{name:'Gold',principal_amount:100000,daily_projection:5000,duration_days:30,display_tag:'Popular'},{name:'Platinum',principal_amount:200000,daily_projection:10000,duration_days:30,display_tag:'Premium'},{name:'Diamond',principal_amount:500000,daily_projection:25000,duration_days:30,display_tag:'Advanced'},{name:'VIP',principal_amount:1000000,daily_projection:50000,duration_days:30,display_tag:'VIP'},{name:'Mega',principal_amount:2000000,daily_projection:100000,duration_days:30,display_tag:'Exclusive'},{name:'Elite',principal_amount:5000000,daily_projection:250000,duration_days:30,display_tag:'Elite'}];
-const state={profile:null,wallet:null,packages:[],packageSource:'fallback',transactions:[],demoHistory:[],activePackages:[],pendingPackage:null,authMode:'register'};
-const $=id=>document.getElementById(id);function money(v,c='UGX'){return c+' '+Math.round(Number(v)||0).toLocaleString('en-UG')}function esc(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}function date(v){if(!v)return'—';const d=new Date(v);return isNaN(d)?String(v):d.toLocaleDateString('en-UG',{year:'numeric',month:'short',day:'numeric'})}function toast(msg){$('toast').textContent=msg;$('toast').classList.add('show');clearTimeout(toast.t);toast.t=setTimeout(()=>$('toast').classList.remove('show'),3500)}function backendStatus(s){$('backendStatus').textContent=s;$('adminBackend').textContent=s}function isAdmin(){return !!currentUser&&ADMIN_EMAILS.includes((currentUser.email||'').toLowerCase())}
-function showPage(name){if(name==='admin'&&!isAdmin()){toast('Admin access is restricted.');name='overview'}const page=$('page-'+name);if(!page)return;document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));page.classList.add('active');document.querySelectorAll('[data-page]').forEach(b=>b.classList.toggle('active',b.dataset.page===name));window.scrollTo({top:0,behavior:'smooth'});if(name==='profile')fillProfile();if(name==='admin'){renderAdmin();loadAdminMembers()}}
-function openAuth(mode='register'){if(currentUser){toast('You are already signed in.');showPage('profile');return}setAuthMode(mode);$('authModal').classList.add('show')}function closeModal(id){$(id).classList.remove('show')}
-function setAuthMode(mode){state.authMode=mode;const reg=mode==='register';$('authTitle').textContent=reg?'Create your account':'Sign in to EliteVest';$('authSubmit').textContent=reg?'Create account':'Sign in';$('nameField').classList.toggle('hidden',!reg);$('phoneField').classList.toggle('hidden',!reg);$('authName').required=reg;$('authPhone').required=false;$('authPassword').minLength=reg?8:0;$('authPassword').placeholder=reg?'At least 8 characters':'Enter your existing password';$('authPassword').autocomplete=reg?'new-password':'current-password';$('tabRegister').classList.toggle('active',reg);$('tabLogin').classList.toggle('active',!reg)}
-function normalizePackage(r){const amount=Number(r.principal_amount)||0,daily=Number(r.daily_projection??r.daily_amount)||0,days=Number(r.duration_days)||30;return{id:r.id||null,name:r.name||'Package',amount,daily,days,profit:daily*days,total:amount+daily*days,tag:r.display_tag||r.name||'Package'}}function packageCard(p,i){return `<article class="package ${i===2?'featured':''}"><div class="package-top"><div class="package-name">${esc(p.name)}</div><span class="tag">${esc(p.tag)}</span></div><div class="price">${money(p.amount)}</div><div class="muted small">Displayed package amount</div><div class="line"></div><div class="row"><span>Daily projection</span><strong>${money(p.daily)}</strong></div><div class="row"><span>Duration</span><strong>${p.days} days</strong></div><div class="row"><span>Projected earnings</span><strong>${money(p.profit)}</strong></div><button class="btn ${i===2?'gold':''}" onclick="openPackage('${esc(p.name).replace(/'/g,"\\'")}')">View package</button></article>`}
-async function loadPackages(){state.packages=FALLBACK_PACKAGES.map(normalizePackage);state.packageSource='fallback';if(supabaseClient){try{let result=await supabaseClient.from('packages').select('*').eq('is_active',true).order('principal_amount',{ascending:true});if(result.error)throw result.error;if(result.data?.length){state.packages=result.data.map(normalizePackage);state.packageSource='Supabase'}}catch(e){console.warn('Package loading:',e.message)}}renderPackages()}function renderPackages(){const html=state.packages.map(packageCard).join('');$('allPackages').innerHTML=html||'<div class="empty">No packages available.</div>';$('featuredPackages').innerHTML=state.packages.slice(0,4).map(packageCard).join('')}
-function openPackage(name){const p=state.packages.find(x=>x.name===name);if(!p)return;state.pendingPackage=p;$('packageModalTitle').textContent=p.name+' package';$('packageModalBody').innerHTML=`<div class="row"><span>Package amount</span><strong>${money(p.amount)}</strong></div><div class="row"><span>Daily projection</span><strong>${money(p.daily)}</strong></div><div class="row"><span>Duration</span><strong>${p.days} days</strong></div><div class="row"><span>Illustrative earnings</span><strong>${money(p.profit)}</strong></div>`;$('packageModal').classList.add('show')}$('confirmPackage').addEventListener('click',()=>{const p=state.pendingPackage;if(!p)return;state.activePackages.push({...p});state.demoHistory.unshift({type:'Demo package preview · '+p.name,amount:p.amount,status:'Demo only',date:new Date().toISOString()});closeModal('packageModal');renderAll();toast('Demo selection only. No money was taken and no investment was created.')});
-function rowsHTML(rows){return rows.map(r=>`<tr><td>${esc(r.type)}</td><td>${money(r.amount,r.currency||'UGX')}</td><td><span class="status">${esc(r.status||'Recorded')}</span></td><td>${esc(date(r.date))}</td></tr>`).join('')}function renderHistory(){const all=[...state.transactions,...state.demoHistory],recent=all.slice(0,5);$('recentRows').innerHTML=rowsHTML(recent);$('recentEmpty').classList.toggle('hidden',recent.length>0);$('recentEmpty').textContent=currentUser?'No transactions were found.':'Sign in to load transactions.';$('historyRows').innerHTML=rowsHTML(all);$('historyEmpty').classList.toggle('hidden',all.length>0);$('historyEmpty').textContent=currentUser?'No transactions were found.':'Sign in to load transactions.';const wallet=all.filter(r=>/wallet|deposit|withdraw|earning|investment/i.test(r.type));$('walletRows').innerHTML=rowsHTML(wallet);$('walletEmpty').classList.toggle('hidden',wallet.length>0);$('walletEmpty').textContent=currentUser?'No wallet transactions were found.':'Sign in to load transactions.'}
-function renderStats(){const selected=state.activePackages.reduce((s,p)=>s+p.amount,0),projected=state.activePackages.reduce((s,p)=>s+p.profit,0),balance=Number(state.wallet?.available_balance)||0,currency=state.wallet?.currency||'UGX';$('statBalance').textContent=money(balance,currency);$('walletBalance').textContent=money(balance,currency);$('statActive').textContent=state.activePackages.length;$('statEarnings').textContent=money(projected);$('walletInvested').textContent=money(selected);$('balanceFoot').textContent=currentUser?'Read from your wallet':'Sign in to load balance';$('walletFoot').textContent=currentUser?'Read-only wallet':'Sign in to load wallet'}function updateReferral(){$('refLink').value=location.href.split('?')[0]+'?ref='+encodeURIComponent(state.profile?.referral_code||'PREVIEW')}async function copyReferral(){try{await navigator.clipboard.writeText($('refLink').value);toast('Preview link copied. Referral tracking is not active.')}catch(e){$('refLink').select();toast('Select and copy the link manually.')}}
-function fillProfile(){const name=state.profile?.full_name||currentUser?.user_metadata?.full_name||'';$('profileName').value=name;$('profileEmail').value=currentUser?.email||'';$('profilePhone').value=state.profile?.phone||currentUser?.user_metadata?.phone||'';$('profileDisplayName').textContent=name||'Your profile';$('profileAvatar').textContent=(name||currentUser?.email||'E').trim().charAt(0).toUpperCase();$('profileStatusEmail').textContent=currentUser?.email||'Not signed in';$('profileCreated').textContent=date(currentUser?.created_at)}function updateAuthButtons(){const signed=!!currentUser;$('signInButton').classList.toggle('hidden',signed);$('joinButton').classList.toggle('hidden',signed);$('signOutButton').classList.toggle('hidden',!signed);$('authStatus').textContent=signed?'Signed in':'Signed out';$('welcomeTitle').textContent=signed?'Welcome, '+(state.profile?.full_name||currentUser.email||'Member'):'Welcome to EliteVest';$('welcomeSubtitle').textContent=signed?'Your account dashboard.':'Sign in to view your account.';const admin=isAdmin();$('adminNav').classList.toggle('hidden',!admin);$('adminMobileNav').classList.toggle('hidden',!admin);if(admin){$('adminEmail').textContent=currentUser.email||'';$('adminUserId').textContent=currentUser.id||'—'}fillProfile()}
-async function loadProfile(){if(!currentUser||!supabaseClient){state.profile=null;fillProfile();updateReferral();return}try{const {data,error}=await supabaseClient.from('profiles').select('id,full_name,phone,referral_code').eq('id',currentUser.id).maybeSingle();if(error)throw error;state.profile=data||{full_name:currentUser.user_metadata?.full_name||'',phone:currentUser.user_metadata?.phone||'',referral_code:null}}catch(e){console.warn('Profile loading:',e.message);state.profile={full_name:currentUser.user_metadata?.full_name||'',phone:currentUser.user_metadata?.phone||'',referral_code:null}}fillProfile();updateReferral();updateAuthButtons()}
-async function loadWallet(){state.wallet=null;if(!currentUser||!supabaseClient)return;try{const {data,error}=await supabaseClient.from('wallets').select('available_balance,currency').eq('user_id',currentUser.id).maybeSingle();if(error)throw error;state.wallet=data||null}catch(e){console.warn('Wallet loading:',e.message);toast('Wallet could not load. Check your Supabase wallet policy.')}}async function loadTransactions(){state.transactions=[];if(!currentUser||!supabaseClient){renderHistory();return}try{const {data,error}=await supabaseClient.from('wallet_transactions').select('transaction_type,direction,amount,currency,status,created_at,description').eq('user_id',currentUser.id).order('created_at',{ascending:false}).limit(50);if(error)throw error;state.transactions=(data||[]).map(r=>({type:(r.description||r.transaction_type||'Transaction')+(r.direction?' · '+r.direction:''),amount:r.amount,currency:r.currency,status:r.status,date:r.created_at}))}catch(e){console.warn('Transaction loading:',e.message);state.transactions=[]}renderHistory()}
-function renderAdmin(){$('adminEmail').textContent=currentUser?.email||'';$('adminUserId').textContent=currentUser?.id||'—';$('adminPackageSource').textContent=state.packageSource;$('adminTxnCount').textContent=state.transactions.length;$('adminRows').innerHTML=rowsHTML(state.transactions.slice(0,20));$('adminEmpty').classList.toggle('hidden',state.transactions.length>0)}
-async function loadAdminMembers(){if(!currentUser||!isAdmin()||!supabaseClient){toast('Administrator access required.');return}const output=$('adminMemberRows'),empty=$('adminMemberEmpty');output.innerHTML='';empty.textContent='Loading member records…';empty.classList.remove('hidden');try{const {data,error}=await supabaseClient.from('profiles').select('id,full_name,phone,account_status').order('full_name',{ascending:true}).limit(500);if(error)throw error;adminMembers=data||[];filterAdminMembers()}catch(error){console.error('Member loading failed:',error);empty.textContent=String(error.message||'').includes('account_status')?'Add the account_status column to profiles first, then refresh members.':'Could not load members. Check the profiles table and Supabase access policies.';$('adminMemberCount').textContent='Members: unavailable';toast('Member records could not be loaded.')}}function filterAdminMembers(){const output=$('adminMemberRows'),empty=$('adminMemberEmpty');if(!isAdmin()){output.innerHTML='';empty.textContent='Administrator access required.';empty.classList.remove('hidden');return}const search=($('adminMemberSearch')?.value||'').trim().toLowerCase();const filtered=adminMembers.filter(m=>[m.full_name,m.phone,m.id,m.account_status].some(v=>String(v||'').toLowerCase().includes(search)));output.innerHTML=filtered.map(m=>{const status=(m.account_status||'active').toLowerCase();const safeStatus=status==='suspended'?'suspended':'active';const nextStatus=safeStatus==='active'?'suspended':'active';const actionLabel=nextStatus==='suspended'?'Suspend':'Activate';return `<tr><td>${esc(m.full_name||'Unnamed member')}</td><td>${esc(m.phone||'Not provided')}</td><td><span class="status ${safeStatus==='suspended'?'member-suspended':'member-active'}">${esc(safeStatus)}</span></td><td><button class="btn smallbtn ${nextStatus==='active'?'gold':''}" onclick="changeMemberStatus('${esc(m.id)}','${nextStatus}')">${actionLabel}</button></td><td style="overflow-wrap:anywhere">${esc(m.id||'—')}</td></tr>`}).join('');$('adminMemberCount').textContent='Members shown: '+filtered.length+' · Loaded: '+adminMembers.length;empty.textContent=search?'No matching members found.':'No member records found.';empty.classList.toggle('hidden',filtered.length>0)}async function changeMemberStatus(memberId,nextStatus){if(!currentUser||!isAdmin()||!supabaseClient){toast('Administrator access required.');return}if(!['active','suspended'].includes(nextStatus)){toast('Invalid account status.');return}const member=adminMembers.find(m=>m.id===memberId);if(!member){toast('Member record not found. Refresh the list.');return}if(memberId===currentUser.id&&nextStatus==='suspended'){toast('You cannot suspend your own administrator account here.');return}const name=member.full_name||memberId;if(!confirm(`Set ${name} account status to ${nextStatus.toUpperCase()}?`))return;try{const {data,error}=await supabaseClient.from('profiles').update({account_status:nextStatus}).eq('id',memberId).select('id,full_name,phone,account_status').maybeSingle();if(error)throw error;if(!data){toast('No record updated. Check your administrator Row Level Security policy.');return}adminMembers=adminMembers.map(m=>m.id===memberId?{...m,...data}:m);filterAdminMembers();toast(`Account status saved as ${nextStatus}.`)}catch(error){console.error('Member status update failed:',error);toast('Could not update status. Check account_status column and administrator RLS policy.')}}function renderAll(){renderStats();renderHistory();updateReferral();if(isAdmin())renderAdmin()}
-async function refreshAccountData(){if(!currentUser){toast('Please sign in first.');openAuth('login');return}await Promise.all([loadProfile(),loadWallet(),loadTransactions()]);renderAll();toast('Account data refreshed.')}
-$('authForm').addEventListener('submit',async e=>{e.preventDefault();if(!supabaseClient){toast('Supabase is not available. Check your internet connection.');return}const submit=$('authSubmit'),email=$('authEmail').value.trim(),password=$('authPassword').value,fullName=$('authName').value.trim(),phone=$('authPhone').value.trim();if(state.authMode==='register'&&password.length<8){toast('New passwords must have at least 8 characters.');return}submit.disabled=true;submit.textContent='Please wait…';try{if(state.authMode==='register'){const {data,error}=await supabaseClient.auth.signUp({email,password,options:{data:{full_name:fullName,phone}}});if(error)throw error;if(data.session){currentSession=data.session;currentUser=data.user;closeModal('authModal');await handleSignedInUser(data.user);toast('Your EliteVest account has been created.')}else{toast('Registration received. Confirm your email, then sign in.');setAuthMode('login')}}else{const {data,error}=await supabaseClient.auth.signInWithPassword({email,password});if(error)throw error;currentSession=data.session;currentUser=data.user;closeModal('authModal');await handleSignedInUser(data.user);toast('You are signed in to EliteVest.')}}catch(err){console.error('Authentication:',err);toast(err?.message||'Authentication failed.')}finally{submit.disabled=false;submit.textContent=state.authMode==='register'?'Create account':'Sign in';$('authPassword').value=''}});
-async function handleSignedInUser(user){currentUser=user;updateAuthButtons();await Promise.all([loadProfile(),loadWallet(),loadTransactions()]);renderAll();fillProfile()}
-$('profileForm').addEventListener('submit',async e=>{e.preventDefault();if(!currentUser||!supabaseClient){toast('Please sign in first.');openAuth('login');return}const full_name=$('profileName').value.trim(),phone=$('profilePhone').value.trim();if(!full_name){toast('Enter your full name.');return}try{const {data,error}=await supabaseClient.from('profiles').upsert({id:currentUser.id,full_name,phone:phone||null},{onConflict:'id'}).select('id,full_name,phone,referral_code').single();if(error)throw error;state.profile=data;fillProfile();updateAuthButtons();updateReferral();toast('Profile updated successfully.')}catch(err){console.error('Profile save:',err);toast(err.message||'Could not save profile. Check the profiles table and RLS policies.')}});
-async function signOutEliteVest(){if(!supabaseClient||!currentUser){toast('You are already signed out.');return}try{const {error}=await supabaseClient.auth.signOut();if(error)throw error;currentUser=null;currentSession=null;state.profile=null;state.wallet=null;state.transactions=[];state.activePackages=[];state.demoHistory=[];adminMembers=[];updateAuthButtons();fillProfile();renderAll();showPage('overview');toast('You have signed out.')}catch(e){toast(e.message||'Could not sign out.')}}$('withdrawForm').addEventListener('submit',e=>{e.preventDefault();toast('Preview only: withdrawal processing is not connected.')});document.querySelectorAll('.modal-backdrop').forEach(b=>b.addEventListener('click',e=>{if(e.target===b)b.classList.remove('show')}));document.addEventListener('keydown',e=>{if(e.key==='Escape')document.querySelectorAll('.modal-backdrop').forEach(m=>m.classList.remove('show'))});window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();installPrompt=e});window.addEventListener('appinstalled',()=>{installPrompt=null;toast('EliteVest has been installed.')});async function installEliteVest(){if(installPrompt){installPrompt.prompt();await installPrompt.userChoice;installPrompt=null;return}alert(/android/i.test(navigator.userAgent)?'Open this site in Chrome, tap ⋮, then choose Install app or Add to Home screen.':'Use your browser menu to choose Add to Home Screen or Install app.')}
-async function initializeEliteVest(){try{if(!window.supabase?.createClient)throw new Error('Supabase client library unavailable');supabaseClient=window.supabase.createClient(SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}});backendStatus('Connected');await loadPackages();const {data,error}=await supabaseClient.auth.getSession();if(error)throw error;currentSession=data.session;currentUser=data.session?.user||null;if(currentUser)await handleSignedInUser(currentUser);else{updateAuthButtons();renderAll()}supabaseClient.auth.onAuthStateChange((event,session)=>{currentSession=session;currentUser=session?.user||null;setTimeout(async()=>{if(currentUser)await handleSignedInUser(currentUser);else{state.profile=null;state.wallet=null;state.transactions=[];state.activePackages=[];state.demoHistory=[];adminMembers=[];updateAuthButtons();fillProfile();renderAll();showPage('overview')}},0)})}catch(e){console.error(e);backendStatus('Connection error');state.packages=FALLBACK_PACKAGES.map(normalizePackage);renderPackages();renderAll();toast(e.message||'Could not initialize EliteVest.')}}
-setAuthMode('register');renderPackages();renderAll();fillProfile();updateAuthButtons();initializeEliteVest();if('serviceWorker'in navigator&&location.protocol==='https:')window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(e=>console.warn('Service worker:',e)));
-</script></body></html>
+
+let supabaseClient=null;
+let currentUser=null;
+let currentSession=null;
+let installPrompt=null;
+let adminMembers=[];
+
+const FALLBACK_PACKAGES=[
+{name:'Bronze',principal_amount:20000,daily_projection:1000,duration_days:30,display_tag:'Starter'},
+{name:'Silver',principal_amount:50000,daily_projection:2500,duration_days:30,display_tag:'Growth'},
+{name:'Gold',principal_amount:100000,daily_projection:5000,duration_days:30,display_tag:'Popular'},
+{name:'Platinum',principal_amount:200000,daily_projection:10000,duration_days:30,display_tag:'Premium'},
+{name:'Diamond',principal_amount:500000,daily_projection:25000,duration_days:30,display_tag:'Advanced'},
+{name:'VIP',principal_amount:1000000,daily_projection:50000,duration_days:30,display_tag:'VIP'},
+{name:'Mega',principal_amount:2000000,daily_projection:100000,duration_days:30,display_tag:'Exclusive'},
+{name:'Elite',principal_amount:5000000,daily_projection:250000,duration_days:30,display_tag:'Elite'}
+];
+
+const state={
+profile:null,
+wallet:null,
+packages:[],
+packageSource:'fallback',
+transactions:[],
+demoHistory:[],
+activePackages:[],
+pendingPackage:null,
+authMode:'register'
+};
+
+const $=id=>document.getElementById(id);
+
+function money(v,c='UGX'){
+return c+' '+Math.round(Number(v)||0).toLocaleString('en-UG');
+}
+
+function esc(v){
+return String(v??'').replace(/[&<>"']/g,c=>({
+'&':'&amp;',
+'<':'&lt;',
+'>':'&gt;',
+'"':'&quot;',
+"'":'&#39;'
+}[c]));
+}
+
+function date(v){
+if(!v)return '—';
+const d=new Date(v);
+return isNaN(d)?String(v):d.toLocaleDateString('en-UG',{
+year:'numeric',month:'short',day:'numeric'
+});
+}
+
+function toast(msg){
+$('toast').textContent=msg;
+$('toast').classList.add('show');
+clearTimeout(toast.t);
+toast.t=setTimeout(()=>$('toast').classList.remove('show'),4000);
+}
+
+function backendStatus(s){
+$('backendStatus').textContent=s;
+$('adminBackend').textContent=s;
+}
+
+function isAdmin(){
+return !!currentUser&&ADMIN_EMAILS.includes((currentUser.email||'').toLowerCase());
+}
+
+function showPage(name){
+if(name==='admin'&&!isAdmin()){
+toast('Admin access is restricted.');
+name='overview';
+}
+const page=$('page-'+name);
+if(!page)return;
+
+document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+page.classList.add('active');
+
+document.querySelectorAll('[data-page]').forEach(b=>{
+b.classList.toggle('active',b.dataset.page===name);
+});
+
+window.scrollTo({top:0,behavior:'smooth'});
+
+if(name==='profile')fillProfile();
+if(name==='admin'){
+renderAdmin();
+loadAdminMembers();
+}
+}
+
+function openAuth(mode='register'){
+if(currentUser){
+toast('You are already signed in.');
+showPage('profile');
+return;
+}
+setAuthMode(mode);
+$('authModal').classList.add('show');
+}
+
+function closeModal(id){
+$(id).classList.remove('show');
+}
+
+function setAuthMode(mode){
+state.authMode=mode;
+const reg=mode==='register';
+
+$('authTitle').textContent=reg?'Create your account':'Sign in to EliteVest';
+$('authSubmit').textContent=reg?'Create account':'Sign in';
+$('nameField').classList.toggle('hidden',!reg);
+$('phoneField').classList.toggle('hidden',!reg);
+$('authName').required=reg;
+$('authPhone').required=false;
+$('authPassword').minLength=reg?8:0;
+$('authPassword').placeholder=reg?'At least 8 characters':'Enter your existing password';
+$('authPassword').autocomplete=reg?'new-password':'current-password';
+$('tabRegister').classList.toggle('active',reg);
+$('tabLogin').classList.toggle('active',!reg);
+}
+
+function normalizePackage(r){
+const amount=Number(r.principal_amount)||0;
+const daily=Number(r.daily_projection??r.daily_amount)||0;
+const days=Number(r.duration_days)||30;
+
+return{
+id:r.id||null,
+name:r.name||'Package',
+amount,
+daily,
+days,
+profit:daily*days,
+total:amount+daily*days,
+tag:r.display_tag||r.name||'Package'
+};
+}
+
+function packageCard(p,i){
+return `
+<article class="package ${i===2?'featured':''}">
+<div class="package-top">
+<div class="package-name">${esc(p.name)}</div>
+<span class="tag">${esc(p.tag)}</span>
+</div>
+<div class="price">${money(p.amount)}</div>
+<div class="muted small">Displayed package amount</div>
+<div class="line"></div>
+<div class="row"><span>Daily projection</span><strong>${money(p.daily)}</strong></div>
+<div class="row"><span>Duration</span><strong>${p.days} days</strong></div>
+<div class="row"><span>Projected earnings</span><strong>${money(p.profit)}</strong></div>
+<button class="btn ${i===2?'gold':''}" onclick="openPackageByIndex(${state.packages.indexOf(p)})">View package</button>
+</article>`;
+}
+
+async function loadPackages(){
+state.packages=FALLBACK_PACKAGES.map(normalizePackage);
+state.packageSource='fallback';
+
+if(supabaseClient){
+try{
+const result=await supabaseClient
+.from('packages')
+.select('*')
+.eq('is_active',true)
+.order('principal_amount',{ascending:true});
+
+if(result.error)throw result.error;
+
+if(result.data?.length){
+state.packages=result.data.map(normalizePackage);
+state.packageSource='Supabase';
+}
+}catch(e){
+console.warn('Package loading:',e.message);
+}
+}
+
+renderPackages();
+}
+
+function renderPackages(){
+const html=state.packages.map(packageCard).join('');
+$('allPackages').innerHTML=html||'<div class="empty">No packages available.</div>';
+$('featuredPackages').innerHTML=state.packages.slice(0,4).map(packageCard).join('');
+}
+
+function openPackageByIndex(index){
+const p=state.packages[index];
+if(!p)return;
+openPackage(p.name);
+}
+
+function openPackage(name){
+const p=state.packages.find(x=>x.name===name);
+if(!p)return;
+
+state.pendingPackage=p;
+
+$('packageModalTitle').textContent=p.name+' package';
+
+$('packageModalBody').innerHTML=`
+<div class="row"><span>Package amount</span><strong>${money(p.amount)}</strong></div>
+<div class="row"><span>Daily projection</span><strong>${money(p.daily)}</strong></div>
+<div class="row"><span>Duration</span><strong>${p.days} days</strong></div>
+<div class="row"><span>Illustrative earnings</span><strong>${money(p.profit)}</strong></div>
+`;
+
+$('paymentMessage').textContent='';
+$('payPackageButton').disabled=false;
+$('payPackageButton').textContent='Continue to payment';
+
+if(!p.id){
+$('paymentMessage').textContent='This is a display-only package. It has no Supabase package ID, so payment is disabled.';
+$('payPackageButton').disabled=true;
+}
+
+$('packageModal').classList.add('show');
+}
+
+/*
+ * PAYMENT REQUEST
+ * Calls the server-side Supabase Edge Function.
+ * API secrets must never be placed in this file.
+ */
+$('elitevestPaymentForm').addEventListener('submit',async function(e){
+e.preventDefault();
+
+if(!supabaseClient){
+toast('Supabase is unavailable. Please try again.');
+return;
+}
+
+if(!currentUser||!currentSession){
+closeModal('packageModal');
+openAuth('login');
+toast('Please sign in before requesting payment.');
+return;
+}
+
+const p=state.pendingPackage;
+
+if(!p){
+toast('Please select a package first.');
+return;
+}
+
+if(!p.id){
+toast('This package is not linked to Supabase. Payment is disabled.');
+return;
+}
+
+const provider=$('paymentProvider').value;
+let phone=$('paymentPhone').value.trim().replace(/[\s()-]/g,'');
+
+/* Normalize common Ugandan phone formats. */
+if(/^0[37]\d{8}$/.test(phone)){
+phone='+256'+phone.substring(1);
+}else if(/^256[37]\d{8}$/.test(phone)){
+phone='+'+phone;
+}
+
+if(!/^\+256[37]\d{8}$/.test(phone)){
+toast('Enter a valid Ugandan number, such as 0771234567.');
+return;
+}
+
+const button=$('payPackageButton');
+const message=$('paymentMessage');
+
+button.disabled=true;
+button.textContent='Submitting request…';
+message.textContent='Contacting the payment service securely.';
+
+try{
+/*
+ * Supabase supplies the signed-in session token to functions.invoke.
+ * The Edge Function must validate the session and package on the server.
+ */
+const {data,error}=await supabaseClient.functions.invoke(
+'initiate-elitevest-payment',
+{
+body:{
+packageId:p.id,
+phoneNumber:phone,
+provider:provider
+}
+}
+);
+
+if(error){
+let detail=error.message||'Payment request failed.';
+
+try{
+if(typeof error.context?.json==='function'){
+const responseBody=await error.context.json();
+if(responseBody?.error)detail=responseBody.error;
+else if(responseBody?.message)detail=responseBody.message;
+}
+}catch(_){}
+
+throw new Error(detail);
+}
+
+if(!data||data.error){
+throw new Error(data?.error||data?.message||'The payment service did not accept the request.');
+}
+
+closeModal('packageModal');
+
+alert(
+'Your payment request was submitted.\\n\\n'+
+'Package: '+p.name+'\\n'+
+'Amount: '+money(p.amount)+'\\n'+
+'Network: '+(provider==='mtn'?'MTN Mobile Money':'Airtel Money')+'\\n\\n'+
+'Check your phone for a payment prompt if the provider supports it. '+
+'Review the merchant and amount before approving. '+
+'Your package must remain inactive until successful payment is verified.'
+);
+
+toast('Payment request submitted. Check your phone for a prompt.');
+
+}catch(err){
+console.error('EliteVest payment request failed:',err);
+message.textContent=err.message||'Could not submit the payment request.';
+toast(err.message||'Payment request failed. Please try again.');
+}finally{
+button.disabled=false;
+button.textContent='Continue to payment';
+}
+});
+
+function rowsHTML(rows){
+return rows.map(r=>`
+<tr>
+<td>${esc(r.type)}</td>
+<td>${money(r.amount,r.currency||'UGX')}</td>
+<td><span class="status">${esc(r.status||'Recorded')}</span></td>
+<td>${esc(date(r.date))}</td>
+</tr>`).join('');
+}
+
+function renderHistory(){
+const all=[...state.transactions,...state.demoHistory];
+const recent=all.slice(0,5);
+
+$('recentRows').innerHTML=rowsHTML(recent);
+$('recentEmpty').classList.toggle('hidden',recent.length>0);
+$('recentEmpty').textContent=currentUser?'No transactions were found.':'Sign in to load transactions.';
+
+$('historyRows').innerHTML=rowsHTML(all);
+$('historyEmpty').classList.toggle('hidden',all.length>0);
+$('historyEmpty').textContent=currentUser?'No transactions were found.':'Sign in to load transactions.';
+
+const wallet=all.filter(r=>/wallet|deposit|withdraw|earning|investment/i.test(r.type));
+$('walletRows').innerHTML=rowsHTML(wallet);
+$('walletEmpty').classList.toggle('hidden',wallet.length>0);
+$('walletEmpty').textContent=currentUser?'No wallet transactions were found.':'Sign in to load transactions.';
+}
+
+function renderStats(){
+const selected=state.activePackages.reduce((s,p)=>s+p.amount,0);
+const projected=state.activePackages.reduce((s,p)=>s+p.profit,0);
+const balance=Number(state.wallet?.available_balance)||0;
+const currency=state.wallet?.currency||'UGX';
+
+$('statBalance').textContent=money(balance,currency);
+$('walletBalance').textContent=money(balance,currency);
+$('statActive').textContent=state.activePackages.length;
+$('statEarnings').textContent=money(projected);
+$('walletInvested').textContent=money(selected);
+$('balanceFoot').textContent=currentUser?'Read from your wallet':'Sign in to load balance';
+$('walletFoot').textContent=currentUser?'Read-only wallet':'Sign in to load wallet';
+}
+
+function updateReferral(){
+$('refLink').value=location.href.split('?')[0]+'?ref='+encodeURIComponent(state.profile?.referral_code||'PREVIEW');
+}
+
+async function copyReferral(){
+try{
+await navigator.clipboard.writeText($('refLink').value);
+toast('Preview link copied. Referral tracking is not active.');
+}catch(e){
+$('refLink').select();
+toast('Select and copy the link manually.');
+}
+}
+
+function fillProfile(){
+const name=state.profile?.full_name||currentUser?.user_metadata?.full_name||'';
+
+$('profileName').value=name;
+$('profileEmail').value=currentUser?.email||'';
+$('profilePhone').value=state.profile?.phone||currentUser?.user_metadata?.phone||'';
+$('profileDisplayName').textContent=name||'Your profile';
+$('profileAvatar').textContent=(name||currentUser?.email||'E').trim().charAt(0).toUpperCase();
+$('profileStatusEmail').textContent=currentUser?.email||'Not signed in';
+$('profileCreated').textContent=date(currentUser?.created_at);
+}
+
+function updateAuthButtons(){
+const signed=!!currentUser;
+
+$('signInButton').classList.toggle('hidden',signed);
+$('joinButton').classList.toggle('hidden',signed);
+$('signOutButton').classList.toggle('hidden',!signed);
+$('authStatus').textContent=signed?'Signed in':'Signed out';
+
+$('welcomeTitle').textContent=signed
+?'Welcome, '+(state.profile?.full_name||currentUser.email||'Member')
+:'Welcome to EliteVest';
+
+$('welcomeSubtitle').textContent=signed
+?'Your account dashboard.'
+:'Sign in to view your account.';
+
+const admin=isAdmin();
+$('adminNav').classList.toggle('hidden',!admin);
+$('adminMobileNav').classList.toggle('hidden',!admin);
+
+if(admin){
+$('adminEmail').textContent=currentUser.email||'';
+$('adminUserId').textContent=currentUser.id||'—';
+}
+
+fillProfile();
+}
+
+async function loadProfile(){
+if(!currentUser||!supabaseClient){
+state.profile=null;
+fillProfile();
+updateReferral();
+return;
+}
+
+try{
+const {data,error}=await supabaseClient
+.from('profiles')
+.select('id,full_name,phone,referral_code')
+.eq('id',currentUser.id)
+.maybeSingle();
+
+if(error)throw error;
+
+state.profile=data||{
+full_name:currentUser.user_metadata?.full_name||'',
+phone:currentUser.user_metadata?.phone||'',
+referral_code:null
+};
+}catch(e){
+console.warn('Profile loading:',e.message);
+state.profile={
+full_name:currentUser.user_metadata?.full_name||'',
+phone:currentUser.user_metadata?.phone||'',
+referral_code:null
+};
+}
+
+fillProfile();
+updateReferral();
+updateAuthButtons();
+}
+
+async function loadWallet(){
+state.wallet=null;
+if(!currentUser||!supabaseClient)return;
+
+try{
+const {data,error}=await supabaseClient
+.from('wallets')
+.select('available_balance,currency')
+.eq('user_id',currentUser.id)
+.maybeSingle();
+
+if(error)throw error;
+state.wallet=data||null;
+}catch(e){
+console.warn('Wallet loading:',e.message);
+}
+}
+
+async function loadTransactions(){
+state.transactions=[];
+
+if(!currentUser||!supabaseClient){
+renderHistory();
+return;
+}
+
+try{
+const {data,error}=await supabaseClient
+.from('wallet_transactions')
+.select('transaction_type,direction,amount,currency,status,created_at,description')
+.eq('user_id',currentUser.id)
+.order('created_at',{ascending:false})
+.limit(50);
+
+if(error)throw error;
+
+state.transactions=(data||[]).map(r=>({
+type:(r.description||r.transaction_type||'Transaction')+(r.direction?' · '+r.direction:''),
+amount:r.amount,
+currency:r.currency,
+status:r.status,
+date:r.created_at
+}));
+}catch(e){
+console.warn('Transaction loading:',e.message);
+state.transactions=[];
+}
+
+renderHistory();
+}
+
+function renderAdmin(){
+$('adminEmail').textContent=currentUser?.email||'';
+$('adminUserId').textContent=currentUser?.id||'—';
+$('adminPackageSource').textContent=state.packageSource;
+$('adminTxnCount').textContent=state.transactions.length;
+$('adminRows').innerHTML=rowsHTML(state.transactions.slice(0,20));
+$('adminEmpty').classList.toggle('hidden',state.transactions.length>0);
+}
+
+async function loadAdminMembers(){
+if(!currentUser||!isAdmin()||!supabaseClient){
+toast('Administrator access required.');
+return;
+}
+
+const output=$('adminMemberRows');
+const empty=$('adminMemberEmpty');
+
+output.innerHTML='';
+empty.textContent='Loading member records…';
+empty.classList.remove('hidden');
+
+try{
+const {data,error}=await supabaseClient
+.from('profiles')
+.select('id,full_name,phone,account_status')
+.order('full_name',{ascending:true})
+.limit(500);
+
+if(error)throw error;
+
+adminMembers=data||[];
+filterAdminMembers();
+}catch(error){
+console.error('Member loading failed:',error);
+empty.textContent=String(error.message||'').includes('account_status')
+?'Add the account_status column to profiles first, then refresh members.'
+:'Could not load members. Check the profiles table and Supabase access policies.';
+$('adminMemberCount').textContent='Members: unavailable';
+toast('Member records could not be loaded.');
+}
+}
+
+function filterAdminMembers(){
+const output=$('adminMemberRows');
+const empty=$('adminMemberEmpty');
+
+if(!isAdmin()){
+output.innerHTML='';
+empty.textContent='Administrator access required.';
+empty.classList.remove('hidden');
+return;
+}
+
+const search=($('adminMemberSearch')?.value||'').trim().toLowerCase();
+
+const filtered=adminMembers.filter(m=>
+[m.full_name,m.phone,m.id,m.account_status]
+.some(v=>String(v||'').toLowerCase().includes(search))
+);
+
+output.innerHTML=filtered.map(m=>{
+const status=(m.account_status||'active').toLowerCase();
+const safeStatus=status==='suspended'?'suspended':'active';
+const nextStatus=safeStatus==='active'?'suspended':'active';
+const actionLabel=nextStatus==='suspended'?'Suspend':'Activate';
+
+return `<tr>
+<td>${esc(m.full_name||'Unnamed member')}</td>
+<td>${esc(m.phone||'Not provided')}</td>
+<td><span class="status ${safeStatus==='suspended'?'member-suspended':'member-active'}">${esc(safeStatus)}</span></td>
+<td><button class="btn smallbtn ${nextStatus==='active'?'gold':''}" onclick="changeMemberStatus('${esc(m.id)}','${nextStatus}')">${actionLabel}</button></td>
+<td style="overflow-wrap:anywhere">${esc(m.id||'—')}</td>
+</tr>`;
+}).join('');
+
+$('adminMemberCount').textContent='Members shown: '+filtered.length+' · Loaded: '+adminMembers.length;
+empty.textContent=search?'No matching members found.':'No member records found.';
+empty.classList.toggle('hidden',filtered.length>0);
+}
+
+async function changeMemberStatus(memberId,nextStatus){
+if(!currentUser||!isAdmin()||!supabaseClient){
+toast('Administrator access required.');
+return;
+}
+
+if(!['active','suspended'].includes(nextStatus)){
+toast('Invalid account status.');
+return;
+}
+
+const member=adminMembers.find(m=>m.id===memberId);
+
+if(!member){
+toast('Member record not found. Refresh the list.');
+return;
+}
+
+if(memberId===currentUser.id&&nextStatus==='suspended'){
+toast('You cannot suspend your own administrator account here.');
+return;
+}
+
+const name=member.full_name||memberId;
+
+if(!confirm(`Set ${name} account status to ${nextStatus.toUpperCase()}?`))return;
+
+try{
+const {data,error}=await supabaseClient
+.from('profiles')
+.update({account_status:nextStatus})
+.eq('id',memberId)
+.select('id,full_name,phone,account_status')
+.maybeSingle();
+
+if(error)throw error;
+
+if(!data){
+toast('No record updated. Check administrator Row Level Security policies.');
+return;
+}
+
+adminMembers=adminMembers.map(m=>m.id===memberId?{...m,...data}:m);
+filterAdminMembers();
+toast(`Account status saved as ${nextStatus}.`);
+}catch(error){
+console.error('Member status update failed:',error);
+toast('Could not update status. Check the account_status column and administrator policies.');
+}
+}
+
+function renderAll(){
+renderStats();
+renderHistory();
+updateReferral();
+if(isAdmin())renderAdmin();
+}
+
+async function refreshAccountData(){
+if(!currentUser){
+toast('Please sign in first.');
+openAuth('login');
+return;
+}
+
+await Promise.all([loadProfile(),loadWallet(),loadTransactions()]);
+renderAll();
+toast('Account data refreshed.');
+}
+
+/* SIGN-UP AND SIGN-IN */
+$('authForm').addEventListener('submit',async e=>{
+e.preventDefault();
+
+if(!supabaseClient){
+toast('Supabase is unavailable. Check your internet connection.');
+return;
+}
+
+const submit=$('authSubmit');
+const email=$('authEmail').value.trim();
+const password=$('authPassword').value;
+const fullName=$('authName').value.trim();
+const phone=$('authPhone').value.trim();
+
+if(state.authMode==='register'&&password.length<8){
+toast('New passwords must have at least 8 characters.');
+return;
+}
+
+submit.disabled=true;
+submit.textContent='Please wait…';
+
+try{
+if(state.authMode==='register'){
+const {data,error}=await supabaseClient.auth.signUp({
+email,
+password,
+options:{data:{full_name:fullName,phone}}
+});
+
+if(error)throw error;
+
+if(data.session){
+currentSession=data.session;
+currentUser=data.user;
+closeModal('authModal');
+await handleSignedInUser(data.user);
+toast('Your EliteVest account has been created.');
+}else{
+toast('Registration received. Confirm your email, then sign in.');
+setAuthMode('login');
+}
+}else{
+const {data,error}=await supabaseClient.auth.signInWithPassword({email,password});
+if(error)throw error;
+
+currentSession=data.session;
+currentUser=data.user;
+closeModal('authModal');
+await handleSignedInUser(data.user);
+toast('You are signed in to EliteVest.');
+}
+}catch(err){
+console.error('Authentication:',err);
+toast(err?.message||'Authentication failed.');
+}finally{
+submit.disabled=false;
+submit.textContent=state.authMode==='register'?'Create account':'Sign in';
+$('authPassword').value='';
+}
+});
+
+async function handleSignedInUser(user){
+currentUser=user;
+updateAuthButtons();
+await Promise.all([loadProfile(),loadWallet(),loadTransactions()]);
+renderAll();
+fillProfile();
+}
+
+/* PROFILE */
+$('profileForm').addEventListener('submit',async e=>{
+e.preventDefault();
+
+if(!currentUser||!supabaseClient){
+toast('Please sign in first.');
+openAuth('login');
+return;
+}
+
+const full_name=$('profileName').value.trim();
+const phone=$('profilePhone').value.trim();
+
+if(!full_name){
+toast('Enter your full name.');
+return;
+}
+
+try{
+const {data,error}=await supabaseClient
+.from('profiles')
+.upsert({id:currentUser.id,full_name,phone:phone||null},{onConflict:'id'})
+.select('id,full_name,phone,referral_code')
+.single();
+
+if(error)throw error;
+
+state.profile=data;
+fillProfile();
+updateAuthButtons();
+updateReferral();
+toast('Profile updated successfully.');
+}catch(err){
+console.error('Profile save:',err);
+toast(err.message||'Could not save profile. Check the profiles table and RLS policies.');
+}
+});
+
+/* SIGN-OUT */
+async function signOutEliteVest(){
+if(!supabaseClient||!currentUser){
+toast('You are already signed out.');
+return;
+}
+
+try{
+const {error}=await supabaseClient.auth.signOut();
+if(error)throw error;
+
+currentUser=null;
+currentSession=null;
+state.profile=null;
+state.wallet=null;
+state.transactions=[];
+state.activePackages=[];
+state.demoHistory=[];
+adminMembers=[];
+
+updateAuthButtons();
+fillProfile();
+renderAll();
+showPage('overview');
+toast('You have signed out.');
+}catch(e){
+toast(e.message||'Could not sign out.');
+}
+}
+
+/* WITHDRAWALS ARE STILL PREVIEW ONLY */
+$('withdrawForm').addEventListener('submit',e=>{
+e.preventDefault();
+toast('Preview only: withdrawal processing is not connected.');
+});
+
+/* MODAL CONTROLS */
+document.querySelectorAll('.modal-backdrop').forEach(b=>{
+b.addEventListener('click',e=>{
+if(e.target===b)b.classList.remove('show');
+});
+});
+
+document.addEventListener('keydown',e=>{
+if(e.key==='Escape'){
+document.querySelectorAll('.modal-backdrop').forEach(m=>m.classList.remove('show'));
+}
+});
+
+/* INSTALL */
+window.addEventListener('beforeinstallprompt',e=>{
+e.preventDefault();
+installPrompt=e;
+});
+
+window.addEventListener('appinstalled',()=>{
+installPrompt=null;
+toast('EliteVest has been installed.');
+});
+
+async function installEliteVest(){
+if(installPrompt){
+installPrompt.prompt();
+await installPrompt.userChoice;
+installPrompt=null;
+return;
+}
+
+alert(/android/i.test(navigator.userAgent)
+?'Open this site in Chrome, tap ⋮, then choose Install app or Add to Home screen.'
+:'Use your browser menu to choose Add to Home Screen or Install app.');
+}
+
+/* INITIALIZATION */
+async function initializeEliteVest(){
+try{
+if(!window.supabase?.createClient){
+throw new Error('Supabase client library unavailable');
+}
+
+supabaseClient=window.supabase.createClient(
+SUPABASE_URL,
+SUPABASE_PUBLISHABLE_KEY,
+{
+auth:{
+persistSession:true,
+autoRefreshToken:true,
+detectSessionInUrl:true
+}
+}
+);
+
+backendStatus('Connected');
+
+await loadPackages();
+
+const {data,error}=await supabaseClient.auth.getSession();
+if(error)throw error;
+
+currentSession=data.session;
+currentUser=data.session?.user||null;
+
+if(currentUser){
+await handleSignedInUser(currentUser);
+}else{
+updateAuthButtons();
+renderAll();
+}
+
+supabaseClient.auth.onAuthStateChange((event,session)=>{
+currentSession=session;
+currentUser=session?.user||null;
+
+setTimeout(async()=>{
+if(currentUser){
+await handleSignedInUser(currentUser);
+}else{
+state.profile=null;
+state.wallet=null;
+state.transactions=[];
+state.activePackages=[];
+state.demoHistory=[];
+adminMembers=[];
+
+updateAuthButtons();
+fillProfile();
+renderAll();
+showPage('overview');
+}
+},0);
+});
+
+}catch(e){
+console.error(e);
+backendStatus('Connection error');
+state.packages=FALLBACK_PACKAGES.map(normalizePackage);
+renderPackages();
+renderAll();
+toast(e.message||'Could not initialize EliteVest.');
+}
+}
+
+setAuthMode('register');
+renderPackages();
+renderAll();
+fillProfile();
+updateAuthButtons();
+initializeEliteVest();
+
+if('serviceWorker'in navigator&&location.protocol==='https:'){
+window.addEventListener('load',()=>{
+navigator.serviceWorker.register('./sw.js').catch(e=>console.warn('Service worker:',e));
+});
+}
+</script>
+</body>
+</html>
