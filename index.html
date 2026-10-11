@@ -4,508 +4,429 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#0b0b0d">
+<meta name="description" content="EliteVest — Invest Today, Grow Tomorrow.">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 <meta name="apple-mobile-web-app-title" content="EliteVest">
-<meta name="description" content="EliteVest — Invest Today, Grow Tomorrow. Explore investment packages and manage your demo portfolio.">
 <link rel="manifest" href="./manifest.json">
 <link rel="apple-touch-icon" href="./icon.svg">
 <title>EliteVest | Invest Today, Grow Tomorrow</title>
 
 <style>
-:root {
+:root{
   --bg:#09090b;
-  --panel:#121216;
-  --panel2:#19191f;
+  --panel:#131316;
+  --panel2:#1b1a1e;
   --gold:#d8b46a;
-  --gold2:#f3d99a;
+  --gold2:#f4dca4;
   --text:#f5f3ee;
-  --muted:#a5a2a0;
-  --border:rgba(216,180,106,.19);
-  --green:#65d9a1;
+  --muted:#a7a3a0;
+  --border:rgba(216,180,106,.22);
+  --green:#68d9a0;
   --red:#ff7777;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
 body{
   margin:0;background:var(--bg);color:var(--text);
-  font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
-  min-height:100vh
+  font-family:Arial,Helvetica,sans-serif;min-height:100vh
 }
 button,input,select{font:inherit}
 button{cursor:pointer}
-a{color:inherit;text-decoration:none}
-button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{
-  outline:2px solid var(--gold);outline-offset:3px
+button:focus-visible,input:focus-visible,select:focus-visible{
+  outline:2px solid var(--gold);outline-offset:2px
 }
-.app{max-width:1440px;margin:auto;min-height:100vh}
+.app{max-width:1450px;margin:auto}
 .topbar{
-  height:74px;padding:0 28px;display:flex;align-items:center;
-  justify-content:space-between;gap:18px;border-bottom:1px solid var(--border);
-  background:rgba(9,9,11,.96);position:sticky;top:0;z-index:20;
-  backdrop-filter:blur(14px)
+  position:sticky;top:0;z-index:20;min-height:72px;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:15px;padding:12px 25px;background:rgba(9,9,11,.97);
+  border-bottom:1px solid var(--border)
 }
-.brand{display:flex;align-items:center;gap:11px;font-weight:850;letter-spacing:.4px}
+.brand{display:flex;align-items:center;gap:10px;color:var(--text);text-decoration:none}
 .brand-icon{
-  width:40px;height:40px;border:1px solid var(--gold);border-radius:13px;
-  display:grid;place-items:center;color:var(--gold);font-size:25px;font-weight:900;
-  background:linear-gradient(145deg,#252016,#0c0c0d)
+  width:41px;height:41px;display:grid;place-items:center;
+  border:1px solid var(--gold);border-radius:12px;
+  color:var(--gold);font-size:25px;font-weight:900
 }
-.brand-name{font-size:19px}
-.brand-sub{font-size:10px;color:var(--muted);font-weight:500;letter-spacing:1.1px;margin-top:3px}
-.top-actions{display:flex;align-items:center;gap:10px}
-.pill{
-  border:1px solid var(--border);border-radius:999px;padding:9px 12px;
-  color:var(--muted);font-size:12px
-}
+.brand-name{font-size:18px;font-weight:900;letter-spacing:1px}
+.brand-sub{font-size:9px;color:var(--muted);letter-spacing:1px;margin-top:4px}
+.top-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .btn{
-  border:1px solid var(--border);border-radius:12px;padding:11px 15px;
-  background:var(--panel2);color:var(--text);font-weight:700
+  display:inline-flex;align-items:center;justify-content:center;gap:7px;
+  border:1px solid var(--border);border-radius:11px;padding:11px 14px;
+  color:var(--text);background:var(--panel2);font-weight:700
 }
 .btn:hover{border-color:var(--gold)}
 .btn-gold{
-  color:#17130a;background:linear-gradient(135deg,var(--gold2),var(--gold));
+  color:#18130a;background:linear-gradient(135deg,var(--gold2),var(--gold));
   border-color:transparent
 }
-.btn-gold:hover{filter:brightness(1.08)}
-.btn-small{padding:8px 11px;font-size:12px}
-.layout{display:grid;grid-template-columns:238px minmax(0,1fr)}
+.btn-small{padding:9px 11px;font-size:12px}
+.install-btn{border-color:var(--gold);color:var(--gold2)}
+.layout{display:grid;grid-template-columns:230px minmax(0,1fr)}
 .sidebar{
-  border-right:1px solid var(--border);padding:24px 15px;
-  min-height:calc(100vh - 74px);background:#0c0c0f
+  padding:24px 14px;border-right:1px solid var(--border);
+  min-height:calc(100vh - 72px);background:#0c0c0f
 }
 .side-label{
   color:#77747a;font-size:10px;letter-spacing:1.7px;
-  text-transform:uppercase;margin:10px 12px 12px
+  margin:8px 12px 13px;text-transform:uppercase
 }
-.nav{display:flex;flex-direction:column;gap:6px}
+.nav{display:grid;gap:5px}
 .nav button{
-  border:1px solid transparent;background:transparent;color:#b4b1b0;
-  text-align:left;padding:13px 12px;border-radius:11px;
-  display:flex;align-items:center;gap:11px;width:100%
+  width:100%;text-align:left;padding:13px 12px;border-radius:10px;
+  background:transparent;border:1px solid transparent;color:#b7b3b0
 }
 .nav button.active,.nav button:hover{
-  background:rgba(216,180,106,.09);color:var(--gold2);
-  border-color:var(--border)
+  background:rgba(216,180,106,.09);border-color:var(--border);color:var(--gold2)
 }
-.nav-icon{width:22px;text-align:center;font-size:17px}
 .sidebar-note{
-  border:1px solid var(--border);border-radius:15px;padding:15px;
-  margin-top:28px;background:linear-gradient(140deg,#1b1811,#101013)
+  margin-top:25px;padding:15px;border:1px solid var(--border);
+  border-radius:14px;background:#17150f
 }
-.sidebar-note strong{display:block;font-size:13px;margin-bottom:8px}
-.sidebar-note p{font-size:12px;line-height:1.6;color:var(--muted);margin:0 0 12px}
-main{padding:28px;min-width:0}
-.page{display:none;animation:fade .18s ease}
+.sidebar-note p{font-size:12px;color:var(--muted);line-height:1.6}
+main{padding:27px;min-width:0}
+.page{display:none}
 .page.active{display:block}
-@keyframes fade{from{opacity:.65;transform:translateY(3px)}to{opacity:1;transform:none}}
-.page-heading{
+.heading{
   display:flex;align-items:flex-start;justify-content:space-between;
-  gap:15px;margin-bottom:23px
+  gap:15px;margin-bottom:22px
 }
-.eyebrow{color:var(--gold);font-size:11px;letter-spacing:1.8px;text-transform:uppercase}
-h1{font-size:clamp(25px,3vw,35px);letter-spacing:-.8px;margin:8px 0}
-h2{font-size:19px;margin:0 0 7px}
-h3{font-size:15px;margin:0 0 9px}
+.eyebrow{color:var(--gold);font-size:11px;letter-spacing:1.7px;text-transform:uppercase}
+h1{font-size:clamp(26px,3vw,36px);margin:9px 0;letter-spacing:-.7px}
+h2{font-size:19px;margin:0 0 9px}
+h3{font-size:15px;margin:0 0 8px}
 p{line-height:1.6}
 .muted{color:var(--muted)}
 .small{font-size:12px}
-.grid{display:grid;gap:16px}
+.grid{display:grid;gap:15px}
 .stats{grid-template-columns:repeat(4,minmax(0,1fr));margin-bottom:18px}
 .card{
-  border:1px solid var(--border);border-radius:17px;padding:20px;
-  background:linear-gradient(145deg,#151519,#101013);min-width:0
+  min-width:0;padding:19px;border:1px solid var(--border);
+  border-radius:16px;background:linear-gradient(145deg,#17171b,#101013)
 }
-.stat-label{color:var(--muted);font-size:12px}
-.stat-value{font-size:clamp(20px,2.3vw,29px);font-weight:800;margin:12px 0 8px;overflow-wrap:anywhere}
+.stat-label{font-size:12px;color:var(--muted)}
+.stat-value{font-size:clamp(19px,2vw,28px);font-weight:850;margin:12px 0;overflow-wrap:anywhere}
 .stat-foot{font-size:11px;color:var(--gold)}
 .hero{
-  position:relative;overflow:hidden;border:1px solid rgba(216,180,106,.35);
-  border-radius:22px;padding:30px;
-  background:radial-gradient(ellipse at 90% 20%,rgba(216,180,106,.17),transparent 45%),
-  linear-gradient(120deg,#1d1a14,#111114 62%,#19160f);
-  margin-bottom:19px
+  padding:30px;border:1px solid rgba(216,180,106,.35);border-radius:20px;
+  margin-bottom:20px;
+  background:radial-gradient(ellipse at 90% 15%,rgba(216,180,106,.17),transparent 42%),
+  linear-gradient(125deg,#211c13,#111114 65%,#19150e)
 }
-.hero:after{
-  content:"E";position:absolute;right:7%;top:-45px;font-size:250px;
-  line-height:1;font-weight:900;color:rgba(216,180,106,.045);pointer-events:none
-}
-.hero-content{position:relative;z-index:1;max-width:600px}
-.hero h1{font-size:clamp(29px,4vw,44px);line-height:1.1;margin:12px 0}
-.hero p{max-width:500px;color:#c0bbb3;font-size:14px}
+.hero-content{max-width:650px}
+.hero h1{font-size:clamp(30px,4vw,45px);line-height:1.12}
+.hero p{font-size:14px;color:#c8c2b8;max-width:550px}
 .hero-buttons{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
-.section-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:27px 0 15px}
+.section-head{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:10px;margin:26px 0 14px
+}
 .section-head h2{margin:0}
 .package-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
 .package{
-  position:relative;overflow:hidden;border:1px solid var(--border);
-  border-radius:17px;padding:19px;background:linear-gradient(150deg,#19191d,#101013);
-  display:flex;flex-direction:column
+  padding:18px;border:1px solid var(--border);border-radius:16px;
+  background:linear-gradient(150deg,#19191d,#101013);
+  display:flex;flex-direction:column;min-width:0
 }
-.package.featured{border-color:rgba(216,180,106,.65);background:linear-gradient(145deg,#272116,#111114)}
-.package-top{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.package.featured{border-color:rgba(216,180,106,.65);background:#201b12}
+.package-top{display:flex;justify-content:space-between;align-items:center;gap:7px}
 .package-name{font-size:17px;font-weight:800}
-.package-tag{
-  font-size:9px;color:var(--gold2);border:1px solid var(--border);
-  border-radius:999px;padding:5px 7px;text-transform:uppercase;letter-spacing:.5px
+.tag{
+  color:var(--gold2);border:1px solid var(--border);border-radius:20px;
+  padding:5px 7px;font-size:9px;text-transform:uppercase
 }
-.package-price{font-size:24px;font-weight:850;margin:18px 0 4px;overflow-wrap:anywhere}
+.package-price{font-size:23px;font-weight:850;margin:18px 0 4px;overflow-wrap:anywhere}
 .package-sub{font-size:11px;color:var(--muted)}
-.package-line{height:1px;background:var(--border);margin:16px 0}
-.package-row{display:flex;justify-content:space-between;gap:8px;font-size:12px;margin:10px 0}
-.package-row span:first-child{color:var(--muted)}
-.package-row strong{text-align:right}
-.package .btn{width:100%;margin-top:12px}
-.two-col{grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr)}
-.table-wrap{width:100%;overflow-x:auto}
-table{border-collapse:collapse;width:100%;min-width:520px}
-th,td{text-align:left;padding:14px 12px;border-bottom:1px solid var(--border);font-size:12px}
+.line{height:1px;background:var(--border);margin:15px 0}
+.row{display:flex;justify-content:space-between;gap:8px;font-size:12px;margin:10px 0}
+.row span:first-child{color:var(--muted)}
+.row strong{text-align:right}
+.package .btn{margin-top:12px;width:100%}
+.two-col{grid-template-columns:1.2fr .8fr}
+.level-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.level-card{padding:17px;border:1px solid var(--border);border-radius:14px;background:var(--panel)}
+.level-percent{font-size:28px;font-weight:850;color:var(--gold);margin:10px 0}
+.notice{
+  border:1px solid var(--border);border-radius:12px;padding:13px 14px;
+  background:rgba(216,180,106,.05);font-size:12px;line-height:1.7;color:#c8c0b2
+}
+.table-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;min-width:500px}
+th,td{padding:13px 11px;text-align:left;border-bottom:1px solid var(--border);font-size:12px}
 th{color:var(--muted);font-weight:600}
-td{color:#e7e3dc}
-.status{display:inline-flex;padding:5px 8px;border-radius:99px;font-size:10px;background:#24241f;color:var(--gold2)}
-.status.demo{color:#d7d2c9}
-.status.success{color:var(--green);background:rgba(101,217,161,.09)}
-.empty{text-align:center;padding:28px 10px;color:var(--muted);font-size:13px}
+td{color:#e6e1d9}
+.status{
+  display:inline-block;padding:5px 8px;border-radius:20px;
+  color:var(--gold2);background:#27231a;font-size:10px
+}
+.empty{text-align:center;padding:24px 10px;color:var(--muted);font-size:13px}
 .form{display:grid;gap:14px}
 .field{display:grid;gap:7px}
-.field label{font-size:12px;color:#c9c4bc}
+.field label{font-size:12px;color:#c8c2bb}
 .field input,.field select{
-  width:100%;padding:13px 14px;border:1px solid #333139;border-radius:11px;
-  color:var(--text);background:#0c0c0f;min-width:0
+  width:100%;padding:13px;border:1px solid #37343a;
+  border-radius:10px;background:#0c0c0f;color:var(--text)
 }
-.field input::placeholder{color:#6e6b70}
-.form .btn{width:100%}
-.notice{
-  border:1px solid var(--border);border-radius:13px;padding:13px 14px;
-  color:#c4bba8;background:rgba(216,180,106,.055);font-size:12px;line-height:1.65
+.form>.btn{width:100%}
+.ref-link{display:flex;gap:8px;margin-top:15px}
+.ref-link input{
+  flex:1;min-width:0;padding:11px;border-radius:9px;
+  border:1px solid #37343a;background:#0c0c0f;color:#eee
 }
-.ref-link{display:flex;gap:8px;align-items:center;margin:15px 0}
-.ref-link input{flex:1;min-width:0;background:#0b0b0e;color:#ddd;border:1px solid #333;padding:12px;border-radius:10px}
-.level-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
-.level-card{border:1px solid var(--border);border-radius:14px;padding:17px;background:#131316}
-.level-percent{font-size:27px;color:var(--gold);font-weight:850;margin:9px 0}
 .modal-backdrop{
-  position:fixed;inset:0;background:rgba(0,0,0,.78);z-index:50;
-  display:none;align-items:center;justify-content:center;padding:18px;
-  overflow-y:auto
+  display:none;position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.8);
+  padding:16px;align-items:center;justify-content:center;overflow:auto
 }
 .modal-backdrop.show{display:flex}
 .modal{
-  width:min(100%,460px);background:#131316;border:1px solid var(--border);
-  border-radius:20px;padding:23px;max-height:92vh;overflow-y:auto
+  width:min(100%,450px);max-height:92vh;overflow:auto;padding:22px;
+  border:1px solid var(--border);border-radius:18px;background:#141417
 }
-.modal-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:18px}
-.close{
-  background:#242329;border:0;color:#ddd;border-radius:9px;
-  width:34px;height:34px;font-size:20px
-}
+.modal-head{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:16px}
+.close{width:35px;height:35px;border:0;border-radius:9px;background:#29272c;color:white;font-size:21px}
+.auth-tabs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:17px 0}
+.auth-tabs button{padding:11px;border:1px solid var(--border);border-radius:9px;background:#0c0c0f;color:#aaa}
+.auth-tabs button.active{color:var(--gold2);background:#282116}
 .toast{
-  position:fixed;bottom:25px;left:50%;transform:translate(-50%,20px);
-  background:#25241f;border:1px solid var(--border);color:var(--text);
-  padding:13px 18px;border-radius:12px;font-size:13px;z-index:100;
-  opacity:0;pointer-events:none;transition:.25s;width:max-content;max-width:90vw
+  position:fixed;z-index:100;bottom:30px;left:50%;transform:translate(-50%,15px);
+  background:#26231c;border:1px solid var(--border);padding:13px 17px;
+  border-radius:12px;font-size:13px;max-width:90vw;opacity:0;pointer-events:none;transition:.2s
 }
 .toast.show{opacity:1;transform:translate(-50%,0)}
-.mobile-nav{display:none}
-.footer{margin:30px 0 8px;text-align:center;color:#77747a;font-size:11px;line-height:1.7}
-.auth-screen{
-  min-height:calc(100vh - 74px);display:none;align-items:center;
-  justify-content:center;padding:30px 15px
-}
-.auth-screen.show{display:flex}
-.auth-card{
-  width:min(100%,440px);border:1px solid var(--border);border-radius:22px;
-  padding:27px;background:linear-gradient(145deg,#19191d,#101013)
-}
-.auth-card .brand{margin-bottom:25px}
-.auth-tabs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:20px 0}
-.auth-tabs button{padding:11px;border-radius:10px;border:1px solid var(--border);background:#0d0d10;color:var(--muted)}
-.auth-tabs button.active{color:var(--gold2);background:#242016}
 .hidden{display:none!important}
+.footer{text-align:center;margin:30px 0 5px;color:#77747a;font-size:11px;line-height:1.8}
+.mobile-nav{display:none}
 @media(max-width:1100px){
- .package-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
- .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .package-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 @media(max-width:760px){
- .topbar{height:65px;padding:0 15px}
- .brand-icon{width:36px;height:36px}
- .brand-name{font-size:17px}
- .top-actions .pill{display:none}
- .layout{display:block}
- .sidebar{display:none}
- main{padding:19px 14px 100px}
- .hero{padding:23px 19px}
- .hero:after{right:-10%;font-size:180px;top:5px}
- .two-col{grid-template-columns:1fr}
- .level-grid{grid-template-columns:1fr}
- .page-heading{margin-bottom:18px}
- .mobile-nav{
-   display:flex;position:fixed;bottom:0;left:0;right:0;z-index:30;
-   background:rgba(12,12,15,.97);border-top:1px solid var(--border);
-   padding:8px 4px calc(8px + env(safe-area-inset-bottom));
-   justify-content:space-around;gap:2px;backdrop-filter:blur(16px)
- }
- .mobile-nav button{
-   flex:1;min-width:0;border:0;background:transparent;color:#9f9ba0;
-   padding:6px 2px;font-size:9px;display:flex;align-items:center;
-   flex-direction:column;gap:5px
- }
- .mobile-nav button span{font-size:18px}
- .mobile-nav button.active{color:var(--gold2)}
- .footer{padding-bottom:10px}
+  .topbar{padding:10px 12px;min-height:64px}
+  .brand-icon{width:36px;height:36px}
+  .brand-name{font-size:16px}
+  .brand-sub{font-size:8px}
+  .layout{display:block}
+  .sidebar{display:none}
+  main{padding:19px 13px 100px}
+  .top-actions{gap:5px}
+  .top-actions .btn{font-size:11px;padding:9px 8px}
+  .hero{padding:23px 18px}
+  .two-col{grid-template-columns:1fr}
+  .mobile-nav{
+    display:flex;position:fixed;bottom:0;left:0;right:0;z-index:30;
+    padding:7px 3px calc(7px + env(safe-area-inset-bottom));
+    background:rgba(12,12,15,.97);border-top:1px solid var(--border);
+    justify-content:space-around
+  }
+  .mobile-nav button{
+    flex:1;min-width:0;display:flex;flex-direction:column;gap:4px;
+    align-items:center;padding:6px 1px;background:transparent;border:0;
+    color:#aaa5aa;font-size:9px
+  }
+  .mobile-nav button span{font-size:18px}
+  .mobile-nav button.active{color:var(--gold2)}
+  .heading{flex-wrap:wrap}
 }
-@media(max-width:390px){
- .package-grid{grid-template-columns:1fr}
- .stats{gap:10px}
- .card{padding:15px}
- .stat-value{font-size:22px}
- .top-actions .btn{padding:9px 10px;font-size:12px}
+@media(max-width:410px){
+  .package-grid{grid-template-columns:1fr}
+  .stats{gap:9px}
+  .card{padding:14px}
+  .stat-value{font-size:20px}
+  .brand-sub{letter-spacing:.4px}
 }
 </style>
 </head>
+
 <body>
 <div class="app">
-  <header class="topbar">
-    <a href="#" class="brand" aria-label="EliteVest home" onclick="showPage('overview');return false">
-      <div class="brand-icon">E</div>
-      <div>
-        <div class="brand-name">ELITEVEST</div>
-        <div class="brand-sub">INVEST TODAY · GROW TOMORROW</div>
-      </div>
-    </a>
-    <div class="top-actions">
-      <span class="pill">UGX · Uganda</span>
-      <button class="btn" onclick="openAuth('login')">Sign in</button>
-      <button class="btn btn-gold" onclick="openAuth('register')">Join now</button>
+<header class="topbar">
+  <a href="#" class="brand" onclick="showPage('overview');return false">
+    <div class="brand-icon">E</div>
+    <div>
+      <div class="brand-name">ELITEVEST</div>
+      <div class="brand-sub">INVEST TODAY · GROW TOMORROW</div>
     </div>
-  </header>
+  </a>
+  <div class="top-actions">
+    <button class="btn btn-small install-btn" id="installButton" onclick="installEliteVest()">⬇ Install App</button>
+    <button class="btn btn-small" onclick="openAuth('login')">Sign in</button>
+    <button class="btn btn-gold btn-small" onclick="openAuth('register')">Join now</button>
+  </div>
+</header>
 
-  <div class="layout" id="appLayout">
-    <aside class="sidebar">
-      <div class="side-label">Workspace</div>
-      <nav class="nav">
-        <button class="active" data-page="overview" onclick="showPage('overview')"><span class="nav-icon">⌂</span>Overview</button>
-        <button data-page="packages" onclick="showPage('packages')"><span class="nav-icon">◇</span>Investment packages</button>
-        <button data-page="wallet" onclick="showPage('wallet')"><span class="nav-icon">▣</span>My wallet</button>
-        <button data-page="withdraw" onclick="showPage('withdraw')"><span class="nav-icon">↗</span>Withdraw</button>
-        <button data-page="referrals" onclick="showPage('referrals')"><span class="nav-icon">♧</span>Referrals</button>
-        <button data-page="history" onclick="showPage('history')"><span class="nav-icon">◷</span>Transactions</button>
-        <button data-page="profile" onclick="showPage('profile')"><span class="nav-icon">◎</span>My profile</button>
-      </nav>
-      <div class="sidebar-note">
-        <strong>Build your future</strong>
-        <p>Explore the packages and learn how the EliteVest demo works.</p>
-        <button class="btn btn-gold btn-small" onclick="showPage('packages')">Explore packages</button>
-      </div>
-    </aside>
+<div class="layout">
+<aside class="sidebar">
+  <div class="side-label">Workspace</div>
+  <nav class="nav">
+    <button class="active" data-page="overview" onclick="showPage('overview')">⌂ &nbsp; Overview</button>
+    <button data-page="packages" onclick="showPage('packages')">◇ &nbsp; Investment packages</button>
+    <button data-page="wallet" onclick="showPage('wallet')">▣ &nbsp; My wallet</button>
+    <button data-page="withdraw" onclick="showPage('withdraw')">↗ &nbsp; Withdraw</button>
+    <button data-page="referrals" onclick="showPage('referrals')">♧ &nbsp; Referrals</button>
+    <button data-page="history" onclick="showPage('history')">◷ &nbsp; Transactions</button>
+    <button data-page="profile" onclick="showPage('profile')">◎ &nbsp; My profile</button>
+  </nav>
+  <div class="sidebar-note">
+    <strong>EliteVest mobile app</strong>
+    <p>Install EliteVest on your device for quick access from your Home Screen.</p>
+    <button class="btn btn-gold btn-small" onclick="installEliteVest()">Install App ↓</button>
+  </div>
+</aside>
 
-    <main id="mainContent">
-      <section class="page active" id="page-overview">
-        <div class="page-heading">
-          <div>
-            <div class="eyebrow">Member dashboard</div>
-            <h1>Welcome to EliteVest</h1>
-            <div class="muted small">Your portfolio overview, all in one place.</div>
-          </div>
-          <button class="btn btn-gold" onclick="showPage('packages')">＋ Explore packages</button>
-        </div>
-
-        <div class="hero">
-          <div class="hero-content">
-            <div class="eyebrow">Invest today · Grow tomorrow</div>
-            <h1>Make your financial goals<br>part of your plan.</h1>
-            <p>Explore investment packages, view projected figures, and manage your portfolio through a clean mobile-friendly dashboard.</p>
-            <div class="hero-buttons">
-              <button class="btn btn-gold" onclick="showPage('packages')">View packages</button>
-              <button class="btn" onclick="showPage('referrals')">Referral programme</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="grid stats">
-          <div class="card">
-            <div class="stat-label">Demo wallet balance</div>
-            <div class="stat-value" id="statBalance">UGX 0</div>
-            <div class="stat-foot">Preview balance only</div>
-          </div>
-          <div class="card">
-            <div class="stat-label">Active demo packages</div>
-            <div class="stat-value" id="statActive">0</div>
-            <div class="stat-foot">Packages selected in this session</div>
-          </div>
-          <div class="card">
-            <div class="stat-label">Projected earnings</div>
-            <div class="stat-value" id="statEarnings">UGX 0</div>
-            <div class="stat-foot">Illustrative, not guaranteed</div>
-          </div>
-          <div class="card">
-            <div class="stat-label">Referral earnings</div>
-            <div class="stat-value" id="statReferral">UGX 0</div>
-            <div class="stat-foot">Demo value</div>
-          </div>
-        </div>
-
-        <div class="notice">
-          <strong>Demo platform notice:</strong> Figures shown are illustrative package projections, not promises or guarantees. No real money is accepted or paid by this prototype.
-        </div>
-
-        <div class="section-head">
-          <h2>Popular packages</h2>
-          <button class="btn btn-small" onclick="showPage('packages')">View all →</button>
-        </div>
-        <div class="grid package-grid" id="featuredPackages"></div>
-
-        <div class="section-head"><h2>Recent activity</h2><button class="btn btn-small" onclick="showPage('history')">Full history →</button></div>
-        <div class="card table-wrap">
-          <table>
-            <thead><tr><th>Activity</th><th>Amount</th><th>Status</th><th>Date</th></tr></thead>
-            <tbody id="recentRows"></tbody>
-          </table>
-          <div id="recentEmpty" class="empty">No demo activity yet. Select a package to try the interface.</div>
-        </div>
-      </section>
-
-      <section class="page" id="page-packages">
-        <div class="page-heading">
-          <div><div class="eyebrow">Explore opportunities</div><h1>Investment packages</h1><p class="muted small">Review the sample package terms before making a decision.</p></div>
-        </div>
-        <div class="notice">The daily amounts and 30-day figures below are user-provided projections. They are not guaranteed returns, and this demo does not accept investments.</div>
-        <div class="section-head"><h2>Available packages</h2><span class="muted small">Currency: UGX</span></div>
-        <div class="grid package-grid" id="allPackages"></div>
-      </section>
-
-      <section class="page" id="page-wallet">
-        <div class="page-heading"><div><div class="eyebrow">Account summary</div><h1>My wallet</h1><p class="muted small">Your demo wallet and activity.</p></div></div>
-        <div class="grid stats">
-          <div class="card"><div class="stat-label">Available demo balance</div><div class="stat-value" id="walletBalance">UGX 0</div></div>
-          <div class="card"><div class="stat-label">Selected package value</div><div class="stat-value" id="walletInvested">UGX 0</div></div>
-        </div>
-        <div class="notice">No real wallet or mobile-money connection is configured. Do not send money to anyone based on this demonstration.</div>
-        <div class="section-head"><h2>Wallet activity</h2></div>
-        <div class="card table-wrap">
-          <table><thead><tr><th>Activity</th><th>Amount</th><th>Status</th><th>Date</th></tr></thead><tbody id="walletRows"></tbody></table>
-          <div id="walletEmpty" class="empty">Your demo wallet activity will appear here.</div>
-        </div>
-      </section>
-
-      <section class="page" id="page-withdraw">
-        <div class="page-heading"><div><div class="eyebrow">Payout interface</div><h1>Withdraw funds</h1><p class="muted small">Demo form for a future secure withdrawal system.</p></div></div>
-        <div class="grid two-col">
-          <div class="card">
-            <h2>Withdrawal request</h2>
-            <p class="muted small">Withdrawals are intended to be available Monday to Friday in the planned design.</p>
-            <form class="form" id="withdrawForm">
-              <div class="field"><label for="withdrawAmount">Amount (UGX)</label><input id="withdrawAmount" type="number" min="1" step="1" placeholder="Enter amount" required></div>
-              <div class="field"><label for="withdrawNetwork">Mobile money network</label><select id="withdrawNetwork" required><option value="">Select network</option><option>MTN Mobile Money</option><option>Airtel Money</option></select></div>
-              <div class="field"><label for="withdrawPhone">Registered phone number</label><input id="withdrawPhone" type="tel" autocomplete="tel" placeholder="e.g. 07XXXXXXXX" required></div>
-              <button class="btn btn-gold" type="submit">Submit demo request</button>
-            </form>
-            <p class="muted small">This form does not send money or create a real withdrawal request.</p>
-          </div>
-          <div class="card">
-            <h2>Withdrawal information</h2>
-            <div class="package-line"></div>
-            <div class="package-row"><span>Planned service days</span><strong>Monday–Friday</strong></div>
-            <div class="package-row"><span>Saturday & Sunday</span><strong>Closed</strong></div>
-            <div class="package-row"><span>Processing status</span><strong>Demo only</strong></div>
-            <div class="package-line"></div>
-            <div class="notice">A live version needs server-side balance checks, identity and fraud controls, secure approval, transaction records, and a verified payment provider.</div>
-          </div>
-        </div>
-      </section>
-
-      <section class="page" id="page-referrals">
-        <div class="page-heading"><div><div class="eyebrow">Member network</div><h1>Referral programme</h1><p class="muted small">Preview of the proposed three-level commission structure.</p></div></div>
-        <div class="hero">
-          <div class="hero-content">
-            <div class="eyebrow">Share EliteVest</div>
-            <h1>Invite people to explore.</h1>
-            <p>Your personal referral link can be connected to a secure referral system when the backend is ready.</p>
-            <div class="ref-link"><input id="refLink" readonly value="Create an account to generate a demo link"><button class="btn btn-gold" onclick="copyReferral()">Copy</button></div>
-          </div>
-        </div>
-        <div class="grid level-grid">
-          <div class="level-card"><div class="muted small">Level 1 · Direct</div><div class="level-percent">5%</div><div class="muted small">Proposed commission</div></div>
-          <div class="level-card"><div class="muted small">Level 2</div><div class="level-percent">2%</div><div class="muted small">Proposed commission</div></div>
-          <div class="level-card"><div class="muted small">Level 3</div><div class="level-percent">1%</div><div class="muted small">Proposed commission</div></div>
-        </div>
-        <div class="section-head"><h2>Referral examples</h2></div>
-        <div class="card table-wrap">
-          <table><thead><tr><th>Package amount</th><th>Level 1 (5%)</th><th>Level 2 (2%)</th><th>Level 3 (1%)</th><th>Total (8%)</th></tr></thead><tbody id="commissionRows"></tbody></table>
-        </div>
-        <p class="muted small">These examples are arithmetic illustrations only. A live referral programme must define eligible transactions, funding sources, terms, and applicable legal requirements.</p>
-      </section>
-
-      <section class="page" id="page-history">
-        <div class="page-heading"><div><div class="eyebrow">Account records</div><h1>Transaction history</h1><p class="muted small">Actions recorded in this browser session.</p></div><button class="btn" onclick="clearDemoHistory()">Clear demo history</button></div>
-        <div class="card table-wrap">
-          <table><thead><tr><th>Activity</th><th>Amount</th><th>Status</th><th>Date</th></tr></thead><tbody id="historyRows"></tbody></table>
-          <div id="historyEmpty" class="empty">No transactions to display.</div>
-        </div>
-        <p class="muted small">Demo records are stored only in this browser. They are not secure account records and may disappear when browser data is cleared.</p>
-      </section>
-
-      <section class="page" id="page-profile">
-        <div class="page-heading"><div><div class="eyebrow">Account settings</div><h1>My profile</h1><p class="muted small">Manage your local demo profile.</p></div></div>
-        <div class="grid two-col">
-          <div class="card">
-            <h2>Member details</h2>
-            <form id="profileForm" class="form">
-              <div class="field"><label for="profileName">Full name</label><input id="profileName" placeholder="Your full name" required></div>
-              <div class="field"><label for="profileEmail">Email address</label><input id="profileEmail" type="email" placeholder="you@example.com"></div>
-              <div class="field"><label for="profilePhone">Phone number</label><input id="profilePhone" type="tel" placeholder="Your phone number"></div>
-              <button class="btn btn-gold" type="submit">Save demo profile</button>
-            </form>
-            <button class="btn" style="width:100%;margin-top:12px" onclick="openAuth('register')">Create / view demo account</button>
-          </div>
-          <div class="card">
-            <h2>Account status</h2>
-            <div class="package-line"></div>
-            <div class="package-row"><span>Environment</span><strong>Prototype</strong></div>
-            <div class="package-row"><span>Backend</span><strong>Not connected</strong></div>
-            <div class="package-row"><span>Mobile app</span><strong>PWA-ready</strong></div>
-            <div class="package-line"></div>
-            <button class="btn" onclick="logoutDemo()">Reset demo session</button>
-          </div>
-        </div>
-      </section>
-
-      <div class="footer">
-        <strong>ELITEVEST</strong> · Invest Today · Grow Tomorrow<br>
-        Prototype only. Package projections are not guaranteed returns. This website is not a live investment service.
-      </div>
-    </main>
+<main id="mainContent">
+<section class="page active" id="page-overview">
+  <div class="heading">
+    <div><div class="eyebrow">Member dashboard</div><h1>Welcome to EliteVest</h1><div class="muted small">Your portfolio overview.</div></div>
+    <button class="btn btn-gold" onclick="showPage('packages')">＋ Explore packages</button>
   </div>
 
-  <nav class="mobile-nav" aria-label="Mobile navigation">
-    <button class="active" data-page="overview" onclick="showPage('overview')"><span>⌂</span>Home</button>
-    <button data-page="packages" onclick="showPage('packages')"><span>◇</span>Packages</button>
-    <button data-page="wallet" onclick="showPage('wallet')"><span>▣</span>Wallet</button>
-    <button data-page="withdraw" onclick="showPage('withdraw')"><span>↗</span>Withdraw</button>
-    <button data-page="referrals" onclick="showPage('referrals')"><span>♧</span>Referrals</button>
-  </nav>
+  <div class="hero">
+    <div class="hero-content">
+      <div class="eyebrow">Invest today · Grow tomorrow</div>
+      <h1>Plan your financial future.</h1>
+      <p>Explore the EliteVest package previews, view sample figures, and use the mobile-friendly dashboard.</p>
+      <div class="hero-buttons">
+        <button class="btn btn-gold" onclick="showPage('packages')">View packages</button>
+        <button class="btn" onclick="installEliteVest()">⬇ Install EliteVest</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid stats">
+    <div class="card"><div class="stat-label">Demo wallet balance</div><div class="stat-value" id="statBalance">UGX 0</div><div class="stat-foot">Preview only</div></div>
+    <div class="card"><div class="stat-label">Selected packages</div><div class="stat-value" id="statActive">0</div><div class="stat-foot">Demo session</div></div>
+    <div class="card"><div class="stat-label">Projected earnings</div><div class="stat-value" id="statEarnings">UGX 0</div><div class="stat-foot">Not guaranteed</div></div>
+    <div class="card"><div class="stat-label">Referral earnings</div><div class="stat-value" id="statReferral">UGX 0</div><div class="stat-foot">Demo value</div></div>
+  </div>
+
+  <div class="notice"><strong>Important:</strong> These are illustrative projections, not guaranteed earnings. This prototype does not accept deposits or make payouts.</div>
+
+  <div class="section-head"><h2>Popular packages</h2><button class="btn btn-small" onclick="showPage('packages')">View all →</button></div>
+  <div class="grid package-grid" id="featuredPackages"></div>
+
+  <div class="section-head"><h2>Recent activity</h2><button class="btn btn-small" onclick="showPage('history')">History →</button></div>
+  <div class="card table-wrap">
+    <table><thead><tr><th>Activity</th><th>Amount</th><th>Status</th><th>Date</th></tr></thead><tbody id="recentRows"></tbody></table>
+    <div id="recentEmpty" class="empty">No demo activity yet.</div>
+  </div>
+</section>
+
+<section class="page" id="page-packages">
+  <div class="heading"><div><div class="eyebrow">Explore opportunities</div><h1>Investment packages</h1><p class="muted small">Review the proposed package figures.</p></div></div>
+  <div class="notice">The figures below are projections supplied for this concept. A projected return is not a guarantee of profit or repayment.</div>
+  <div class="section-head"><h2>All packages</h2><span class="muted small">UGX</span></div>
+  <div class="grid package-grid" id="allPackages"></div>
+</section>
+
+<section class="page" id="page-wallet">
+  <div class="heading"><div><div class="eyebrow">Account summary</div><h1>My wallet</h1><p class="muted small">Demo wallet overview.</p></div></div>
+  <div class="grid stats">
+    <div class="card"><div class="stat-label">Available balance</div><div class="stat-value" id="walletBalance">UGX 0</div></div>
+    <div class="card"><div class="stat-label">Selected package value</div><div class="stat-value" id="walletInvested">UGX 0</div></div>
+  </div>
+  <div class="notice">No real wallet or mobile-money connection is configured. Do not send money based on this prototype.</div>
+  <div class="section-head"><h2>Wallet activity</h2></div>
+  <div class="card table-wrap"><table><thead><tr><th>Activity</th><th>Amount</th><th>Status</th><th>Date</th></tr></thead><tbody id="walletRows"></tbody></table><div id="walletEmpty" class="empty">No wallet activity yet.</div></div>
+</section>
+
+<section class="page" id="page-withdraw">
+  <div class="heading"><div><div class="eyebrow">Payout interface</div><h1>Withdraw funds</h1><p class="muted small">Demo withdrawal form.</p></div></div>
+  <div class="grid two-col">
+    <div class="card">
+      <h2>Withdrawal request</h2>
+      <p class="muted small">The proposed service schedule is Monday to Friday.</p>
+      <form class="form" id="withdrawForm">
+        <div class="field"><label for="withdrawAmount">Amount (UGX)</label><input id="withdrawAmount" type="number" min="1" step="1" placeholder="Enter amount" required></div>
+        <div class="field"><label for="withdrawNetwork">Mobile money network</label><select id="withdrawNetwork" required><option value="">Select network</option><option>MTN Mobile Money</option><option>Airtel Money</option></select></div>
+        <div class="field"><label for="withdrawPhone">Phone number</label><input id="withdrawPhone" type="tel" placeholder="07XXXXXXXX" required></div>
+        <button class="btn btn-gold" type="submit">Submit demo request</button>
+      </form>
+      <p class="muted small">No money is sent and no real request is created.</p>
+    </div>
+    <div class="card">
+      <h2>Withdrawal information</h2><div class="line"></div>
+      <div class="row"><span>Planned service days</span><strong>Monday–Friday</strong></div>
+      <div class="row"><span>Weekend</span><strong>Closed</strong></div>
+      <div class="row"><span>Current status</span><strong>Demo only</strong></div><div class="line"></div>
+      <div class="notice">A live service needs server-side balance checks, transaction records, secure approval, and a verified payment provider.</div>
+    </div>
+  </div>
+</section>
+
+<section class="page" id="page-referrals">
+  <div class="heading"><div><div class="eyebrow">Member network</div><h1>Referral programme</h1><p class="muted small">Proposed three-level commission structure.</p></div></div>
+  <div class="hero"><div class="hero-content"><div class="eyebrow">Share EliteVest</div><h1>Invite people to explore.</h1><p>Your personal demo referral link can be connected to a secure backend later.</p><div class="ref-link"><input id="refLink" readonly><button class="btn btn-gold" onclick="copyReferral()">Copy</button></div></div></div>
+  <div class="grid level-grid">
+    <div class="level-card"><div class="muted small">Level 1 · Direct</div><div class="level-percent">5%</div><div class="muted small">Proposed commission</div></div>
+    <div class="level-card"><div class="muted small">Level 2</div><div class="level-percent">2%</div><div class="muted small">Proposed commission</div></div>
+    <div class="level-card"><div class="muted small">Level 3</div><div class="level-percent">1%</div><div class="muted small">Proposed commission</div></div>
+  </div>
+  <div class="section-head"><h2>Illustrative commission amounts</h2></div>
+  <div class="card table-wrap"><table><thead><tr><th>Package</th><th>Level 1 (5%)</th><th>Level 2 (2%)</th><th>Level 3 (1%)</th><th>Total (8%)</th></tr></thead><tbody id="commissionRows"></tbody></table></div>
+  <p class="muted small">These examples are arithmetic illustrations only. Actual referral arrangements require clear terms and appropriate compliance checks.</p>
+</section>
+
+<section class="page" id="page-history">
+  <div class="heading"><div><div class="eyebrow">Account records</div><h1>Transaction history</h1><p class="muted small">Activity from this browser session.</p></div><button class="btn" onclick="clearDemoHistory()">Clear demo history</button></div>
+  <div class="card table-wrap"><table><thead><tr><th>Activity</th><th>Amount</th><th>Status</th><th>Date</th></tr></thead><tbody id="historyRows"></tbody></table><div id="historyEmpty" class="empty">No demo transactions yet.</div></div>
+  <p class="muted small">These records are temporary and are not secure financial records.</p>
+</section>
+
+<section class="page" id="page-profile">
+  <div class="heading"><div><div class="eyebrow">Account settings</div><h1>My profile</h1><p class="muted small">Local demo profile.</p></div></div>
+  <div class="grid two-col">
+    <div class="card"><h2>Member details</h2>
+      <form id="profileForm" class="form">
+        <div class="field"><label for="profileName">Full name</label><input id="profileName" required placeholder="Your full name"></div>
+        <div class="field"><label for="profileEmail">Email address</label><input id="profileEmail" type="email" placeholder="you@example.com"></div>
+        <div class="field"><label for="profilePhone">Phone number</label><input id="profilePhone" type="tel" placeholder="Your phone number"></div>
+        <button class="btn btn-gold" type="submit">Save demo profile</button>
+      </form>
+      <button class="btn" style="width:100%;margin-top:12px" onclick="openAuth('register')">Create demo account</button>
+    </div>
+    <div class="card"><h2>Platform status</h2><div class="line"></div>
+      <div class="row"><span>Environment</span><strong>Prototype</strong></div>
+      <div class="row"><span>Backend</span><strong>Not connected</strong></div>
+      <div class="row"><span>Installation</span><strong>PWA</strong></div><div class="line"></div>
+      <button class="btn" onclick="logoutDemo()">Reset demo session</button>
+    </div>
+  </div>
+</section>
+
+<div class="footer"><strong>ELITEVEST</strong><br>Invest Today · Grow Tomorrow<br>Prototype only. Projected returns are not guaranteed. This is not a live investment service.</div>
+</main>
 </div>
 
-<div class="modal-backdrop" id="authModal" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+<nav class="mobile-nav" aria-label="Mobile navigation">
+  <button class="active" data-page="overview" onclick="showPage('overview')"><span>⌂</span>Home</button>
+  <button data-page="packages" onclick="showPage('packages')"><span>◇</span>Packages</button>
+  <button data-page="wallet" onclick="showPage('wallet')"><span>▣</span>Wallet</button>
+  <button data-page="withdraw" onclick="showPage('withdraw')"><span>↗</span>Withdraw</button>
+  <button data-page="referrals" onclick="showPage('referrals')"><span>♧</span>Referrals</button>
+</nav>
+</div>
+
+<div class="modal-backdrop" id="authModal" role="dialog" aria-modal="true">
   <div class="modal">
     <div class="modal-head"><div><div class="eyebrow">Welcome to EliteVest</div><h2 id="authTitle">Create demo account</h2></div><button class="close" onclick="closeModal('authModal')" aria-label="Close">×</button></div>
-    <div class="notice">This prototype does not create a real account or securely store passwords. Do not enter a password you use elsewhere.</div>
+    <div class="notice">Demo only. No real account is created and no password is stored. Do not use a password from another service.</div>
     <div class="auth-tabs"><button id="tabRegister" class="active" onclick="setAuthMode('register')">Create account</button><button id="tabLogin" onclick="setAuthMode('login')">Sign in</button></div>
-    <form class="form" id="authForm">
-      <div class="field" id="nameField"><label for="authName">Full name</label><input id="authName" autocomplete="name" placeholder="Enter full name"></div>
+    <form id="authForm" class="form">
+      <div class="field" id="nameField"><label for="authName">Full name</label><input id="authName" autocomplete="name" placeholder="Your full name"></div>
       <div class="field"><label for="authEmail">Email address</label><input id="authEmail" type="email" autocomplete="email" placeholder="you@example.com" required></div>
       <div class="field" id="phoneField"><label for="authPhone">Phone number</label><input id="authPhone" type="tel" autocomplete="tel" placeholder="07XXXXXXXX"></div>
-      <div class="field"><label for="authPassword">Password (demo only)</label><input id="authPassword" type="password" autocomplete="off" minlength="4" placeholder="Enter a demo password" required></div>
+      <div class="field"><label for="authPassword">Password (demo only)</label><input id="authPassword" type="password" autocomplete="off" minlength="4" placeholder="Demo password" required></div>
       <button class="btn btn-gold" id="authSubmit" type="submit">Create demo account</button>
     </form>
   </div>
 </div>
 
-<div class="modal-backdrop" id="packageModal" role="dialog" aria-modal="true" aria-labelledby="packageModalTitle">
+<div class="modal-backdrop" id="packageModal" role="dialog" aria-modal="true">
   <div class="modal">
-    <div class="modal-head"><div><div class="eyebrow">Package preview</div><h2 id="packageModalTitle">Confirm package</h2></div><button class="close" onclick="closeModal('packageModal')" aria-label="Close">×</button></div>
+    <div class="modal-head"><div><div class="eyebrow">Package preview</div><h2 id="packageModalTitle">Package</h2></div><button class="close" onclick="closeModal('packageModal')" aria-label="Close">×</button></div>
     <div id="packageModalBody"></div>
-    <div class="notice" style="margin:15px 0">This action adds a local demo record only. It does not accept or transfer money.</div>
+    <div class="notice" style="margin:15px 0">This adds a demo record only. No money is taken or transferred.</div>
     <button class="btn btn-gold" style="width:100%" id="confirmPackage">Confirm demo selection</button>
   </div>
 </div>
@@ -514,229 +435,223 @@ td{color:#e7e3dc}
 <script>
 "use strict";
 
-const PACKAGES = [
-  {name:"Bronze",amount:20000,daily:1000,tag:"Starter"},
-  {name:"Silver",amount:50000,daily:2500,tag:"Growth"},
-  {name:"Gold",amount:100000,daily:5000,tag:"Popular"},
-  {name:"Platinum",amount:200000,daily:10000,tag:"Premium"},
-  {name:"Diamond",amount:500000,daily:25000,tag:"Advanced"},
-  {name:"VIP",amount:1000000,daily:50000,tag:"VIP"},
-  {name:"Mega",amount:2000000,daily:100000,tag:"Exclusive"},
-  {name:"Elite",amount:5000000,daily:250000,tag:"Elite"}
-].map(p => ({...p,days:30,profit:p.daily*30,total:p.amount+p.daily*30}));
+const PACKAGES=[
+ {name:"Bronze",amount:20000,daily:1000,tag:"Starter"},
+ {name:"Silver",amount:50000,daily:2500,tag:"Growth"},
+ {name:"Gold",amount:100000,daily:5000,tag:"Popular"},
+ {name:"Platinum",amount:200000,daily:10000,tag:"Premium"},
+ {name:"Diamond",amount:500000,daily:25000,tag:"Advanced"},
+ {name:"VIP",amount:1000000,daily:50000,tag:"VIP"},
+ {name:"Mega",amount:2000000,daily:100000,tag:"Exclusive"},
+ {name:"Elite",amount:5000000,daily:250000,tag:"Elite"}
+].map(p=>({...p,days:30,profit:p.daily*30,total:p.amount+p.daily*30}));
 
-const state = {
-  profile:null,
-  activePackages:[],
-  history:[],
-  referralEarnings:0,
-  pendingPackage:null,
-  authMode:"register"
-};
-
-const money = n => "UGX " + Math.round(Number(n)||0).toLocaleString("en-UG");
-const dateNow = () => new Date().toLocaleDateString("en-UG",{year:"numeric",month:"short",day:"numeric"});
-const esc = s => String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const state={profile:null,activePackages:[],history:[],pendingPackage:null,authMode:"register"};
+const money=n=>"UGX "+Math.round(Number(n)||0).toLocaleString("en-UG");
+const today=()=>new Date().toLocaleDateString("en-UG",{year:"numeric",month:"short",day:"numeric"});
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 
 function toast(message){
-  const el=document.getElementById("toast");
-  el.textContent=message;
-  el.classList.add("show");
-  clearTimeout(toast.timer);
-  toast.timer=setTimeout(()=>el.classList.remove("show"),3200);
+ const el=document.getElementById("toast");
+ el.textContent=message;el.classList.add("show");
+ clearTimeout(toast.timer);toast.timer=setTimeout(()=>el.classList.remove("show"),3300);
 }
 function showPage(name){
-  const target=document.getElementById("page-"+name);
-  if(!target)return;
-  document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
-  target.classList.add("active");
-  document.querySelectorAll("[data-page]").forEach(b=>b.classList.toggle("active",b.dataset.page===name));
-  document.getElementById("mainContent").scrollIntoView({behavior:"smooth",block:"start"});
-  if(name==="wallet"||name==="history")renderHistory();
-  if(name==="profile")fillProfile();
+ const page=document.getElementById("page-"+name);if(!page)return;
+ document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
+ page.classList.add("active");
+ document.querySelectorAll("[data-page]").forEach(b=>b.classList.toggle("active",b.dataset.page===name));
+ window.scrollTo({top:0,behavior:"smooth"});
+ if(name==="wallet"||name==="history")renderHistory();
+ if(name==="profile")fillProfile();
 }
-function openAuth(mode="register"){
-  setAuthMode(mode);
-  document.getElementById("authModal").classList.add("show");
-}
+function openAuth(mode="register"){setAuthMode(mode);document.getElementById("authModal").classList.add("show")}
 function closeModal(id){document.getElementById(id).classList.remove("show")}
 function setAuthMode(mode){
-  state.authMode=mode;
-  const register=mode==="register";
-  document.getElementById("authTitle").textContent=register?"Create demo account":"Sign in to demo";
-  document.getElementById("authSubmit").textContent=register?"Create demo account":"Continue to demo";
-  document.getElementById("nameField").classList.toggle("hidden",!register);
-  document.getElementById("phoneField").classList.toggle("hidden",!register);
-  document.getElementById("authName").required=register;
-  document.getElementById("authPhone").required=register;
-  document.getElementById("tabRegister").classList.toggle("active",register);
-  document.getElementById("tabLogin").classList.toggle("active",!register);
+ state.authMode=mode;const reg=mode==="register";
+ document.getElementById("authTitle").textContent=reg?"Create demo account":"Sign in to demo";
+ document.getElementById("authSubmit").textContent=reg?"Create demo account":"Continue to demo";
+ document.getElementById("nameField").classList.toggle("hidden",!reg);
+ document.getElementById("phoneField").classList.toggle("hidden",!reg);
+ document.getElementById("authName").required=reg;
+ document.getElementById("authPhone").required=reg;
+ document.getElementById("tabRegister").classList.toggle("active",reg);
+ document.getElementById("tabLogin").classList.toggle("active",!reg);
 }
 function packageCard(p,index){
-  return `<article class="package ${index===2?"featured":""}">
-    <div class="package-top"><div class="package-name">${esc(p.name)}</div><span class="package-tag">${esc(p.tag)}</span></div>
-    <div class="package-price">${money(p.amount)}</div>
-    <div class="package-sub">Sample principal amount</div>
-    <div class="package-line"></div>
-    <div class="package-row"><span>Daily projection</span><strong>${money(p.daily)}</strong></div>
-    <div class="package-row"><span>Duration</span><strong>${p.days} days</strong></div>
-    <div class="package-row"><span>Projected earnings</span><strong>${money(p.profit)}</strong></div>
-    <div class="package-row"><span>Principal + projection</span><strong>${money(p.total)}</strong></div>
-    <button class="btn ${index===2?"btn-gold":""}" onclick="openPackage('${p.name}')">View package</button>
-  </article>`;
+ return `<article class="package ${index===2?"featured":""}">
+ <div class="package-top"><div class="package-name">${esc(p.name)}</div><span class="tag">${esc(p.tag)}</span></div>
+ <div class="package-price">${money(p.amount)}</div><div class="package-sub">Sample principal amount</div>
+ <div class="line"></div>
+ <div class="row"><span>Daily projection</span><strong>${money(p.daily)}</strong></div>
+ <div class="row"><span>Duration</span><strong>30 days</strong></div>
+ <div class="row"><span>Projected earnings</span><strong>${money(p.profit)}</strong></div>
+ <div class="row"><span>Principal + projection</span><strong>${money(p.total)}</strong></div>
+ <button class="btn ${index===2?"btn-gold":""}" onclick="openPackage('${p.name}')">View package</button></article>`;
 }
 function renderPackages(){
-  document.getElementById("allPackages").innerHTML=PACKAGES.map(packageCard).join("");
-  document.getElementById("featuredPackages").innerHTML=PACKAGES.slice(0,4).map(packageCard).join("");
-  document.getElementById("commissionRows").innerHTML=PACKAGES.map(p=>`
-    <tr><td>${money(p.amount)}</td><td>${money(p.amount*.05)}</td><td>${money(p.amount*.02)}</td><td>${money(p.amount*.01)}</td><td>${money(p.amount*.08)}</td></tr>
-  `).join("");
+ document.getElementById("allPackages").innerHTML=PACKAGES.map(packageCard).join("");
+ document.getElementById("featuredPackages").innerHTML=PACKAGES.slice(0,4).map(packageCard).join("");
+ document.getElementById("commissionRows").innerHTML=PACKAGES.map(p=>`<tr><td>${money(p.amount)}</td><td>${money(p.amount*.05)}</td><td>${money(p.amount*.02)}</td><td>${money(p.amount*.01)}</td><td>${money(p.amount*.08)}</td></tr>`).join("");
 }
 function openPackage(name){
-  const p=PACKAGES.find(x=>x.name===name);
-  if(!p)return;
-  state.pendingPackage=p;
-  document.getElementById("packageModalTitle").textContent=p.name+" package";
-  document.getElementById("packageModalBody").innerHTML=`
-    <div class="package-row"><span>Package</span><strong>${esc(p.name)}</strong></div>
-    <div class="package-row"><span>Principal (sample)</span><strong>${money(p.amount)}</strong></div>
-    <div class="package-row"><span>Daily projection</span><strong>${money(p.daily)}</strong></div>
-    <div class="package-row"><span>Duration</span><strong>${p.days} days</strong></div>
-    <div class="package-row"><span>Projected earnings</span><strong>${money(p.profit)}</strong></div>
-    <div class="package-row"><span>Total including principal</span><strong>${money(p.total)}</strong></div>`;
-  document.getElementById("packageModal").classList.add("show");
+ const p=PACKAGES.find(x=>x.name===name);if(!p)return;
+ state.pendingPackage=p;
+ document.getElementById("packageModalTitle").textContent=p.name+" package";
+ document.getElementById("packageModalBody").innerHTML=`
+ <div class="row"><span>Principal (sample)</span><strong>${money(p.amount)}</strong></div>
+ <div class="row"><span>Daily projection</span><strong>${money(p.daily)}</strong></div>
+ <div class="row"><span>Duration</span><strong>30 days</strong></div>
+ <div class="row"><span>Projected earnings</span><strong>${money(p.profit)}</strong></div>
+ <div class="row"><span>Principal + projection</span><strong>${money(p.total)}</strong></div>`;
+ document.getElementById("packageModal").classList.add("show");
 }
 document.getElementById("confirmPackage").addEventListener("click",()=>{
-  const p=state.pendingPackage;
-  if(!p)return;
-  state.activePackages.push({...p,selectedAt:Date.now()});
-  state.history.unshift({type:"Demo package selection · "+p.name,amount:p.amount,status:"Demo only",date:dateNow()});
-  closeModal("packageModal");
-  renderAll();
-  toast(p.name+" selected in demo mode. No money was taken.");
+ const p=state.pendingPackage;if(!p)return;
+ state.activePackages.push({...p});
+ state.history.unshift({type:"Demo package selection · "+p.name,amount:p.amount,status:"Demo only",date:today()});
+ closeModal("packageModal");renderAll();
+ toast(p.name+" selected. No money was taken.");
 });
 function renderStats(){
-  const invested=state.activePackages.reduce((sum,p)=>sum+p.amount,0);
-  const projected=state.activePackages.reduce((sum,p)=>sum+p.profit,0);
-  document.getElementById("statBalance").textContent=money(0);
-  document.getElementById("statActive").textContent=state.activePackages.length;
-  document.getElementById("statEarnings").textContent=money(projected);
-  document.getElementById("statReferral").textContent=money(state.referralEarnings);
-  document.getElementById("walletBalance").textContent=money(0);
-  document.getElementById("walletInvested").textContent=money(invested);
+ const invested=state.activePackages.reduce((s,p)=>s+p.amount,0);
+ const profit=state.activePackages.reduce((s,p)=>s+p.profit,0);
+ document.getElementById("statBalance").textContent=money(0);
+ document.getElementById("statActive").textContent=state.activePackages.length;
+ document.getElementById("statEarnings").textContent=money(profit);
+ document.getElementById("statReferral").textContent=money(0);
+ document.getElementById("walletBalance").textContent=money(0);
+ document.getElementById("walletInvested").textContent=money(invested);
 }
 function rowsHTML(rows){
-  if(!rows.length)return "";
-  return rows.map(r=>`<tr><td>${esc(r.type)}</td><td>${money(r.amount)}</td><td><span class="status demo">${esc(r.status)}</span></td><td>${esc(r.date)}</td></tr>`).join("");
+ return rows.map(r=>`<tr><td>${esc(r.type)}</td><td>${money(r.amount)}</td><td><span class="status">${esc(r.status)}</span></td><td>${esc(r.date)}</td></tr>`).join("");
 }
 function renderHistory(){
-  const recent=state.history.slice(0,5);
-  document.getElementById("recentRows").innerHTML=rowsHTML(recent);
-  document.getElementById("recentEmpty").classList.toggle("hidden",recent.length>0);
-  document.getElementById("historyRows").innerHTML=rowsHTML(state.history);
-  document.getElementById("historyEmpty").classList.toggle("hidden",state.history.length>0);
-  document.getElementById("walletRows").innerHTML=rowsHTML(state.history.filter(x=>x.type.toLowerCase().includes("wallet")));
-  document.getElementById("walletEmpty").classList.toggle("hidden",state.history.some(x=>x.type.toLowerCase().includes("wallet")));
+ const recent=state.history.slice(0,5);
+ document.getElementById("recentRows").innerHTML=rowsHTML(recent);
+ document.getElementById("recentEmpty").classList.toggle("hidden",recent.length>0);
+ document.getElementById("historyRows").innerHTML=rowsHTML(state.history);
+ document.getElementById("historyEmpty").classList.toggle("hidden",state.history.length>0);
+ document.getElementById("walletRows").innerHTML=rowsHTML(state.history.filter(r=>r.type.toLowerCase().includes("wallet")));
+ document.getElementById("walletEmpty").classList.toggle("hidden",state.history.some(r=>r.type.toLowerCase().includes("wallet")));
 }
 function renderAll(){renderStats();renderHistory();updateReferral()}
 function updateReferral(){
-  const base=location.href.split("?")[0];
-  const ref=state.profile?.id||"DEMO";
-  document.getElementById("refLink").value=base+"?ref="+encodeURIComponent(ref);
+ const base=location.href.split("?")[0];
+ document.getElementById("refLink").value=base+"?ref="+encodeURIComponent(state.profile?.id||"DEMO");
 }
 async function copyReferral(){
-  const input=document.getElementById("refLink");
-  try{
-    await navigator.clipboard.writeText(input.value);
-    toast("Demo referral link copied.");
-  }catch(e){
-    input.focus();input.select();
-    try{document.execCommand("copy");toast("Demo referral link copied.");}
-    catch(err){toast("Select and copy the link manually.");}
-  }
+ const input=document.getElementById("refLink");
+ try{await navigator.clipboard.writeText(input.value);toast("Demo referral link copied.");}
+ catch(e){input.focus();input.select();toast("Select and copy the referral link.");}
 }
 function fillProfile(){
-  document.getElementById("profileName").value=state.profile?.name||"";
-  document.getElementById("profileEmail").value=state.profile?.email||"";
-  document.getElementById("profilePhone").value=state.profile?.phone||"";
+ document.getElementById("profileName").value=state.profile?.name||"";
+ document.getElementById("profileEmail").value=state.profile?.email||"";
+ document.getElementById("profilePhone").value=state.profile?.phone||"";
 }
 document.getElementById("authForm").addEventListener("submit",event=>{
-  event.preventDefault();
-  const email=document.getElementById("authEmail").value.trim();
-  const password=document.getElementById("authPassword").value;
-  if(state.authMode==="register"){
-    state.profile={
-      id:"EV"+Math.random().toString(36).slice(2,9).toUpperCase(),
-      name:document.getElementById("authName").value.trim(),
-      email,
-      phone:document.getElementById("authPhone").value.trim()
-    };
-  }else if(!state.profile||state.profile.email.toLowerCase()!==email.toLowerCase()){
-    toast("No matching demo profile in this browser. Create a demo account first.");
-    return;
-  }
-  // Deliberately do not store or validate a password: this is not real authentication.
-  closeModal("authModal");
-  fillProfile();updateReferral();
-  toast("Demo session ready. No real account was created.");
-  showPage("overview");
-  document.getElementById("authPassword").value="";
+ event.preventDefault();
+ const email=document.getElementById("authEmail").value.trim();
+ if(state.authMode==="register"){
+  state.profile={id:"EV"+Math.random().toString(36).slice(2,9).toUpperCase(),name:document.getElementById("authName").value.trim(),email,phone:document.getElementById("authPhone").value.trim()};
+ }else if(!state.profile||state.profile.email.toLowerCase()!==email.toLowerCase()){
+  toast("No matching demo profile in this session. Create a demo account first.");return;
+ }
+ closeModal("authModal");document.getElementById("authPassword").value="";
+ fillProfile();updateReferral();showPage("overview");
+ toast("Demo session ready. No real account was created.");
 });
 document.getElementById("profileForm").addEventListener("submit",event=>{
-  event.preventDefault();
-  state.profile=state.profile||{id:"EV"+Math.random().toString(36).slice(2,9).toUpperCase()};
-  state.profile.name=document.getElementById("profileName").value.trim();
-  state.profile.email=document.getElementById("profileEmail").value.trim();
-  state.profile.phone=document.getElementById("profilePhone").value.trim();
-  updateReferral();
-  toast("Demo profile updated in this session.");
+ event.preventDefault();
+ state.profile=state.profile||{id:"EV"+Math.random().toString(36).slice(2,9).toUpperCase()};
+ state.profile.name=document.getElementById("profileName").value.trim();
+ state.profile.email=document.getElementById("profileEmail").value.trim();
+ state.profile.phone=document.getElementById("profilePhone").value.trim();
+ updateReferral();toast("Demo profile updated for this session.");
 });
 document.getElementById("withdrawForm").addEventListener("submit",event=>{
-  event.preventDefault();
-  const amount=Number(document.getElementById("withdrawAmount").value);
-  const network=document.getElementById("withdrawNetwork").value;
-  const phone=document.getElementById("withdrawPhone").value.trim();
-  if(!Number.isFinite(amount)||amount<=0){toast("Enter a valid amount.");return;}
-  if(!network||!phone){toast("Complete all fields.");return;}
-  const day=new Date().getDay();
-  if(day===0||day===6){toast("The planned withdrawal service is closed on weekends.");return;}
-  toast("Demo only: no withdrawal was submitted and no money was sent.");
+ event.preventDefault();
+ const amount=Number(document.getElementById("withdrawAmount").value);
+ const network=document.getElementById("withdrawNetwork").value;
+ const phone=document.getElementById("withdrawPhone").value.trim();
+ if(!Number.isFinite(amount)||amount<=0||!network||!phone){toast("Please complete all fields correctly.");return;}
+ const day=new Date().getDay();
+ if(day===0||day===6){toast("The planned withdrawal service is closed on weekends.");return;}
+ toast("Demo only: no withdrawal was sent or submitted.");
 });
 function clearDemoHistory(){
-  if(!confirm("Clear all demo activity from this session?"))return;
-  state.history=[];
-  state.activePackages=[];
-  renderAll();
-  toast("Demo activity cleared.");
+ if(!confirm("Clear all demo activity?"))return;
+ state.history=[];state.activePackages=[];renderAll();toast("Demo activity cleared.");
 }
 function logoutDemo(){
-  state.profile=null;
-  state.activePackages=[];
-  state.history=[];
-  state.referralEarnings=0;
-  renderAll();fillProfile();updateReferral();
-  toast("Demo session reset.");
-  showPage("overview");
+ state.profile=null;state.activePackages=[];state.history=[];
+ renderAll();fillProfile();updateReferral();showPage("overview");toast("Demo session reset.");
 }
-document.querySelectorAll(".modal-backdrop").forEach(backdrop=>{
-  backdrop.addEventListener("click",event=>{
-    if(event.target===backdrop)backdrop.classList.remove("show");
-  });
+document.querySelectorAll(".modal-backdrop").forEach(backdrop=>backdrop.addEventListener("click",e=>{
+ if(e.target===backdrop)backdrop.classList.remove("show");
+}));
+document.addEventListener("keydown",e=>{
+ if(e.key==="Escape")document.querySelectorAll(".modal-backdrop").forEach(m=>m.classList.remove("show"));
 });
-document.addEventListener("keydown",event=>{
-  if(event.key==="Escape")document.querySelectorAll(".modal-backdrop").forEach(m=>m.classList.remove("show"));
+
+/* INSTALLABLE WEB APP */
+let eliteVestInstallPrompt=null;
+
+window.addEventListener("beforeinstallprompt",event=>{
+ event.preventDefault();
+ eliteVestInstallPrompt=event;
 });
+
+window.addEventListener("appinstalled",()=>{
+ eliteVestInstallPrompt=null;
+ toast("EliteVest has been installed.");
+});
+
+async function installEliteVest(){
+ if(window.matchMedia("(display-mode: standalone)").matches){
+  toast("EliteVest is already installed.");
+  return;
+ }
+
+ if(eliteVestInstallPrompt){
+  eliteVestInstallPrompt.prompt();
+  await eliteVestInstallPrompt.userChoice;
+  eliteVestInstallPrompt=null;
+  return;
+ }
+
+ const ua=navigator.userAgent||"";
+ const isIOS=/iphone|ipad|ipod/i.test(ua);
+ const isAndroid=/android/i.test(ua);
+ const isSafari=isIOS&&/safari/i.test(ua)&&!/crios|fxios|edgios/i.test(ua);
+
+ if(isIOS){
+  if(isSafari){
+   alert("INSTALL ELITEVEST ON YOUR IPHONE\n\n1. Tap the Share button in Safari.\n2. Scroll down and tap 'Add to Home Screen'.\n3. If shown, enable 'Open as Web App'.\n4. Tap 'Add'.\n\nEliteVest will appear on your Home Screen.");
+  }else{
+   alert("To install EliteVest on iPhone, open this website in Safari, tap Share, choose 'Add to Home Screen', then tap Add.");
+  }
+  return;
+ }
+
+ if(isAndroid){
+  alert("INSTALL ELITEVEST ON ANDROID\n\n1. Open this website in Chrome.\n2. Tap the three-dot menu (⋮).\n3. Choose 'Install app' or 'Add to Home screen'.\n4. Follow the on-screen instructions.\n\nIf the install option is missing, check that the website is published over HTTPS and its PWA files are available.");
+  return;
+ }
+
+ alert("To install EliteVest, open the website in a supported mobile browser and choose Install app or Add to Home Screen.");
+}
 
 renderPackages();
 renderAll();
 fillProfile();
 updateReferral();
 
-if("serviceWorker" in navigator && location.protocol.startsWith("http")){
-  window.addEventListener("load",()=>{
-    navigator.serviceWorker.register("./sw.js")
-      .catch(error=>console.warn("Service worker registration failed:",error));
-  });
+if("serviceWorker" in navigator && location.protocol==="https:"){
+ window.addEventListener("load",()=>{
+  navigator.serviceWorker.register("./sw.js").catch(error=>console.warn("Service worker registration failed:",error));
+ });
 }
 </script>
 </body>
