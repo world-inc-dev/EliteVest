@@ -100,19 +100,6 @@ main{padding:clamp(18px,2.5vw,36px);max-width:1280px;width:100%;margin:0 auto}
 </style>
 
 
-<style>
-/* Wallet-app navigation: grouped desktop menu and compact mobile More sheet */
-.nav-section-label{padding:16px 13px 5px;color:#8a98a9;font-size:9px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase}
-.more-menu{display:none}
-.more-menu.open{display:block;position:fixed;z-index:12;left:12px;right:12px;bottom:calc(68px + env(safe-area-inset-bottom));padding:12px;border:1px solid #dce5ef;border-radius:18px;background:rgba(255,255,255,.98);box-shadow:0 16px 48px #102b462b;backdrop-filter:blur(18px)}
-.more-menu-title{padding:6px 8px 10px;color:#748297;font-size:10px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase}
-.more-menu button{width:100%;display:flex;align-items:center;gap:12px;padding:12px 10px;border:0;border-radius:11px;background:transparent;color:#243449;text-align:left}
-.more-menu button:hover,.more-menu button:focus-visible{background:#e8f6f7}
-.more-menu button>span:first-child{width:36px;height:36px;display:grid;place-items:center;flex-shrink:0;border-radius:11px;background:#e8f6f7;color:#087f8c;font-size:18px}
-.more-menu button>span:nth-child(2){display:grid;gap:3px}.more-menu button strong{font-size:13px}.more-menu button small{font-size:11px;color:#758398}
-.mobile-nav button#moreNavButton.active{color:#087f8c}
-@media(min-width:701px){.more-menu{display:none!important}.nav-section-label{padding-top:19px}}
-</style>
 
 <style>
 /* Responsive containment and single-row mobile navigation */
@@ -135,6 +122,23 @@ input,select,textarea{max-width:100%;min-width:0}
 @media(max-width:360px){
   .mobile-nav button{min-width:57px;padding-left:6px;padding-right:6px;font-size:8px}
   .brand small{max-width:105px;overflow:hidden;text-overflow:ellipsis}
+}
+</style>
+
+
+<style>
+/* Final mobile layout: all navigation tabs fit in one row without horizontal scrolling */
+html,body{width:100%;max-width:100%;overflow-x:hidden!important}
+body{overflow-x:clip!important}
+@media(max-width:700px){
+  .mobile-nav{display:flex!important;position:fixed;left:0;right:0;bottom:0;width:100%;max-width:100%;box-sizing:border-box;z-index:30;overflow:hidden!important;flex-wrap:nowrap;justify-content:space-between;gap:0;padding:6px 3px calc(6px + env(safe-area-inset-bottom));}
+  .mobile-nav button{display:flex;flex:1 1 0;min-width:0;max-width:none;width:0;overflow:hidden;white-space:nowrap;flex-direction:column;align-items:center;justify-content:center;gap:3px;padding:5px 0;border:0;background:transparent;font-size:8px;line-height:1.1;text-overflow:clip;}
+  .mobile-nav button span{font-size:14px;line-height:1}
+  main{width:100%;max-width:100%;min-width:0;padding:16px 12px calc(76px + env(safe-area-inset-bottom))}
+}
+@media(max-width:360px){
+ .mobile-nav button{font-size:7px;padding-left:0;padding-right:0}
+ .mobile-nav button span{font-size:13px}
 }
 </style>
 
@@ -168,7 +172,16 @@ input,select,textarea{max-width:100%;min-width:0}
 <footer><b>ELITEVEST</b><br>Invest Today · Grow Tomorrow</footer>
 </main>
 </div>
-<button data-page="history" onclick="showPage('history')"><span>◷</span><span><strong>Transactions</strong><small>Payments and wallet activity</small></span></button><button data-page="referrals" onclick="showPage('referrals')"><span>♧</span><span><strong>Referrals</strong><small>Your referral network</small></span></button><button data-page="profile" onclick="showPage('profile')"><span>◎</span><span><strong>My profile</strong><small>Personal details and preferences</small></span></button><button class="hidden" id="adminMobileNav" data-page="admin" onclick="showPage('admin')"><span>⚙</span><span><strong>Admin dashboard</strong><small>Administration tools</small></span></button></div><nav class="mobile-nav" aria-label="Main navigation"><button class="active" data-page="home" onclick="showPage('home')"><span>⌂</span>Home</button><button data-page="packages" onclick="showPage('packages')"><span>◇</span>Packages</button><button data-page="wallet" onclick="showPage('wallet')"><span>▣</span>Wallet</button><button data-page="withdraw" onclick="showPage('withdraw')"><span>↗</span>Withdraw</button><button data-page="referrals" onclick="showPage('referrals')"><span>♧</span>Referrals</button><button data-page="history" onclick="showPage('history')"><span>◷</span>Transactions</button><button data-page="profile" onclick="showPage('profile')"><span>◎</span>Profile</button><button class="hidden" id="adminMobileNav" data-page="admin" onclick="showPage('admin')"><span>⚙</span>Admin</button></nav>
+<nav class="mobile-nav" aria-label="Main navigation">
+<button class="active" data-page="home" onclick="showPage('home')"><span>⌂</span>Home</button>
+<button data-page="packages" onclick="showPage('packages')"><span>◇</span>Plans</button>
+<button data-page="wallet" onclick="showPage('wallet')"><span>▣</span>Wallet</button>
+<button data-page="withdraw" onclick="showPage('withdraw')"><span>↗</span>Withdraw</button>
+<button data-page="referrals" onclick="showPage('referrals')"><span>♧</span>Ref</button>
+<button data-page="history" onclick="showPage('history')"><span>◷</span>Txns</button>
+<button data-page="profile" onclick="showPage('profile')"><span>◎</span>Profile</button>
+<button class="hidden" id="adminMobileNav" data-page="admin" onclick="showPage('admin')"><span>⚙</span>Admin</button>
+</nav>
 </div>
 <div class="modal-bg" id="authModal" role="dialog" aria-modal="true" aria-labelledby="authTitle"><div class="modal"><div class="modal-head"><div><div class="eyebrow">Welcome to EliteVest</div><h2 id="authTitle">Create account</h2></div><button class="close" onclick="closeModal('authModal')">×</button></div><div class="tabs"><button id="tabRegister" class="active" onclick="setAuthMode('register')">Create account</button><button id="tabLogin" onclick="setAuthMode('login')">Sign in</button></div><form class="form" id="authForm"><div class="field" id="nameField"><label for="authName">Full name</label><input id="authName" autocomplete="name" placeholder="Your full name"></div><div class="field"><label for="authEmail">Email address</label><input id="authEmail" type="email" autocomplete="email" required placeholder="you@example.com"></div><div class="field" id="phoneField"><label for="authPhone">Phone number (optional)</label><input id="authPhone" type="tel" autocomplete="tel" placeholder="+256…, +234…, +1…"></div><div class="field" id="countryField"><label for="authCountry">Country / region</label><select id="authCountry" onchange="syncCurrencyFromCountry()"><option value="UG">Uganda</option><option value="NG">Nigeria</option><option value="KE">Kenya</option><option value="TZ">Tanzania</option><option value="RW">Rwanda</option><option value="ZA">South Africa</option><option value="GH">Ghana</option><option value="US">United States</option><option value="GB">United Kingdom</option><option value="CA">Canada</option><option value="IN">India</option><option value="AE">United Arab Emirates</option><option value="OTHER">Other country</option></select></div><div class="field" id="currencyField"><label for="authCurrency">Preferred display currency</label><select id="authCurrency"><option>UGX</option><option>NGN</option><option>KES</option><option>TZS</option><option>RWF</option><option>ZAR</option><option>GHS</option><option>USD</option><option>GBP</option><option>EUR</option><option>CAD</option><option>INR</option><option>AED</option><option>AUD</option><option>JPY</option></select></div><div class="field"><label for="authPassword">Password</label><input id="authPassword" type="password" autocomplete="new-password" required placeholder="At least 8 characters"></div><button class="btn gold" id="authSubmit" type="submit">Create account</button></form></div></div>
 <div class="modal-bg" id="packageModal" role="dialog" aria-modal="true" aria-labelledby="packageModalTitle"><div class="modal"><div class="modal-head"><div><div class="eyebrow">Package details</div><h2 id="packageModalTitle">Package</h2></div><button class="close" onclick="closeModal('packageModal')">×</button></div><div id="packageDetails"></div><form id="paymentForm" class="form"><div class="field" id="paymentProviderField"><label for="paymentProvider">Mobile money network</label><select id="paymentProvider" required><option value="mtn">MTN Mobile Money</option><option value="airtel">Airtel Money</option></select></div><div class="field" id="paymentPhoneField"><label for="paymentPhone">Mobile money phone</label><input id="paymentPhone" type="tel" required placeholder="07XXXXXXXX"></div><button class="btn gold" id="payButton" type="submit">Request payment</button><p id="paymentMessage" class="muted small" aria-live="polite"></p></form></div></div>
@@ -193,9 +206,7 @@ const date=s=>{if(!s)return '—';const d=new Date(s);return isNaN(d)?'—':d.to
 function toast(s){$('toast').textContent=s;$('toast').classList.add('show');clearTimeout(toast.t);toast.t=setTimeout(()=>$('toast').classList.remove('show'),4000)}
 function closeModal(id){$(id).classList.remove('show')}
 function isAdmin(){return !!user&&ADMIN_EMAILS.includes((user.email||'').toLowerCase())}
-function toggleMoreNav(){const menu=$('moreMenu'),button=$('moreNavButton');const open=!menu.classList.contains('open');menu.classList.toggle('open',open);button.classList.toggle('active',open);button.setAttribute('aria-expanded',String(open))}
-document.addEventListener('click',e=>{const menu=$('moreMenu'),button=$('moreNavButton');if(menu&&button&&menu.classList.contains('open')&&!menu.contains(e.target)&&!button.contains(e.target)){menu.classList.remove('open');button.classList.remove('active');button.setAttribute('aria-expanded','false')}});
-function showPage(name){if(name==='admin'&&!isAdmin()){toast('Admin access restricted.');name='home'}document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id==='page-'+name));document.querySelectorAll('[data-page]').forEach(b=>b.classList.toggle('active',b.dataset.page===name));const menu=$('moreMenu'),more=$('moreNavButton');if(menu)menu.classList.remove('open');if(more){more.classList.remove('active');more.setAttribute('aria-expanded','false')}window.scrollTo({top:0,behavior:'smooth'});if(name==='admin')renderAdmin()}
+function showPage(name){if(name==='admin'&&!isAdmin()){toast('Admin access restricted.');name='home'}document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id==='page-'+name));document.querySelectorAll('[data-page]').forEach(b=>b.classList.toggle('active',b.dataset.page===name));window.scrollTo({top:0,behavior:'smooth'});if(name==='admin')renderAdmin()}
 function openAuth(mode='register'){if(user){showPage('profile');toast('You are already signed in.');return}setAuthMode(mode);$('authModal').classList.add('show')}
 function setAuthMode(mode){authMode=mode;const reg=mode==='register';$('authTitle').textContent=reg?'Create account':'Sign in to EliteVest';$('authSubmit').textContent=reg?'Create account':'Sign in';$('nameField').classList.toggle('hidden',!reg);$('phoneField').classList.toggle('hidden',!reg);$('authName').required=reg;$('authPassword').minLength=reg?8:0;$('authPassword').autocomplete=reg?'new-password':'current-password';$('countryField').classList.toggle('hidden',!reg);$('currencyField').classList.toggle('hidden',!reg);$('tabRegister').classList.toggle('active',reg);$('tabLogin').classList.toggle('active',!reg)}
 function normalizePackage(p){const amount=Number(p.principal_amount)||0,daily=Number(p.daily_projection)||0,days=Number(p.duration_days)||30;return {...p,amount,daily,days,profit:daily*days,tag:p.name||'Package'}}
