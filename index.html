@@ -1377,12 +1377,164 @@ input, select, textarea { min-width: 0; max-width: 100%; }
 }
 </style>
 
+
+<style id="elitevest-premium-public-home">
+body.ev-public {background:#f5f7fb;color:#172235}
+body.ev-public .layout {display:none!important}
+body.ev-public #elitevest-public-home {display:block}
+body.ev-member #elitevest-public-home {display:none!important}
+#elitevest-public-home {display:none;color:#172235;font-family:inherit;overflow:hidden}
+#elitevest-public-home * {box-sizing:border-box;min-width:0}
+.ev-public-hero {position:relative;isolation:isolate;overflow:hidden;background:radial-gradient(ellipse at 78% 45%,rgba(31,124,117,.25),transparent 35%),linear-gradient(120deg,#081526 0%,#102a3b 55%,#0c3940 100%);color:#f8fafc;padding:clamp(46px,7vw,92px) clamp(20px,6vw,88px) 24px}
+.ev-public-hero:before {content:"";position:absolute;inset:0;z-index:-1;opacity:.16;background-image:linear-gradient(rgba(255,255,255,.1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.1) 1px,transparent 1px);background-size:42px 42px;mask-image:linear-gradient(90deg,#000,transparent)}
+.ev-public-hero-inner {max-width:1200px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1.12fr) minmax(280px,.88fr);gap:36px;align-items:center}
+.ev-public-copy {position:relative;z-index:2}
+.ev-pill {display:inline-flex;align-items:center;gap:9px;border:1px solid rgba(244,220,164,.3);background:rgba(255,255,255,.06);padding:9px 13px;border-radius:999px;font-size:12px;color:#e7edf4;letter-spacing:.03em}
+.ev-pulse {width:7px;height:7px;border-radius:50%;background:#d8b46a;box-shadow:0 0 0 5px rgba(216,180,106,.12)}
+.ev-kicker {font-size:11px;font-weight:800;letter-spacing:.18em;color:#b48b3d;margin:20px 0 12px}
+.ev-public-copy .ev-kicker {color:#e7c77f}
+.ev-public-copy h1 {font-size:clamp(2.5rem,5.4vw,4.8rem);line-height:1.04;letter-spacing:-.055em;max-width:720px;margin:0;color:#fff;font-weight:800}
+.ev-public-copy h1 span,.ev-section-heading h2 span,.ev-final-cta h2 span {color:#e1c078}
+.ev-lead {font-size:clamp(15px,1.6vw,18px);line-height:1.75;color:#c7d2df;max-width:610px;margin:22px 0 26px}
+.ev-public-actions {display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.ev-public-actions .btn {min-height:48px;padding:12px 20px;white-space:normal;line-height:1.35}
+.ev-outline-btn {background:transparent!important;border:1px solid rgba(255,255,255,.38)!important;color:#fff!important}
+.ev-disclaimer-line {display:flex;gap:9px;align-items:flex-start;margin-top:22px;color:#b8c6d4;font-size:12px;line-height:1.6}
+.ev-disclaimer-line span {color:#e1c078;font-weight:900}
+.ev-hero-visual {position:relative;min-height:390px;display:grid;place-items:center}
+.ev-orbit {position:absolute;border:1px solid rgba(220,190,119,.22);border-radius:50%;transform:rotate(-23deg)}
+.ev-orbit-one {width:min(88%,400px);height:300px}
+.ev-orbit-two {width:min(98%,450px);height:350px;transform:rotate(32deg)}
+.ev-emblem {position:relative;z-index:1;width:min(78%,300px);aspect-ratio:1/1;border:1px solid rgba(233,203,132,.5);border-radius:50%;background:radial-gradient(circle at 35% 28%,#244c58,#0b1c2c 72%);box-shadow:0 25px 80px rgba(0,0,0,.28),inset 0 0 0 10px rgba(255,255,255,.025);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:25px}
+.ev-emblem-mark {font-size:64px;font-weight:900;letter-spacing:-.09em;line-height:1;color:#e8cc86}
+.ev-emblem-name {margin-top:15px;font-weight:900;letter-spacing:.24em;font-size:15px;color:#fff}
+.ev-emblem-tag {margin-top:8px;font-size:8px;letter-spacing:.1em;color:#cbd5df}
+.ev-emblem-line {width:54px;height:1px;background:#d8b46a;margin:18px 0 12px}
+.ev-emblem-caption {font-size:8px;letter-spacing:.17em;color:#d7e0e9}
+.ev-float-card {position:absolute;z-index:2;display:flex;align-items:center;gap:11px;padding:12px 15px;border:1px solid rgba(255,255,255,.12);background:rgba(13,31,47,.92);box-shadow:0 15px 45px rgba(0,0,0,.2);border-radius:13px;max-width:220px}
+.ev-float-top {top:12%;right:0}.ev-float-bottom {bottom:10%;left:-1%}
+.ev-float-icon {display:grid;place-items:center;width:36px;height:36px;border-radius:10px;background:rgba(216,180,106,.14);color:#e6c67b;font-size:20px}
+.ev-float-card small,.ev-float-card strong {display:block;overflow-wrap:anywhere}
+.ev-float-card small {font-size:10px;color:#aebdca}.ev-float-card strong {font-size:12px;color:#fff;margin-top:3px}
+.ev-hero-bottom {max-width:1200px;margin:34px auto 0;border-top:1px solid rgba(255,255,255,.14);padding-top:17px;display:flex;justify-content:space-between;gap:12px;color:#93a6b7;font-size:10px;letter-spacing:.16em;font-weight:700}
+.ev-public-section {padding:clamp(46px,7vw,84px) clamp(20px,6vw,88px);max-width:1360px;margin:0 auto}
+.ev-section-heading {max-width:690px;margin-bottom:30px}
+.ev-section-heading .ev-kicker,.ev-safety-panel .ev-kicker,.ev-final-cta .ev-kicker {margin-top:0}
+.ev-section-heading h2,.ev-safety-panel h2,.ev-final-cta h2 {font-size:clamp(1.8rem,3.6vw,3rem);line-height:1.15;letter-spacing:-.04em;margin:0;color:#13283b}
+.ev-section-heading h2 span {color:#177c77}
+.ev-section-heading>p:last-child {color:#627386;line-height:1.75;margin:14px 0 0}
+.ev-feature-grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.ev-feature-card {padding:26px;border:1px solid #e2e8ef;border-radius:18px;background:#fff;box-shadow:0 10px 30px rgba(18,38,58,.035)}
+.ev-feature-icon {width:46px;height:46px;display:grid;place-items:center;background:#edf6f4;color:#147c75;border-radius:13px;font-size:23px}
+.ev-card-index {font-size:10px;letter-spacing:.13em;font-weight:800;color:#a17b34;margin:22px 0 10px}
+.ev-feature-card h3 {font-size:18px;line-height:1.35;color:#14283b;margin:0 0 9px;overflow-wrap:anywhere}
+.ev-feature-card>p:last-child {color:#637386;font-size:14px;line-height:1.75;margin:0}
+.ev-process-section {background:#102638;color:#fff;padding:clamp(46px,7vw,80px) clamp(20px,6vw,88px)}
+.ev-process-wrap {max-width:1184px;margin:0 auto}
+.ev-heading-light h2 {color:#fff}.ev-heading-light h2 span {color:#e1c078}.ev-heading-light>p:last-child {color:#bdcbd7}
+.ev-steps {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+.ev-steps article {display:flex;gap:18px;padding:22px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.035);border-radius:15px}
+.ev-steps article>span {flex:0 0 43px;width:43px;height:43px;display:grid;place-items:center;border-radius:12px;background:rgba(216,180,106,.13);color:#e5c77e;font-weight:800}
+.ev-steps h3 {margin:2px 0 7px;color:#fff;font-size:16px}.ev-steps p {margin:0;color:#b9c8d5;font-size:13px;line-height:1.7}
+.ev-safety-panel {display:grid;grid-template-columns:52px minmax(0,1fr);gap:20px;padding:clamp(22px,4vw,38px);border-radius:20px;border:1px solid #ead9b3;background:#fffaf0}
+.ev-safety-symbol {width:48px;height:48px;border-radius:15px;display:grid;place-items:center;background:#f3e4bd;color:#76561e;font-size:26px;font-weight:900}
+.ev-safety-panel h2 {font-size:clamp(1.45rem,3vw,2.2rem)}
+.ev-safety-panel>div>p:last-child {color:#6b5b40;line-height:1.8;margin:14px 0 0;font-size:14px}
+.ev-faq-section {padding-top:12px}
+.ev-faq-list {max-width:900px;display:grid;gap:10px}
+.ev-faq-list details {border:1px solid #e1e7ee;background:#fff;border-radius:13px;padding:0 18px}
+.ev-faq-list summary {cursor:pointer;list-style:none;padding:18px 25px 18px 0;color:#172b3e;font-weight:750;line-height:1.5;position:relative}
+.ev-faq-list summary::-webkit-details-marker {display:none}
+.ev-faq-list summary:after {content:"+";position:absolute;right:0;top:14px;font-size:22px;color:#177c77}
+.ev-faq-list details[open] summary:after {content:"−"}
+.ev-faq-list details p {color:#617386;line-height:1.75;font-size:14px;margin:0;padding:0 0 18px}
+.ev-final-cta {text-align:center;padding:clamp(45px,7vw,78px) 20px;background:linear-gradient(125deg,#0c1c2d,#16464a);color:#fff}
+.ev-final-cta h2 {color:#fff;max-width:780px;margin:0 auto}
+.ev-final-cta>p:not(.ev-kicker) {color:#c4d1dc;max-width:650px;line-height:1.75;margin:15px auto 24px}
+.ev-final-cta .ev-public-actions {justify-content:center}
+.ev-public-footer {padding:28px clamp(20px,6vw,88px);background:#081522;color:#aebdca}
+.ev-footer-brand {display:flex;align-items:center;gap:11px;color:#fff}
+.ev-footer-logo {display:grid;place-items:center;width:38px;height:38px;border-radius:11px;background:#d8b46a;color:#14283b;font-weight:900;font-size:22px}
+.ev-footer-brand strong,.ev-footer-brand small {display:block}.ev-footer-brand strong {letter-spacing:.16em;font-size:12px}.ev-footer-brand small {margin-top:4px;font-size:8px;letter-spacing:.1em;color:#b7c5d1}
+.ev-public-footer>p {max-width:850px;font-size:11px;line-height:1.7;margin:18px 0}
+.ev-footer-copy {font-size:10px;color:#7f92a3}
+@media(max-width:800px){.ev-public-hero-inner{grid-template-columns:minmax(0,1fr);gap:15px}.ev-public-copy h1{font-size:clamp(2.5rem,10vw,4rem)}.ev-hero-visual{min-height:330px}.ev-emblem{width:245px}.ev-float-top{right:1%;top:5%}.ev-float-bottom{left:0;bottom:4%}.ev-feature-grid{grid-template-columns:minmax(0,1fr)}.ev-feature-card{padding:22px}.ev-steps{grid-template-columns:minmax(0,1fr)}.ev-hero-bottom{font-size:8px;letter-spacing:.08em}}
+@media(max-width:430px){.ev-public-hero{padding:38px 18px 20px}.ev-public-copy h1{font-size:2.45rem}.ev-pill{font-size:10px}.ev-hero-visual{min-height:285px}.ev-emblem{width:210px}.ev-emblem-mark{font-size:54px}.ev-float-card{padding:9px 10px;max-width:175px}.ev-float-card strong{font-size:10px}.ev-hero-bottom{flex-wrap:wrap}.ev-public-actions .btn{width:100%}.ev-safety-panel{grid-template-columns:minmax(0,1fr)}}
+</style>
+
 </head>
-<body>
+<body class="ev-public">
 <header>
   <div class="brand"><div class="logo">E</div><div><strong>ELITEVEST</strong><small>INVEST TODAY · GROW TOMORROW</small></div></div>
   <div class="actions"><button class="btn gold" id="installAppBtn" type="button" onclick="installEliteVest()">Install App</button><div class="member-chip hidden" id="memberChip"><span class="member-avatar" id="memberAvatar">M</span><span class="member-identity"><small>MEMBER ACCOUNT</small><strong id="memberUsername">Member</strong></span></div><button class="btn" id="loginTop" onclick="openAuth('login')">Sign in</button><button class="btn gold" id="joinTop" onclick="openAuth('register')">Join now</button><button class="btn" id="logoutTop" onclick="signOut()">Sign out</button></div>
 </header>
+
+<section id="elitevest-public-home" aria-label="EliteVest public homepage">
+  <div class="ev-public-hero">
+    <div class="ev-public-hero-inner">
+      <div class="ev-public-copy">
+        <div class="ev-pill"><span class="ev-pulse"></span> A clearer way to manage your account</div>
+        <p class="ev-kicker">WELCOME TO ELITEVEST</p>
+        <h1>Build your financial journey with <span>clarity.</span></h1>
+        <p class="ev-lead">Explore available packages, review their terms, and manage your activity from one convenient online platform.</p>
+        <div class="ev-public-actions">
+          <button class="btn gold" onclick="openAuth('register')">Create your account <span aria-hidden="true">→</span></button>
+          <button class="btn ev-outline-btn" onclick="openAuth('login')">Sign in</button>
+        </div>
+        <div class="ev-disclaimer-line"><span aria-hidden="true">✓</span> Review the terms and risks before making a financial decision.</div>
+      </div>
+      <div class="ev-hero-visual" aria-hidden="true">
+        <div class="ev-orbit ev-orbit-one"></div><div class="ev-orbit ev-orbit-two"></div>
+        <div class="ev-emblem"><div class="ev-emblem-mark">EV</div><div class="ev-emblem-name">ELITEVEST</div><div class="ev-emblem-tag">INVEST TODAY · GROW TOMORROW</div><div class="ev-emblem-line"></div><div class="ev-emblem-caption">YOUR ACCOUNT. YOUR OVERVIEW.</div></div>
+        <div class="ev-float-card ev-float-top"><span class="ev-float-icon">◈</span><span><small>Account access</small><strong>In one place</strong></span></div>
+        <div class="ev-float-card ev-float-bottom"><span class="ev-float-icon">✓</span><span><small>Make informed choices</small><strong>Review before you act</strong></span></div>
+      </div>
+    </div>
+    <div class="ev-hero-bottom"><span>01 / EXPLORE</span><span>02 / UNDERSTAND</span><span>03 / MANAGE</span></div>
+  </div>
+
+  <section class="ev-public-section ev-intro-section">
+    <div class="ev-section-heading"><p class="ev-kicker">THE ELITEVEST EXPERIENCE</p><h2>A platform designed around <span>clarity and control.</span></h2><p>Get familiar with the platform before creating an account. Review the available information and decide what is right for you.</p></div>
+    <div class="ev-feature-grid">
+      <article class="ev-feature-card"><div class="ev-feature-icon">▦</div><p class="ev-card-index">01 / OVERVIEW</p><h3>Your activity, organised</h3><p>Use your personal dashboard to review account information and available activity records after signing in.</p></article>
+      <article class="ev-feature-card"><div class="ev-feature-icon">◇</div><p class="ev-card-index">02 / PACKAGES</p><h3>Understand each package</h3><p>Review package amounts, durations, terms, and any applicable fees before deciding whether to proceed.</p></article>
+      <article class="ev-feature-card"><div class="ev-feature-icon">↗</div><p class="ev-card-index">03 / ACCOUNT TOOLS</p><h3>Manage in one place</h3><p>Access supported wallet, transaction, profile, referral, and withdrawal-request features from your account.</p></article>
+    </div>
+  </section>
+
+  <section class="ev-process-section">
+    <div class="ev-process-wrap">
+      <div class="ev-section-heading ev-heading-light"><p class="ev-kicker">GETTING STARTED</p><h2>Know the steps <span>before you begin.</span></h2><p>Take your time to understand the process. Do not send money until the payment method, recipient, and terms have been independently verified.</p></div>
+      <div class="ev-steps">
+        <article><span>01</span><div><h3>Create an account</h3><p>Register with accurate details and keep your password private.</p></div></article>
+        <article><span>02</span><div><h3>Review the information</h3><p>Read the package details, eligibility rules, fees, duration, and risk disclosures.</p></div></article>
+        <article><span>03</span><div><h3>Make an informed decision</h3><p>Proceed only if you understand the terms and can verify the platform and payment instructions.</p></div></article>
+        <article><span>04</span><div><h3>Track your account</h3><p>When available, use your dashboard to review account activity and submit supported requests.</p></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="ev-public-section">
+    <div class="ev-safety-panel">
+      <div class="ev-safety-symbol">!</div><div><p class="ev-kicker">IMPORTANT INFORMATION</p><h2>Understand the risks. Verify first.</h2><p>Investment activity can involve loss of capital. Projected or displayed earnings are not guarantees. Before depositing, verify the legal operator, applicable authorisation, payment recipient, withdrawal terms, and all fees independently. Never rely on claims of guaranteed profits.</p></div>
+    </div>
+  </section>
+
+  <section class="ev-public-section ev-faq-section">
+    <div class="ev-section-heading"><p class="ev-kicker">HELP CENTRE</p><h2>Frequently asked <span>questions.</span></h2><p>A few things to know before joining.</p></div>
+    <div class="ev-faq-list">
+      <details><summary>Can I explore EliteVest before registering?</summary><p>Yes. This public page introduces the platform. Create an account or sign in when you are ready to access member features.</p></details>
+      <details><summary>Are projected earnings guaranteed?</summary><p>No. Projections are not guarantees of future results. Review the full terms and risks, and do not invest money you cannot afford to lose.</p></details>
+      <details><summary>How do I check package details?</summary><p>Sign in and open Packages to review the details currently available on the platform. Confirm all terms and fees before taking action.</p></details>
+      <details><summary>Are deposits and withdrawals always available?</summary><p>Availability depends on the features and verified payment processes that are operational. A request or on-screen status alone does not confirm that a payment has settled.</p></details>
+      <details><summary>How should I protect my account?</summary><p>Use a unique password, never share your sign-in details or one-time codes, and verify support and payment instructions before acting.</p></details>
+    </div>
+  </section>
+
+  <section class="ev-final-cta"><p class="ev-kicker">YOUR NEXT STEP</p><h2>Start with the information. <span>Choose with confidence.</span></h2><p>Explore EliteVest, review the terms, and decide whether creating an account is right for you.</p><div class="ev-public-actions"><button class="btn gold" onclick="openAuth('register')">Create an account <span aria-hidden="true">→</span></button><button class="btn ev-outline-btn" onclick="openAuth('login')">I already have an account</button></div></section>
+  <footer class="ev-public-footer"><div class="ev-footer-brand"><span class="ev-footer-logo">E</span><span><strong>ELITEVEST</strong><small>INVEST TODAY · GROW TOMORROW</small></span></div><p>Information on this website is not a guarantee of returns or a substitute for independent financial advice. Verify the operator, applicable authorisation, terms, and risks before committing funds.</p><span class="ev-footer-copy">© <span id="evYear">2026</span> EliteVest. Please read all terms before proceeding.</span></footer>
+</section>
+
 <div class="layout">
 <aside class="side"><div class="eyebrow" style="margin:8px 10px 14px">Workspace</div><nav class="nav" id="sideNav">
 <button class="active" data-page="home" onclick="showPage('home')"><span class="nav-icon">⌂</span><span>Overview</span></button><button data-page="packages" onclick="showPage('packages')"><span class="nav-icon">◇</span><span>Packages</span></button><button data-page="wallet" onclick="showPage('wallet')"><span class="nav-icon">▣</span><span>My wallet</span></button><button data-page="withdraw" onclick="showPage('withdraw')"><span class="nav-icon">↗</span><span>Withdraw</span></button><button data-page="referrals" onclick="showPage('referrals')"><span class="nav-icon">♧</span><span>Referrals</span></button><button data-page="history" onclick="showPage('history')"><span class="nav-icon">◷</span><span>Transactions</span></button><button data-page="profile" onclick="showPage('profile')"><span class="nav-icon">◎</span><span>My profile</span></button><button class="hidden" id="adminNav" data-page="admin" onclick="showPage('admin')"><span class="nav-icon">⚙</span><span>Admin dashboard</span></button>
@@ -1475,6 +1627,8 @@ const date=s=>{if(!s)return '—';const d=new Date(s);return isNaN(d)?'—':d.to
 function toast(s){$('toast').textContent=s;$('toast').classList.add('show');clearTimeout(toast.t);toast.t=setTimeout(()=>$('toast').classList.remove('show'),4000)}
 function closeModal(id){$(id).classList.remove('show')}
 function isAdmin(){return !!user&&ADMIN_EMAILS.includes((user.email||'').toLowerCase())}
+
+function syncLandingMode(){document.body.classList.toggle('ev-public',!user);document.body.classList.toggle('ev-member',!!user);const y=$('evYear');if(y)y.textContent=String(new Date().getFullYear())}
 function showPage(name){if(name==='admin'&&!isAdmin()){toast('Admin access restricted.');name='home'}document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id==='page-'+name));document.querySelectorAll('[data-page]').forEach(b=>b.classList.toggle('active',b.dataset.page===name));window.scrollTo({top:0,behavior:'smooth'});if(name==='admin')renderAdmin()}
 function openAuth(mode='register'){if(user){showPage('profile');toast('You are already signed in.');return}setAuthMode(mode);$('authModal').classList.add('show')}
 function setAuthMode(mode){authMode=mode;const reg=mode==='register';$('authTitle').textContent=reg?'Create account':'Sign in to EliteVest';$('authSubmit').textContent=reg?'Create account':'Sign in';$('nameField').classList.toggle('hidden',!reg);$('usernameField').classList.toggle('hidden',!reg);$('phoneField').classList.toggle('hidden',!reg);$('emailField').classList.toggle('hidden',reg);$('confirmPasswordField').classList.toggle('hidden',!reg);$('authName').required=reg;$('authUsername').required=reg;$('authPhone').required=reg;$('authConfirmPassword').required=reg;if(!reg){$('usernameStatus').textContent='Enter your username and password.';$('usernameStatus').dataset.state='';$('authEmail').type='text';$('authEmail').placeholder='Username';$('authEmail').autocomplete='username';$('authEmail').required=true;$('authEmail').previousElementSibling.textContent='Username';}else{$('authEmail').type='email';$('authEmail').required=false;$('authEmail').autocomplete='email';$('authEmail').previousElementSibling.textContent='Internal account identifier';checkUsernameAvailability();}syncCountryPhoneCode();$('authPassword').minLength=reg?8:0;$('authPassword').autocomplete=reg?'new-password':'current-password';$('countryField').classList.toggle('hidden',!reg);$('currencyField').classList.toggle('hidden',!reg);$('tabRegister').classList.toggle('active',reg);$('tabLogin').classList.toggle('active',!reg)}
@@ -1588,7 +1742,7 @@ function showInstallInstructions(){
 }
 if('serviceWorker' in navigator && /^https?:$/.test(location.protocol)){window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js').catch(err=>console.warn('PWA service worker registration failed',err)))}
 
-async function initialize(){try{if(!window.supabase?.createClient)throw new Error('Supabase library did not load');sb=window.supabase.createClient(SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}});$('backendStatus').textContent='Connected';await loadPackages();const {data,error}=await sb.auth.getSession();if(error)throw error;session=data.session;user=session?.user||null;if(user?.user_metadata?.preferred_currency&&$('displayCurrency').querySelector('option[value="'+user.user_metadata.preferred_currency+'"]')){displayCurrency=user.user_metadata.preferred_currency;localStorage.setItem(CURRENCY_KEY,displayCurrency);}if(user?.user_metadata?.country_code)localStorage.setItem('elitevest_country',user.user_metadata.country_code);await loadData();sb.auth.onAuthStateChange((_event,s)=>{session=s;user=s?.user||null;if(user?.user_metadata?.preferred_currency&&$('displayCurrency').querySelector('option[value="'+user.user_metadata.preferred_currency+'"]')){displayCurrency=user.user_metadata.preferred_currency;localStorage.setItem(CURRENCY_KEY,displayCurrency);}if(user?.user_metadata?.country_code)localStorage.setItem('elitevest_country',user.user_metadata.country_code);setTimeout(loadData,0)});}catch(e){console.error(e);$('backendStatus').textContent='Connection error';toast(e.message||'Could not connect to Supabase')}} 
+async function initialize(){try{if(!window.supabase?.createClient)throw new Error('Supabase library did not load');sb=window.supabase.createClient(SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}});$('backendStatus').textContent='Connected';await loadPackages();const {data,error}=await sb.auth.getSession();if(error)throw error;session=data.session;user=session?.user||null;syncLandingMode();if(user?.user_metadata?.preferred_currency&&$('displayCurrency').querySelector('option[value="'+user.user_metadata.preferred_currency+'"]')){displayCurrency=user.user_metadata.preferred_currency;localStorage.setItem(CURRENCY_KEY,displayCurrency);}if(user?.user_metadata?.country_code)localStorage.setItem('elitevest_country',user.user_metadata.country_code);await loadData();sb.auth.onAuthStateChange((_event,s)=>{session=s;user=s?.user||null;syncLandingMode();if(user?.user_metadata?.preferred_currency&&$('displayCurrency').querySelector('option[value="'+user.user_metadata.preferred_currency+'"]')){displayCurrency=user.user_metadata.preferred_currency;localStorage.setItem(CURRENCY_KEY,displayCurrency);}if(user?.user_metadata?.country_code)localStorage.setItem('elitevest_country',user.user_metadata.country_code);setTimeout(loadData,0)});}catch(e){console.error(e);$('backendStatus').textContent='Connection error';toast(e.message||'Could not connect to Supabase')}} 
 setAuthMode('register');renderAccount();initialize();loadDisplayRates();
 </script>
 </body>
