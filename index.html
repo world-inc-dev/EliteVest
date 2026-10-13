@@ -282,7 +282,41 @@ tbody tr:hover{background:#f8fbfc}
 }
 </style>
 
- <style>/* Premium member financial cards */ .wallet-summary-card{position:relative;overflow:hidden;padding:24px;border-radius:20px;margin:0 0 22px;background:linear-gradient(125deg,#102c46 0%,#17495a 56%,#087f8c 100%);color:#fff;box-shadow:0 14px 34px rgba(16,44,70,.16);border:1px solid rgba(255,255,255,.12)}.wallet-summary-card:after{content:"";position:absolute;width:190px;height:190px;right:-55px;top:-78px;border-radius:50%;border:1px solid rgba(255,255,255,.18);box-shadow:0 0 0 22px rgba(255,255,255,.035),0 0 0 46px rgba(255,255,255,.025);pointer-events:none}.wallet-summary-top,.wallet-summary-bottom{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:12px}.wallet-summary-label{font-size:10px;letter-spacing:1.7px;font-weight:800;color:#bfe9e8}.wallet-summary-title{font-size:14px;font-weight:700;margin-top:6px;color:#fff}.wallet-summary-icon{display:grid;place-items:center;width:42px;height:42px;border-radius:13px;background:#ffffff18;border:1px solid #ffffff28;font-size:20px;color:#e5f8f5}.wallet-summary-value{position:relative;z-index:1;font-size:clamp(28px,4vw,38px);font-weight:850;letter-spacing:-.8px;margin:25px 0 22px;overflow-wrap:anywhere}.wallet-summary-bottom{font-size:11px;color:#d3e7ec;flex-wrap:wrap}.wallet-secure-tag{padding:7px 10px;border-radius:20px;background:#ffffff17;border:1px solid #ffffff22;white-space:nowrap}.stats .stat-card{border:1px solid #e1e9f1;background:linear-gradient(145deg,#fff,#f8fbfd);border-radius:17px;padding:19px;box-shadow:0 8px 24px rgba(22,47,70,.055)}.stats .stat-card:hover{transform:translateY(-2px);box-shadow:0 13px 28px rgba(22,47,70,.09)}.stats .stat-icon{background:#e4f5f4;color:#087f8c}.stats .stat-card .value{font-weight:800;overflow-wrap:anywhere}.quick-action{border:1px solid #e1e9f1;border-radius:15px;background:linear-gradient(145deg,#fff,#f8fbfd)}.quick-icon{flex-shrink:0;background:#e4f5f4;color:#087f8c}@media(max-width:600px){.wallet-summary-card{padding:19px;border-radius:17px}.wallet-summary-value{margin:22px 0 18px}.wallet-summary-bottom{align-items:flex-start;flex-direction:column;gap:9px}}</style>\n</head>
+ <style>/* Premium member financial cards */ .wallet-summary-card{position:relative;overflow:hidden;padding:24px;border-radius:20px;margin:0 0 22px;background:linear-gradient(125deg,#102c46 0%,#17495a 56%,#087f8c 100%);color:#fff;box-shadow:0 14px 34px rgba(16,44,70,.16);border:1px solid rgba(255,255,255,.12)}.wallet-summary-card:after{content:"";position:absolute;width:190px;height:190px;right:-55px;top:-78px;border-radius:50%;border:1px solid rgba(255,255,255,.18);box-shadow:0 0 0 22px rgba(255,255,255,.035),0 0 0 46px rgba(255,255,255,.025);pointer-events:none}.wallet-summary-top,.wallet-summary-bottom{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:12px}.wallet-summary-label{font-size:10px;letter-spacing:1.7px;font-weight:800;color:#bfe9e8}.wallet-summary-title{font-size:14px;font-weight:700;margin-top:6px;color:#fff}.wallet-summary-icon{display:grid;place-items:center;width:42px;height:42px;border-radius:13px;background:#ffffff18;border:1px solid #ffffff28;font-size:20px;color:#e5f8f5}.wallet-summary-value{position:relative;z-index:1;font-size:clamp(28px,4vw,38px);font-weight:850;letter-spacing:-.8px;margin:25px 0 22px;overflow-wrap:anywhere}.wallet-summary-bottom{font-size:11px;color:#d3e7ec;flex-wrap:wrap}.wallet-secure-tag{padding:7px 10px;border-radius:20px;background:#ffffff17;border:1px solid #ffffff22;white-space:nowrap}.stats .stat-card{border:1px solid #e1e9f1;background:linear-gradient(145deg,#fff,#f8fbfd);border-radius:17px;padding:19px;box-shadow:0 8px 24px rgba(22,47,70,.055)}.stats .stat-card:hover{transform:translateY(-2px);box-shadow:0 13px 28px rgba(22,47,70,.09)}.stats .stat-icon{background:#e4f5f4;color:#087f8c}.stats .stat-card .value{font-weight:800;overflow-wrap:anywhere}.quick-action{border:1px solid #e1e9f1;border-radius:15px;background:linear-gradient(145deg,#fff,#f8fbfd)}.quick-icon{flex-shrink:0;background:#e4f5f4;color:#087f8c}@media(max-width:600px){.wallet-summary-card{padding:19px;border-radius:17px}.wallet-summary-value{margin:22px 0 18px}.wallet-summary-bottom{align-items:flex-start;flex-direction:column;gap:9px}}</style>
+<style>
+/* Consistent premium cards across every member and admin section */
+.card,.hero,.package,.wallet-summary-card,.quick-action,.admin-account-card,.admin-filter-card,.notice{
+ border-radius:17px;
+}
+.card{
+ background:linear-gradient(145deg,#ffffff 0%,#fbfdff 100%);
+ border:1px solid #e1e9f1;
+ box-shadow:0 7px 22px rgba(22,47,70,.045);
+ padding:18px;
+}
+.card h2,.card h3{color:#172b42}
+.section-head{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:22px 0 13px}
+.table-wrap{overflow-x:auto;border:1px solid #e1e9f1;border-radius:15px;background:#fff}
+.table-wrap table{width:100%;border-collapse:collapse}
+.table-wrap th{background:#f3f7fa;color:#526579;font-size:11px;letter-spacing:.3px;text-transform:uppercase}
+.table-wrap th,.table-wrap td{padding:12px 13px;border-bottom:1px solid #edf1f5;text-align:left}
+.table-wrap tr:last-child td{border-bottom:0}
+.form,.field{min-width:0}
+.form .field{margin-bottom:14px}
+.form input,.form select,.form textarea,input,select,textarea{max-width:100%;border-radius:10px}
+.grid>.card{min-width:0}
+.page .hero{border:1px solid #dce8ef;background:linear-gradient(135deg,#fff 0%,#f2f8fa 100%);color:#172b42;box-shadow:0 7px 22px rgba(22,47,70,.045)}
+.page .hero p{color:#627387}
+.page .notice{border-radius:13px}
+.page .row{gap:12px;padding:10px 0;border-bottom:1px solid #edf1f5}
+.page .row:last-child{border-bottom:0}
+@media(max-width:600px){
+ .card{padding:14px;border-radius:14px}
+ .table-wrap th,.table-wrap td{padding:10px;font-size:12px}
+ .section-head{align-items:flex-start}
+}
+</style>
+</head>
 <body>
 <header>
   <div class="brand"><div class="logo">E</div><div><strong>ELITEVEST</strong><small>INVEST TODAY · GROW TOMORROW</small></div></div>
