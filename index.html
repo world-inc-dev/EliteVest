@@ -1214,6 +1214,87 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible { 
  .heading .btn { padding:8px!important;font-size:11px!important; }
 }
 </style>
+
+<style id="elitevest-universal-accessible-contrast">
+/* Site-wide contrast/accessibility rules. Each light or dark surface gets matching text. */
+:root { color-scheme:light; --ev-ink:#172235; --ev-muted:#526579; --ev-border:#d7e1ec; }
+html,body { background:#f3f6fb!important;color:#172235!important; }
+body { font-size:15px;line-height:1.5; }
+body :is(main,section,.page,footer) { color:#172235; }
+body :is(.card,.package,.quick-action,.notice,.modal,.modal-content,.table-wrap,.table-container,.admin-account-card,.admin-filter-card,.admin-details-grid,.stat-card,.summary-card,.wallet-card,.transaction-card,.profile-card,.content-card,.empty-state,.member-chip,.field,.tabs) {
+  color:#172235!important;
+}
+body :is(.card,.package,.quick-action,.table-wrap,.table-container,.admin-account-card,.admin-filter-card,.stat-card,.summary-card,.wallet-card,.transaction-card,.profile-card,.content-card,.empty-state) {
+  background-color:#ffffff!important;border-color:#d7e1ec!important;
+}
+body :is(.card,.package,.quick-action,.notice,.modal,.modal-content,.table-wrap,.table-container,.admin-account-card,.admin-filter-card,.stat-card,.summary-card,.wallet-card,.transaction-card,.profile-card,.content-card,.empty-state,.field,.tabs) :is(h1,h2,h3,h4,h5,h6,p,span,strong,b,em,i,label,small,li,dt,dd,div,output,legend,caption) {
+ color:#172235!important;-webkit-text-fill-color:#172235!important;opacity:1!important;
+}
+body :is(.card,.package,.quick-action,.notice,.modal,.modal-content,.table-wrap,.table-container,.admin-account-card,.admin-filter-card,.stat-card,.summary-card,.wallet-card,.transaction-card,.profile-card,.content-card,.empty-state) :is(.muted,.small,.hint,.help,.subtext,.description,.meta,.secondary,.text-muted,.form-text,.stat-caption,.label,.row span,.eyebrow) {
+ color:#526579!important;-webkit-text-fill-color:#526579!important;opacity:1!important;
+}
+/* Admin area: explicitly handle every admin card, report tile, notice, filter, table, and action. */
+#page-admin { color:#172235!important; }
+#page-admin :is(h1,h2,h3,h4,h5,h6,p,span,strong,b,em,i,label,small,li,dt,dd,div,output) {
+ color:#172235;-webkit-text-fill-color:#172235;opacity:1;
+}
+#page-admin .eyebrow { color:#087f78!important;-webkit-text-fill-color:#087f78!important;font-weight:800!important; }
+#page-admin .muted,#page-admin .small,#page-admin .stat-caption,#page-admin .label { color:#526579!important;-webkit-text-fill-color:#526579!important;opacity:1!important; }
+#page-admin .card,#page-admin .stat-card,#page-admin .admin-account-card,#page-admin .admin-filter-card,#page-admin .table-wrap {
+ background:#fff!important;color:#172235!important;border-color:#d7e1ec!important;
+}
+#page-admin .value,#page-admin .stat-value { color:#087443!important;-webkit-text-fill-color:#087443!important;font-weight:850!important; }
+#page-admin .status { background:#e9f7ef!important;color:#075b3b!important;-webkit-text-fill-color:#075b3b!important;border-color:#c4e9d2!important; }
+#page-admin .notice.admin-note { background:#fff8e7!important;border:1px solid #eedca7!important;color:#684b12!important; }
+#page-admin .notice.admin-note :is(strong,b,p,span,div) { color:#684b12!important;-webkit-text-fill-color:#684b12!important; }
+#page-admin input,#page-admin select,#page-admin textarea {
+ background:#fff!important;color:#172235!important;-webkit-text-fill-color:#172235!important;border:1px solid #bdcad9!important;
+}
+#page-admin input::placeholder,#page-admin textarea::placeholder { color:#718096!important;-webkit-text-fill-color:#718096!important;opacity:1!important; }
+#page-admin table { background:#fff!important;color:#172235!important; }
+#page-admin thead th { background:#edf2f7!important;color:#334960!important;-webkit-text-fill-color:#334960!important; }
+#page-admin tbody td { background:#fff!important;color:#172235!important;-webkit-text-fill-color:#172235!important; }
+#page-admin tbody tr:hover td { background:#f1f8f5!important; }
+#page-admin td :is(button,.btn) { color:#172235!important;-webkit-text-fill-color:#172235!important; }
+#page-admin #adminWithdrawalRows .btn:not(.gold) { background:#fff0f0!important;color:#9b2634!important;-webkit-text-fill-color:#9b2634!important;border-color:#edc4c8!important; }
+/* Navigation and all interactive controls */
+.side { background:#fff!important; }
+.nav button,.nav button span { color:#34465c!important;-webkit-text-fill-color:#34465c!important;opacity:1!important; }
+.nav button.active,.nav button:hover,.nav button.active span,.nav button:hover span { color:#075b3b!important;-webkit-text-fill-color:#075b3b!important; }
+.mobile-nav { background:#fff!important; }
+.mobile-nav button,.mobile-nav button span { color:#40536a!important;-webkit-text-fill-color:#40536a!important;opacity:1!important; }
+.mobile-nav button.active,.mobile-nav button.active span { color:#075b3b!important;-webkit-text-fill-color:#075b3b!important; }
+body input,body select,body textarea {
+ background:#fff!important;color:#172235!important;-webkit-text-fill-color:#172235!important;border-color:#bdcad9!important;
+}
+body input::placeholder,body textarea::placeholder { color:#718096!important;-webkit-text-fill-color:#718096!important;opacity:1!important; }
+body select option { background:#fff!important;color:#172235!important; }
+body .field label { color:#334960!important;-webkit-text-fill-color:#334960!important;font-weight:700!important; }
+body .btn:not(.gold):not(.primary):not(.btn-primary),body button:not(.gold):not(.primary):not(.btn-primary) { color:#20364d!important;-webkit-text-fill-color:#20364d!important; }
+body .gold,body .btn.gold,body .btn-gold,body .btn-primary,body button.primary { color:#172235!important;-webkit-text-fill-color:#172235!important; }
+/* Dark banner surfaces retain white text, rather than inheriting the light-card rules. */
+body :is(.hero,.dashboard-hero,.wallet-summary-card,.banner,.welcome-banner,.wallet-hero) {
+ background:linear-gradient(120deg,#10243d 0%,#124452 100%)!important;color:#fff!important;
+}
+body :is(.hero,.dashboard-hero,.wallet-summary-card,.banner,.welcome-banner,.wallet-hero) :is(h1,h2,h3,h4,p,span,strong,b,small,div,.eyebrow,.muted) {
+ color:#fff!important;-webkit-text-fill-color:#fff!important;opacity:1!important;
+}
+body :is(.hero,.dashboard-hero,.wallet-summary-card,.banner,.welcome-banner,.wallet-hero) .hero-primary,
+body :is(.hero,.dashboard-hero,.wallet-summary-card,.banner,.welcome-banner,.wallet-hero) .hero-primary * {
+ color:#10243d!important;-webkit-text-fill-color:#10243d!important;
+}
+body table { border-color:#d7e1ec!important; }
+body table th { background:#edf2f7!important;color:#334960!important;-webkit-text-fill-color:#334960!important; }
+body table td { color:#172235!important;-webkit-text-fill-color:#172235!important; }
+body .success,body .positive,body .status-success,body .approved { color:#087443!important;-webkit-text-fill-color:#087443!important; }
+body .danger,body .negative,body .error,body .status-error,body .rejected { color:#b42318!important;-webkit-text-fill-color:#b42318!important; }
+body .warning,body .pending,body .status-pending { color:#854d0e!important;-webkit-text-fill-color:#854d0e!important; }
+@media(max-width:760px) {
+ #page-admin .admin-details-grid .row { align-items:flex-start;flex-wrap:wrap; }
+ #page-admin .admin-details-grid .row strong { overflow-wrap:anywhere; }
+ body :is(.muted,.small,.hint,.help,.subtext,.description,.meta,.secondary,.text-muted,.form-text) { opacity:1!important; }
+}
+</style>
 </head>
 <body>
 <header>
