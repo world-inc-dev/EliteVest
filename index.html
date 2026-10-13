@@ -840,6 +840,81 @@ tr:nth-child(even) td{background:rgba(255,255,255,.025) !important}
 }
 </style>
 
+
+<style id="elitevest-global-readable-text-fix">
+/* Global readability pass: make every screen, card, form, modal and table readable. */
+html { color-scheme: dark; }
+body { background:#070d18 !important; color:#f8fafc !important; }
+body, body * { text-shadow:none; }
+body :is(p,span,strong,b,em,i,label,small,summary,li,dt,dd,th,td,h1,h2,h3,h4,h5,h6,legend,output,div) {
+  text-decoration-color:currentColor;
+}
+body :is(p,span,strong,b,em,i,label,small,summary,li,dt,dd,th,td,h1,h2,h3,h4,h5,h6,legend,output) {
+  color:#f1f5f9;
+}
+/* Muted/help text was too dim on some backgrounds. */
+body :is(.muted,.small,.hint,.help,.subtext,.description,.meta,.secondary,.text-muted,.form-text,.package-top,.package .row span,.stat-label,.eyebrow,.caption) {
+  color:#d1d9e6 !important; opacity:1 !important;
+}
+/* Keep all main surfaces consistently dark so light text never lands on white. */
+body :is(main,section,article,aside,nav,form,fieldset,dialog,.modal,.modal-content,.card,.panel,.box,.tile,.stat,.stat-card,.summary-card,.table-wrap,.table-container,.package,.package-card,.wallet-card,.transaction-card,.profile-card,.admin-card,.content-card,.list-item,.notice,.alert,.banner,.hero,.welcome-banner,.empty-state,.dropdown-menu,.menu-panel) {
+  color:#f8fafc;
+}
+body :is(.card,.panel,.box,.tile,.stat,.stat-card,.summary-card,.table-wrap,.table-container,.package,.package-card,.wallet-card,.transaction-card,.profile-card,.admin-card,.content-card,.list-item,.notice,.alert,.empty-state,.dropdown-menu,.menu-panel,.modal-content) {
+  background-color:#101c2d !important;
+  border-color:#42536b !important;
+}
+body :is(.hero,.banner,.welcome-banner) {
+  background:linear-gradient(135deg,#10233a,#123b49) !important;
+  color:#ffffff !important;
+}
+body :is(.hero,.banner,.welcome-banner) * { color:#ffffff !important; opacity:1 !important; }
+/* Package figures and numeric values get strong contrast and size. */
+.package .price,.package-card .price,.price,.amount,.balance,.money,.value,.stat-value {
+  color:#78f0bd !important; font-weight:800 !important; opacity:1 !important;
+}
+.package .row strong,.package-card .row strong { color:#ffffff !important; font-weight:800 !important; }
+.package .row span,.package-card .row span { color:#e2e8f0 !important; opacity:1 !important; }
+.package :is(button,.btn) { font-weight:800 !important; }
+/* Inputs, selectors and text areas: visible text, labels, and placeholders. */
+input,select,textarea {
+  background:#07111f !important; color:#ffffff !important;
+  border:1px solid #64748b !important; caret-color:#ffffff;
+}
+input::placeholder,textarea::placeholder { color:#cbd5e1 !important; opacity:1 !important; }
+select option { background:#07111f !important; color:#ffffff !important; }
+input:disabled,select:disabled,textarea:disabled { color:#d1d9e6 !important; opacity:1 !important; }
+/* Links, navigation, badges, buttons and interactive states. */
+a { color:#7dd3fc !important; }
+a:hover { color:#bae6fd !important; }
+nav a,header a,.nav-link,.tab,.bottom-nav a { opacity:1 !important; }
+button,.btn { opacity:1 !important; font-weight:700; }
+button:not(.gold):not(.btn-gold):not(.primary):not(.btn-primary):not([class*="gold"]) {
+  color:#f8fafc;
+}
+button.gold,.btn.gold,.gold,.btn-gold,button.primary,.btn-primary {
+  background:#f1cf83 !important; color:#101827 !important; border-color:#f1cf83 !important;
+}
+button:disabled,.btn:disabled { opacity:.8 !important; color:#e2e8f0 !important; }
+:focus-visible { outline:3px solid #facc15 !important; outline-offset:3px !important; }
+/* Tables, separators and status colors. */
+table { color:#f8fafc !important; border-color:#475569 !important; }
+th { color:#ffffff !important; background:#17263a !important; }
+td { color:#eaf0f8 !important; border-color:#334155 !important; }
+hr,.line { border-color:#475569 !important; opacity:1 !important; }
+body :is(.success,.positive,.status-success,.approved,.active-status) { color:#86efac !important; opacity:1 !important; }
+body :is(.danger,.negative,.error,.status-error,.rejected) { color:#fca5a5 !important; opacity:1 !important; }
+body :is(.warning,.pending,.status-pending) { color:#fde68a !important; opacity:1 !important; }
+/* Override accidental low-opacity/transparent text and inherited white surfaces. */
+body * { -webkit-text-fill-color:currentColor; }
+body :is(.muted,.small,.hint,.help,.subtext,.description,.meta,.secondary,.text-muted,.form-text) { -webkit-text-fill-color:#d1d9e6 !important; }
+@media(max-width:600px) {
+  body { font-size:16px !important; }
+  body :is(.muted,.small,.hint,.help,.subtext,.description,.meta,.secondary,.text-muted,.form-text) { font-size:14px !important; }
+  .package .price,.package-card .price,.price { font-size:1.35rem !important; }
+  body :is(.card,.panel,.box,.tile,.stat-card,.summary-card,.package,.package-card,.wallet-card,.transaction-card,.profile-card,.admin-card,.content-card) { color:#f8fafc !important; }
+}
+</style>
 </head>
 <body>
 <header>
