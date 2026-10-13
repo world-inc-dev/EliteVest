@@ -1475,7 +1475,8 @@ body.ev-member #elitevest-public-home {display:none!important}
 @media(max-width:760px){#ev-public-nav{flex-wrap:wrap;gap:12px;padding:12px 18px}.ev-nav-links{order:3;width:100%;justify-content:flex-start;overflow-x:auto;padding:5px 0 2px;gap:20px}.ev-nav-links a{white-space:nowrap}.ev-nav-join{margin-left:auto}}
 @media(max-width:380px){.ev-nav-brand{font-size:10px}.ev-nav-join{font-size:11px;padding:8px 10px}}
 </style>
-\n
+
+
 <style id="elitevest-homepage-readable-overflow-fix">
 /* Public homepage: readable contrast, tidy wrapping, and no horizontal spill. */
 #elitevest-public-home{width:100%;max-width:100%;overflow-x:clip;color:#172235;background:#f5f7fb}
@@ -1608,7 +1609,8 @@ body.ev-member .layout{display:grid!important;visibility:visible!important;point
   <div class="actions"><button class="btn gold" id="installAppBtn" type="button" onclick="installEliteVest()">Install App</button><div class="member-chip hidden" id="memberChip"><span class="member-avatar" id="memberAvatar">M</span><span class="member-identity"><small>MEMBER ACCOUNT</small><strong id="memberUsername">Member</strong></span></div><button class="btn" id="loginTop" onclick="openAuth('login')">Sign in</button><button class="btn gold" id="joinTop" onclick="openAuth('register')">Join now</button><button class="btn" id="logoutTop" onclick="signOut()">Sign out</button></div>
 </header>
 
-<section id="elitevest-public-home" aria-label="EliteVest public homepage">\n
+<section id="elitevest-public-home" aria-label="EliteVest public homepage">
+
 
   <div class="ev-public-hero">
     <div class="ev-public-hero-inner">
@@ -1878,7 +1880,11 @@ function showInstallInstructions(){
   }else{
     steps='Chrome on Android: Tap the browser menu ⋮ → Install app. If that option is missing, choose Add to Home screen, then confirm Add.';
   }
-  alert('Install EliteVest\n\n'+steps+'\n\nIf you do not see that option, update your browser and open the live website over HTTPS, then try again.');
+  alert('Install EliteVest
+
+'+steps+'
+
+If you do not see that option, update your browser and open the live website over HTTPS, then try again.');
 }
 if('serviceWorker' in navigator && /^https?:$/.test(location.protocol)){window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js').catch(err=>console.warn('PWA service worker registration failed',err)))}
 
