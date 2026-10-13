@@ -358,6 +358,34 @@ tbody tr:hover{background:#f8fbfc}
 }
 </style>
 
+
+<style>
+/* EliteVest color refinement: white surfaces, green positives, red negatives */
+:root{--bg:#fff;--panel:#fff;--panel2:#f8fafc;--text:#172235;--muted:#667085;--line:#e4e7ec;--green:#16834a;--red:#d92d20}
+html,body,.layout,main,.page{background:#fff;color:var(--text)}
+.side{background:#fff!important;border-right-color:#e4e7ec!important}
+.card,.package,.quick-action,.notice,.modal{background:#fff!important;box-shadow:0 3px 12px #17223508}
+.stats>.card,.stats>.stat-card,.package-grid>.package,.quick-actions>.quick-action{background:#fff!important;border-color:#e4e7ec!important}
+.stats>.card:nth-child(odd),.stats>.stat-card:nth-child(odd){border-top:4px solid #16834a!important}
+.stats>.card:nth-child(even),.stats>.stat-card:nth-child(even){border-top:4px solid #d92d20!important}
+.package-grid>.package:nth-child(odd){border-top:4px solid #16834a!important}
+.package-grid>.package:nth-child(even){border-top:4px solid #d92d20!important}
+.package-grid>.package.featured{background:#fff!important;border-color:#b8dfc7!important;border-top:4px solid #16834a!important}
+.quick-actions>.quick-action:nth-child(odd){border-left:4px solid #16834a!important}
+.quick-actions>.quick-action:nth-child(even){border-left:4px solid #d92d20!important}
+.quick-icon{background:#edf8f1!important;color:#16834a!important}
+.quick-actions>.quick-action:nth-child(even) .quick-icon{background:#fff0ef!important;color:#d92d20!important}
+.value,.price,.stat-card .value,.row strong{color:#16834a}
+.positive,.income,.earnings,.available-balance,.balance-value,.credit-amount{color:#16834a!important}
+.negative,.loss,.debit-amount,.withdrawal-amount,.danger-amount{color:#d92d20!important}
+.notice{color:#526177!important;border-color:#e4e7ec!important}
+.field input,.field select,.ref-link input{background:#fff!important;color:#172235!important;border-color:#d0d5dd!important}
+.tabs button{background:#fff!important;color:#475467!important;border-color:#e4e7ec!important}
+.tabs button.active{background:#edf8f1!important;color:#16834a!important;border-color:#b8dfc7!important}
+.status{background:#f8fafc!important;color:#475467!important;border-color:#e4e7ec!important}
+#adminWithdrawalRows .btn:not(.gold){background:#fff0ef!important;border-color:#f2b8b5!important;color:#b42318!important}
+.mobile-nav{background:rgba(255,255,255,.98)!important;border-top-color:#e4e7ec!important}
+</style>
 </head>
 <body>
 <header>
