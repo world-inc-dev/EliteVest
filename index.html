@@ -386,6 +386,57 @@ html,body,.layout,main,.page{background:#fff;color:var(--text)}
 #adminWithdrawalRows .btn:not(.gold){background:#fff0ef!important;border-color:#f2b8b5!important;color:#b42318!important}
 .mobile-nav{background:rgba(255,255,255,.98)!important;border-top-color:#e4e7ec!important}
 </style>
+
+<style>
+/* EliteVest visibility and contrast refinement */
+:root{--text:#101828;--muted:#475467;--line:#d0d5dd}
+body{font-size:15px;line-height:1.55;color:#101828}
+p{line-height:1.7}
+.label,.row span,.muted,.stat-caption,.quick-action small,th,.field label{color:#475467!important}
+.value,.price,.stat-card .value{font-weight:850;letter-spacing:-.35px}
+.card,.package,.quick-action{border-color:#cfd6df!important;box-shadow:0 4px 14px rgba(16,24,40,.07)!important}
+.card h2,.card h3,.package h3,.section-head h2{color:#101828}
+.btn{font-weight:750;border-width:1px;min-height:42px}
+.btn.gold{background:#087f45!important;border-color:#087f45!important;color:#fff!important}
+.btn.gold:hover{background:#066637!important}
+.btn:not(.gold){background:#fff!important;color:#1d2939!important;border-color:#b8c2cf!important}
+.btn:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #087f45!important;outline-offset:3px}
+.field input,.field select,.ref-link input{min-height:45px;border:1px solid #98a2b3!important;color:#101828!important;background:#fff!important}
+.field input::placeholder,.ref-link input::placeholder{color:#667085}
+.notice{font-size:13px;line-height:1.75;border:1px solid #cbd5e1!important}
+.tag,.status{font-size:11px;font-weight:750;border-width:1px}
+.status[data-status="approved"],.status[data-status="completed"],.status[data-status="paid"],.status[data-status="active"]{color:#067647!important;background:#ecfdf3!important;border-color:#75d9a2!important}
+.status[data-status="rejected"],.status[data-status="failed"]{color:#b42318!important;background:#fef3f2!important;border-color:#f3aaa5!important}
+.positive,.income,.earnings,.available-balance,.balance-value,.credit-amount{color:#067647!important;font-weight:800}
+.negative,.loss,.debit-amount,.withdrawal-amount,.danger-amount{color:#b42318!important;font-weight:800}
+.hero .eyebrow,.dashboard-hero .eyebrow{color:#a7f3d0!important}
+.hero h1,.dashboard-hero h1{color:#fff!important}
+.hero p,.dashboard-hero p{color:#f1f5f9!important}
+.nav button{font-size:14px;font-weight:650}
+.nav button.active{color:#066637!important;background:#eaf8ef!important;border-color:#a6dfba!important}
+.nav button.active .nav-icon{background:#087f45!important;color:#fff!important}
+.mobile-nav button{font-weight:700;color:#344054!important}
+.mobile-nav button.active{color:#067647!important}
+.mobile-nav button.active span{filter:none}
+.heading h1{color:#101828}
+footer{color:#667085;font-size:12px}
+table td,table th{padding:13px 10px;font-size:13px;color:#344054}
+table th{font-weight:750;color:#475467;background:#f8fafc}
+.modal{border:1px solid #cfd6df!important}
+.close{font-weight:800}
+.toast{font-weight:650}
+@media(max-width:700px){
+ body{font-size:14px}
+ main{padding-left:14px;padding-right:14px}
+ .card,.package{padding:15px}
+ .label,.row span,.stat-caption,.quick-action small{font-size:12px}
+ .row{font-size:13px}
+ .btn{min-height:40px}
+ .mobile-nav button{min-width:65px;padding:7px 8px;font-size:10px}
+ .mobile-nav button span{font-size:18px}
+}
+</style>
+
 </head>
 <body>
 <header>
