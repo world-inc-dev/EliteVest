@@ -1887,11 +1887,7 @@ function showInstallInstructions(){
   }else{
     steps='Chrome on Android: Tap the browser menu ⋮ → Install app. If that option is missing, choose Add to Home screen, then confirm Add.';
   }
-  alert('Install EliteVest
-
-'+steps+'
-
-If you do not see that option, update your browser and open the live website over HTTPS, then try again.');
+  alert('Install EliteVest\n\n'+steps+'\n\nIf you do not see that option, update your browser and open the live website over HTTPS, then try again.');
 }
 if('serviceWorker' in navigator && /^https?:$/.test(location.protocol)){window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js').catch(err=>console.warn('PWA service worker registration failed',err)))}
 
