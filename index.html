@@ -1377,6 +1377,18 @@ input, select, textarea { min-width: 0; max-width: 100%; }
 }
 </style>
 
+<style id="elitevest-layout-auth-fixes">
+/* Dashboard fills the available width; auth overlay must be controlled by its class. */
+.layout{width:100%;max-width:none;grid-template-columns:215px minmax(0,1fr)}
+.layout>main{width:100%;max-width:none;min-width:0}
+.layout .page.active{width:100%;max-width:none}
+body.ev-public #logoutTop,body.ev-public #memberChip{display:none!important}
+body.ev-public #loginTop,body.ev-public #joinTop{display:inline-flex}
+body.ev-member #loginTop,body.ev-member #joinTop{display:none!important}
+body.ev-member #logoutTop,body.ev-member #memberChip{display:inline-flex}
+.modal-bg{display:none!important}
+.modal-bg.show{display:flex!important}
+</style>
 
 <style id="elitevest-premium-public-home">
 body.ev-public {background:#f5f7fb;color:#172235}
@@ -1606,7 +1618,7 @@ body.ev-member .layout{display:grid!important;visibility:visible!important;point
 <body class="ev-public">
 <header>
   <div class="brand"><div class="logo">E</div><div><strong>ELITEVEST</strong><small>INVEST TODAY · GROW TOMORROW</small></div></div>
-  <div class="actions"><button class="btn gold" id="installAppBtn" type="button" onclick="installEliteVest()">Install App</button><div class="member-chip hidden" id="memberChip"><span class="member-avatar" id="memberAvatar">M</span><span class="member-identity"><small>MEMBER ACCOUNT</small><strong id="memberUsername">Member</strong></span></div><button class="btn" id="loginTop" onclick="try{openAuth('login')}catch(e){};var m=document.getElementById('authModal');if(m){m.classList.add('show');m.style.display='flex';m.style.visibility='visible';m.style.opacity='1'}">Sign in</button><button class="btn gold" id="joinTop" onclick="try{openAuth('register')}catch(e){};var m=document.getElementById('authModal');if(m){m.classList.add('show');m.style.display='flex';m.style.visibility='visible';m.style.opacity='1'}">Join now</button><button class="btn" id="logoutTop" onclick="signOut()">Sign out</button></div>
+  <div class="actions"><button class="btn gold" id="installAppBtn" type="button" onclick="installEliteVest()">Install App</button><div class="member-chip hidden" id="memberChip"><span class="member-avatar" id="memberAvatar">M</span><span class="member-identity"><small>MEMBER ACCOUNT</small><strong id="memberUsername">Member</strong></span></div><button class="btn" id="loginTop" onclick="openAuth('login')">Sign in</button><button class="btn gold" id="joinTop" onclick="openAuth('register')">Join now</button><button class="btn hidden" id="logoutTop" onclick="signOut()">Sign out</button></div>
 </header>
 
 <section id="elitevest-public-home" aria-label="EliteVest public homepage">
@@ -1765,10 +1777,10 @@ async function loadDisplayRates(){try{const response=await fetch('https://open.e
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const date=s=>{if(!s)return '—';const d=new Date(s);return isNaN(d)?'—':d.toLocaleDateString('en-UG',{year:'numeric',month:'short',day:'numeric'})};
 function toast(s){$('toast').textContent=s;$('toast').classList.add('show');clearTimeout(toast.t);toast.t=setTimeout(()=>$('toast').classList.remove('show'),4000)}
-function closeModal(id){$(id).classList.remove('show')}
+function closeModal(id){const modal=$(id);if(!modal)return;modal.classList.remove('show');modal.style.removeProperty('display');modal.style.removeProperty('visibility');modal.style.removeProperty('opacity');modal.setAttribute('aria-hidden','true')}
 function isAdmin(){return !!user&&ADMIN_EMAILS.includes((user.email||'').toLowerCase())}
 
-function syncLandingMode(){document.body.classList.toggle('ev-public',!user);document.body.classList.toggle('ev-member',!!user);const y=$('evYear');if(y)y.textContent=String(new Date().getFullYear())}
+function syncLandingMode(){document.body.classList.toggle('ev-public',!user);document.body.classList.toggle('ev-member',!!user);const login=$('loginTop'),join=$('joinTop'),logout=$('logoutTop'),chip=$('memberChip');if(login)login.classList.toggle('hidden',!!user);if(join)join.classList.toggle('hidden',!!user);if(logout)logout.classList.toggle('hidden',!user);if(chip)chip.classList.toggle('hidden',!user);const y=$('evYear');if(y)y.textContent=String(new Date().getFullYear());if(user)closeModal('authModal')}
 function showPage(name){if(name==='admin'&&!isAdmin()){toast('Admin access restricted.');name='home'}document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id==='page-'+name));document.querySelectorAll('[data-page]').forEach(b=>b.classList.toggle('active',b.dataset.page===name));window.scrollTo({top:0,behavior:'smooth'});if(name==='admin')renderAdmin()}
 function openAuth(mode='register'){
  const modal=document.getElementById('authModal');
@@ -1787,9 +1799,7 @@ function openAuth(mode='register'){
    const regTab=document.getElementById('tabRegister'),loginTab=document.getElementById('tabLogin');if(regTab)regTab.classList.toggle('active',!login);if(loginTab)loginTab.classList.toggle('active',login);
  }
  modal.classList.add('show');
- modal.style.display='flex';
- modal.style.visibility='visible';
- modal.style.opacity='1';
+ modal.removeAttribute('style');
  modal.setAttribute('aria-hidden','false');
 }
 function setAuthMode(mode){authMode=mode;const reg=mode==='register';$('authTitle').textContent=reg?'Create account':'Sign in to EliteVest';$('authSubmit').textContent=reg?'Create account':'Sign in';$('nameField').classList.toggle('hidden',!reg);$('usernameField').classList.toggle('hidden',!reg);$('phoneField').classList.toggle('hidden',!reg);$('emailField').classList.toggle('hidden',reg);$('confirmPasswordField').classList.toggle('hidden',!reg);$('authName').required=reg;$('authUsername').required=reg;$('authPhone').required=reg;$('authConfirmPassword').required=reg;if(!reg){$('usernameStatus').textContent='Enter your username and password.';$('usernameStatus').dataset.state='';$('authEmail').type='text';$('authEmail').placeholder='Username';$('authEmail').autocomplete='username';$('authEmail').required=true;$('authEmail').previousElementSibling.textContent='Username';}else{$('authEmail').type='email';$('authEmail').required=false;$('authEmail').autocomplete='email';$('authEmail').previousElementSibling.textContent='Internal account identifier';checkUsernameAvailability();}syncCountryPhoneCode();$('authPassword').minLength=reg?8:0;$('authPassword').autocomplete=reg?'new-password':'current-password';$('countryField').classList.toggle('hidden',!reg);$('currencyField').classList.toggle('hidden',!reg);$('tabRegister').classList.toggle('active',reg);$('tabLogin').classList.toggle('active',!reg)}
