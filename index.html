@@ -146,6 +146,116 @@ body{overflow-x:clip!important}
 }
 </style>
 
+
+<style>
+/* Premium responsive polish — presentation-only; keeps existing app logic intact */
+:root{
+  --ev-ink:#142b42;
+  --ev-teal:#087f8c;
+  --ev-teal-soft:#e7f6f6;
+  --ev-gold:#c6a45b;
+  --ev-gold-soft:#f8f1df;
+  --ev-shadow:0 12px 30px rgba(20,43,66,.07);
+}
+html{scroll-behavior:smooth}
+body{
+  background:
+    radial-gradient(ellipse at 12% 0%,rgba(8,127,140,.055),transparent 30rem),
+    #f4f7fb;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+header{
+  min-height:66px;
+  backdrop-filter:blur(16px);
+}
+.brand .logo{
+  box-shadow:inset 0 0 0 3px rgba(255,255,255,.7),0 5px 14px rgba(8,127,140,.12);
+  font-family:Georgia,serif;
+}
+.btn{
+  transition:transform .16s ease,box-shadow .16s ease,background .16s ease,border-color .16s ease;
+}
+.btn:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(20,43,66,.09)}
+.btn:active{transform:translateY(0)}
+.btn.gold{box-shadow:0 5px 13px rgba(8,127,140,.16)}
+.side{position:relative}
+.side:after{
+  content:"";position:absolute;right:0;top:20px;bottom:20px;width:1px;
+  background:linear-gradient(transparent,#dce5ef 15%,#dce5ef 85%,transparent);
+}
+.nav button{transition:all .18s ease}
+.nav button:not(.active):hover .nav-icon{background:#e7f6f6;color:#087f8c}
+.dashboard-heading h1{font-weight:800}
+.dashboard-hero{
+  isolation:isolate;
+  box-shadow:0 18px 42px rgba(16,43,70,.14);
+}
+.dashboard-hero:after{
+  content:"";position:absolute;z-index:-1;width:250px;height:250px;border-radius:50%;
+  right:12%;bottom:-190px;border:1px solid rgba(255,255,255,.16);
+  box-shadow:0 0 0 24px rgba(255,255,255,.025),0 0 0 50px rgba(255,255,255,.02);
+}
+.stat-card,.quick-action,.card,.package{
+  box-shadow:0 5px 18px rgba(20,43,66,.035);
+  transition:border-color .18s ease,box-shadow .18s ease,transform .18s ease;
+}
+.stat-card:hover,.card:hover{border-color:#c8dbe6}
+.quick-action:hover{transform:translateY(-2px);box-shadow:var(--ev-shadow)}
+.package{position:relative;overflow:hidden}
+.package.featured:before{
+  content:"";position:absolute;left:0;right:0;top:0;height:3px;
+  background:linear-gradient(90deg,#087f8c,#c6a45b,#087f8c);
+}
+.package .price{color:var(--ev-ink);letter-spacing:-.5px}
+.package .btn{border-radius:10px}
+.section-head{gap:12px}
+.section-head h2{font-weight:800}
+.field input,.field select,.ref-link input{
+  min-height:45px;transition:border-color .15s ease,box-shadow .15s ease;
+}
+.field input:focus,.field select:focus,.ref-link input:focus{
+  border-color:#53b9bd;box-shadow:0 0 0 3px rgba(8,127,140,.10);outline:none;
+}
+.table-wrap{border-radius:15px}
+table th{background:#f8fafc}
+tbody tr:hover{background:#f8fbfc}
+.status{font-weight:700;letter-spacing:.1px}
+.notice{border-radius:12px}
+.modal-bg{backdrop-filter:blur(5px)}
+.modal{border-radius:20px}
+.toast{box-shadow:0 12px 30px rgba(16,43,70,.18)}
+@media(min-width:701px){
+  .side{position:sticky;top:66px;height:calc(100vh - 66px);overflow-y:auto}
+  .nav button{min-height:46px}
+}
+@media(max-width:700px){
+  header{position:sticky;top:0;z-index:35;min-height:58px}
+  .brand{min-width:0}
+  .brand strong{letter-spacing:.7px}
+  .actions{max-width:62%;gap:5px}
+  .actions .btn{border-radius:9px;min-height:34px}
+  .dashboard-heading{gap:8px}
+  .dashboard-heading h1{line-height:1.15}
+  .dashboard-hero{box-shadow:0 12px 26px rgba(16,43,70,.12)}
+  .stat-card{border-radius:14px}
+  .quick-actions{margin-bottom:23px}
+  .mobile-nav{
+    backdrop-filter:blur(18px);
+    box-shadow:0 -8px 24px rgba(20,43,66,.08);
+    border-top:1px solid rgba(220,229,239,.9);
+  }
+  .mobile-nav button{border-radius:10px}
+  .mobile-nav button.active{background:#e7f6f6}
+  .modal-bg{align-items:flex-end;padding:8px}
+  .modal{width:100%;max-height:92dvh;border-radius:20px 20px 14px 14px;padding:18px}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*:before,*:after{transition:none!important;animation:none!important}
+}
+</style>
+
 </head>
 <body>
 <header>
