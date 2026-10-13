@@ -1771,9 +1771,21 @@ function isAdmin(){return !!user&&ADMIN_EMAILS.includes((user.email||'').toLower
 function syncLandingMode(){document.body.classList.toggle('ev-public',!user);document.body.classList.toggle('ev-member',!!user);const y=$('evYear');if(y)y.textContent=String(new Date().getFullYear())}
 function showPage(name){if(name==='admin'&&!isAdmin()){toast('Admin access restricted.');name='home'}document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id==='page-'+name));document.querySelectorAll('[data-page]').forEach(b=>b.classList.toggle('active',b.dataset.page===name));window.scrollTo({top:0,behavior:'smooth'});if(name==='admin')renderAdmin()}
 function openAuth(mode='register'){
- const modal=$('authModal');
- if(!modal){console.error('EliteVest auth modal is missing');toast('Sign-up form could not load. Please refresh the page.');return}
- try{setAuthMode(mode)}catch(err){console.error('Could not initialise auth form',err)}
+ const modal=document.getElementById('authModal');
+ if(!modal){console.error('EliteVest auth modal is missing');alert('The account form could not load. Please refresh the page.');return}
+ const login=mode==='login';
+ try{setAuthMode(login?'login':'register')}catch(err){
+   console.error('Could not initialise auth form',err);
+   const put=(id,value)=>{const el=document.getElementById(id);if(el)el.textContent=value};
+   put('authTitle',login?'Sign in to EliteVest':'Create account');
+   put('authSubmit',login?'Sign in':'Create account');
+   ['nameField','usernameField','phoneField','confirmPasswordField','countryField','currencyField'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.toggle('hidden',login)});
+   const email=document.getElementById('emailField');if(email)email.classList.toggle('hidden',!login);
+   ['authName','authUsername','authPhone','authConfirmPassword'].forEach(id=>{const el=document.getElementById(id);if(el)el.required=!login});
+   const identifier=document.getElementById('authEmail');if(identifier){identifier.type=login?'text':'email';identifier.required=login;identifier.placeholder=login?'Username':'Internal account identifier';identifier.autocomplete=login?'username':'email';}
+   const pass=document.getElementById('authPassword');if(pass){pass.minLength=login?0:8;pass.autocomplete=login?'current-password':'new-password'}
+   const regTab=document.getElementById('tabRegister'),loginTab=document.getElementById('tabLogin');if(regTab)regTab.classList.toggle('active',!login);if(loginTab)loginTab.classList.toggle('active',login);
+ }
  modal.classList.add('show');
  modal.style.display='flex';
  modal.style.visibility='visible';
