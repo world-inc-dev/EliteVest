@@ -721,6 +721,76 @@ hr{border-color:var(--ev-border) !important}
 }
 </style>
 
+
+<style id="elitevest-profile-banner-and-card-contrast">
+/* Make the personalized Welcome banner match the navy/teal visual system */
+.heading.dashboard-heading{
+ display:flex !important;align-items:center !important;justify-content:space-between !important;
+ gap:18px !important;padding:22px 26px !important;margin-bottom:20px !important;
+ background:linear-gradient(120deg,#102b46 0%,#145b59 100%) !important;
+ color:#fff !important;border:1px solid rgba(113,215,204,.32) !important;
+ border-radius:24px !important;
+ box-shadow:0 18px 42px rgba(0,0,0,.2),inset 0 1px rgba(255,255,255,.07) !important;
+}
+.heading.dashboard-heading #welcome{
+ color:#fff !important;font-weight:850 !important;line-height:1.2 !important;
+ margin:5px 0 8px !important;text-shadow:0 1px 2px rgba(0,0,0,.18);
+}
+.heading.dashboard-heading .eyebrow{color:#f4dca4 !important;font-weight:800 !important;letter-spacing:.12em}
+.heading.dashboard-heading #subwelcome{color:#e0edf3 !important;opacity:1 !important}
+.heading.dashboard-heading .btn{flex-shrink:0}
+@media(max-width:640px){
+ .heading.dashboard-heading{align-items:flex-start !important;flex-direction:column !important;padding:20px !important;border-radius:20px !important}
+ .heading.dashboard-heading .btn{width:100%}
+}
+/* Convert any remaining white/light cards and nested panels to readable dark teal surfaces */
+.card,.stat-card,.package,.wallet-summary-card,.quick-action,
+.admin-account-card,.admin-filter-card,.notice,.panel,.table-wrap,
+.form-card,.account-card,.transaction-card,.modal,.modal-content,
+.auth-card,.profile-card,.balance-card,.summary-card,.empty-state,
+.payment-card,.withdraw-card,.referral-card,.history-card{
+ background:linear-gradient(145deg,#102b46 0%,#0d484b 100%) !important;
+ color:#f4f8fc !important;border:1px solid rgba(144,205,213,.30) !important;
+ border-radius:20px !important;
+ box-shadow:0 12px 30px rgba(0,0,0,.18),inset 0 1px rgba(255,255,255,.045) !important;
+}
+.card *, .stat-card *, .package *, .wallet-summary-card *, .quick-action *,
+.admin-account-card *, .admin-filter-card *, .notice *, .panel *, .table-wrap *,
+.form-card *, .account-card *, .transaction-card *, .modal *, .modal-content *,
+.auth-card *, .profile-card *, .balance-card *, .summary-card *, .empty-state *,
+.payment-card *, .withdraw-card *, .referral-card *, .history-card *{
+ border-color:rgba(144,205,213,.22);
+}
+.card h1,.card h2,.card h3,.card h4,.stat-card h1,.stat-card h2,
+.stat-card h3,.package h1,.package h2,.package h3,
+.wallet-summary-card h1,.wallet-summary-card h2,.wallet-summary-card h3,
+.quick-action strong,.admin-account-card strong,.panel h2,.panel h3{
+ color:#fff !important;
+}
+.card p,.card small,.card label,.card .muted,.card .small,
+.stat-card p,.stat-card small,.stat-card .label,.stat-card .stat-caption,
+.package p,.package small,.package .muted,.wallet-summary-card p,
+.wallet-summary-card small,.quick-action small,.panel p,.panel small,
+.table-wrap p,.table-wrap small{
+ color:#c8d9e5 !important;
+}
+.card .value,.stat-card .value,.wallet-summary-value,.price{
+ color:#67e0b1 !important;font-weight:800 !important;
+}
+input,select,textarea{
+ background:#071a2e !important;color:#f8fbff !important;
+ border-color:rgba(144,205,213,.5) !important;
+}
+input::placeholder,textarea::placeholder{color:#b7c8d6 !important;opacity:1 !important}
+table,tbody{background:transparent !important}
+th{background:#0a243a !important;color:#e8f4fa !important}
+td{background:transparent !important;color:#f1f7fb !important}
+tr:nth-child(even) td{background:rgba(255,255,255,.025) !important}
+@media(max-width:640px){
+ .card,.stat-card,.package,.wallet-summary-card,.quick-action,.panel,.table-wrap{border-radius:17px !important}
+}
+</style>
+
 </head>
 <body>
 <header>
