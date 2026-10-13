@@ -1295,6 +1295,88 @@ body .warning,body .pending,body .status-pending { color:#854d0e!important;-webk
  body :is(.muted,.small,.hint,.help,.subtext,.description,.meta,.secondary,.text-muted,.form-text) { opacity:1!important; }
 }
 </style>
+
+<style id="elitevest-card-text-fit">
+/* Keep all card content inside its own boundaries on phones and desktop. */
+*, *::before, *::after { box-sizing: border-box; }
+.card, .package, .stat-card, .stat, .quick-action, .notice, .admin-card,
+.dashboard-card, .summary-card, .wallet-summary-card, .wallet-hero,
+.modal-card, .panel, .report-card, .metric-card, .transaction-card,
+.withdrawal-card, .profile-card, .referral-card, .table-wrap {
+  min-width: 0;
+  max-width: 100%;
+}
+.card *, .package *, .stat-card *, .stat *, .quick-action *, .notice *,
+.admin-card *, .dashboard-card *, .summary-card *, .wallet-summary-card *,
+.wallet-hero *, .modal-card *, .panel *, .report-card *, .metric-card *,
+.transaction-card *, .withdrawal-card *, .profile-card *, .referral-card * {
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+.grid, .cards-grid, .stats-grid, .package-grid, .dashboard-grid,
+.admin-grid, .quick-actions, .overview-grid, .wallet-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  min-width: 0;
+}
+.row, .package-top, .card-header, .section-heading, .admin-card-header,
+.quick-action, .stat-row, .metric-row {
+  min-width: 0;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.row > *, .package-top > *, .card-header > *, .section-heading > *,
+.admin-card-header > *, .stat-row > *, .metric-row > * {
+  min-width: 0;
+  max-width: 100%;
+}
+.card h1, .card h2, .card h3, .card h4,
+.package h1, .package h2, .package h3, .package h4,
+#page-admin h1, #page-admin h2, #page-admin h3, #page-admin h4 {
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+.card p, .package p, .notice, .muted, .small,
+#page-admin td, #page-admin th, #page-admin label {
+  line-height: 1.5;
+  white-space: normal;
+}
+.card button, .package button, .quick-action button,
+#page-admin button, .btn {
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  height: auto;
+  min-height: 42px;
+  line-height: 1.35;
+}
+input, select, textarea { min-width: 0; max-width: 100%; }
+.table-wrap, .table-responsive { width: 100%; overflow-x: auto; }
+#page-admin table { width: 100%; min-width: 600px; border-collapse: collapse; }
+#page-admin td, #page-admin th { overflow-wrap: anywhere; padding: 10px 8px; }
+@media (max-width: 600px) {
+  .card, .package, .stat-card, .stat, .quick-action, .notice,
+  .admin-card, .dashboard-card, .summary-card, .metric-card,
+  .transaction-card, .withdrawal-card, .profile-card, .referral-card {
+    padding: 14px;
+    margin-inline: 0;
+  }
+  .grid, .cards-grid, .stats-grid, .package-grid, .dashboard-grid,
+  .admin-grid, .quick-actions, .overview-grid, .wallet-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 12px;
+  }
+  .row { align-items: flex-start; }
+  .row > * { flex: 1 1 120px; }
+  .price, .amount, .value, .stat-value, .money {
+    font-size: clamp(1rem, 5vw, 1.5rem);
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+  }
+}
+</style>
+
 </head>
 <body>
 <header>
