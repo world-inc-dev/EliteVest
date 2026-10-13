@@ -1534,6 +1534,73 @@ body.ev-member #elitevest-public-home {display:none!important}
  #elitevest-public-home .ev-public-actions .btn{width:100%}
 }
 </style>
+
+<style id="elitevest-homepage-final-overflow-and-member-gate">
+/* Enforce public/member separation while authentication is checked. */
+html,body{max-width:100%;overflow-x:hidden}
+body.ev-public .layout,body:not(.ev-member) .layout{
+ display:none!important;visibility:hidden!important;pointer-events:none!important;
+}
+body.ev-public #elitevest-public-home{display:block!important;visibility:visible!important}
+body.ev-public .mobile-nav,body.ev-public #sideNav,body.ev-public .side,body.ev-public main{
+ display:none!important;
+}
+body.ev-member #elitevest-public-home{display:none!important}
+body.ev-member .layout{display:grid!important;visibility:visible!important;pointer-events:auto!important}
+#elitevest-public-home{width:100%;max-width:100%;overflow-x:hidden;contain:layout paint}
+#elitevest-public-home *{box-sizing:border-box;max-width:100%;min-width:0}
+#elitevest-public-home .ev-public-hero,
+#elitevest-public-home .ev-process-section,
+#elitevest-public-home .ev-public-section,
+#elitevest-public-home .ev-final-cta,
+#elitevest-public-home .ev-public-footer{width:100%;max-width:100%;overflow-x:hidden}
+#elitevest-public-home .ev-public-hero-inner{width:100%;max-width:1200px;grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr)}
+#elitevest-public-home .ev-public-copy,
+#elitevest-public-home .ev-section-heading,
+#elitevest-public-home .ev-feature-grid,
+#elitevest-public-home .ev-steps,
+#elitevest-public-home .ev-safety-panel,
+#elitevest-public-home .ev-faq-list{width:100%;max-width:100%}
+#elitevest-public-home h1,#elitevest-public-home h2,#elitevest-public-home h3,
+#elitevest-public-home p,#elitevest-public-home summary,#elitevest-public-home a,
+#elitevest-public-home button,#elitevest-public-home small,#elitevest-public-home strong{
+ max-width:100%;white-space:normal;overflow-wrap:anywhere;word-break:normal;
+}
+#elitevest-public-home .ev-public-copy h1{font-size:clamp(1.85rem,5vw,4rem);line-height:1.16;letter-spacing:-.025em}
+#elitevest-public-home .ev-section-heading h2,
+#elitevest-public-home .ev-safety-panel h2,
+#elitevest-public-home .ev-final-cta h2{font-size:clamp(1.55rem,3.8vw,2.8rem);line-height:1.25;letter-spacing:-.02em}
+#elitevest-public-home .ev-hero-visual{min-width:0;width:100%;max-width:100%}
+#elitevest-public-home .ev-float-card{max-width:min(220px,48%);overflow-wrap:anywhere}
+#elitevest-public-home .ev-emblem{max-width:78%}
+#elitevest-public-home .ev-feature-card,
+#elitevest-public-home .ev-steps article,
+#elitevest-public-home .ev-faq-list details{min-width:0;overflow:hidden}
+#elitevest-public-home .ev-feature-card p,
+#elitevest-public-home .ev-steps p,
+#elitevest-public-home .ev-faq-list details p,
+#elitevest-public-home .ev-safety-panel>div>p,
+#elitevest-public-home .ev-public-footer p{overflow-wrap:anywhere;word-break:normal}
+@media(max-width:760px){
+ #elitevest-public-home .ev-public-hero-inner{grid-template-columns:minmax(0,1fr);gap:8px}
+ #elitevest-public-home .ev-public-copy h1{font-size:clamp(1.85rem,8.2vw,2.7rem)}
+ #elitevest-public-home .ev-hero-visual{min-height:250px}
+ #elitevest-public-home .ev-public-section,#elitevest-public-home .ev-process-section{padding-left:16px;padding-right:16px}
+ #elitevest-public-home .ev-feature-grid,#elitevest-public-home .ev-steps{grid-template-columns:minmax(0,1fr)}
+ #elitevest-public-home .ev-safety-panel{grid-template-columns:34px minmax(0,1fr);gap:12px;padding:16px}
+ #elitevest-public-home .ev-safety-symbol{width:32px;height:32px;font-size:20px}
+ #elitevest-public-home .ev-float-card{max-width:46%;padding:8px}
+ #elitevest-public-home .ev-float-card small{font-size:10px}
+ #elitevest-public-home .ev-float-card strong{font-size:11px}
+ #elitevest-public-home .ev-public-actions .btn{width:100%;max-width:100%}
+}
+@media(max-width:360px){
+ #elitevest-public-home .ev-public-copy h1{font-size:1.8rem}
+ #elitevest-public-home .ev-float-card{max-width:44%;gap:5px}
+ #elitevest-public-home .ev-float-icon{width:27px;height:27px;flex:0 0 27px}
+ #elitevest-public-home .ev-emblem{width:175px}
+}
+</style>
 </head>
 <body class="ev-public">
 <header>
