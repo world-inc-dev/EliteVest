@@ -1475,14 +1475,73 @@ body.ev-member #elitevest-public-home {display:none!important}
 @media(max-width:760px){#ev-public-nav{flex-wrap:wrap;gap:12px;padding:12px 18px}.ev-nav-links{order:3;width:100%;justify-content:flex-start;overflow-x:auto;padding:5px 0 2px;gap:20px}.ev-nav-links a{white-space:nowrap}.ev-nav-join{margin-left:auto}}
 @media(max-width:380px){.ev-nav-brand{font-size:10px}.ev-nav-join{font-size:11px;padding:8px 10px}}
 </style>
-\n</head>
+\n
+<style id="elitevest-homepage-readable-overflow-fix">
+/* Public homepage: readable contrast, tidy wrapping, and no horizontal spill. */
+#elitevest-public-home{width:100%;max-width:100%;overflow-x:clip;color:#172235;background:#f5f7fb}
+#elitevest-public-home,#elitevest-public-home *{box-sizing:border-box;min-width:0}
+#elitevest-public-home p,#elitevest-public-home h1,#elitevest-public-home h2,#elitevest-public-home h3,#elitevest-public-home a,#elitevest-public-home button,#elitevest-public-home summary,#elitevest-public-home small,#elitevest-public-home strong{overflow-wrap:anywhere;word-break:normal}
+#elitevest-public-home .ev-public-copy h1{color:#fff;line-height:1.12;letter-spacing:-.035em;max-width:100%;font-size:clamp(2rem,5.2vw,4.35rem)}
+#elitevest-public-home .ev-public-copy h1 span{color:#f0d28b}
+#elitevest-public-home .ev-lead{color:#e0e8f0;line-height:1.7}
+#elitevest-public-home .ev-disclaimer-line{color:#e0e8f0;font-size:13px}
+#elitevest-public-home .ev-pill{color:#f0f4f8;line-height:1.5}
+#elitevest-public-home .ev-kicker{color:#805d20;line-height:1.5;letter-spacing:.12em}
+#elitevest-public-home .ev-public-copy .ev-kicker,#elitevest-public-home .ev-heading-light .ev-kicker,#elitevest-public-home .ev-final-cta .ev-kicker{color:#f0d28b}
+#elitevest-public-home .ev-section-heading h2,#elitevest-public-home .ev-safety-panel h2{color:#12283b;line-height:1.22;letter-spacing:-.025em}
+#elitevest-public-home .ev-section-heading h2 span{color:#116b67}
+#elitevest-public-home .ev-section-heading>p:last-child{color:#405367;line-height:1.75}
+#elitevest-public-home .ev-feature-card{height:100%;overflow:hidden}
+#elitevest-public-home .ev-feature-card h3{color:#12283b;line-height:1.4}
+#elitevest-public-home .ev-feature-card>p:last-child{color:#405367;line-height:1.75}
+#elitevest-public-home .ev-card-index{color:#78571f;line-height:1.5}
+#elitevest-public-home .ev-steps h3{color:#fff;line-height:1.4}
+#elitevest-public-home .ev-steps p{color:#e0e8f0;line-height:1.75}
+#elitevest-public-home .ev-safety-panel{align-items:start}
+#elitevest-public-home .ev-safety-panel>div>p:last-child{color:#4b402d;line-height:1.8}
+#elitevest-public-home .ev-faq-list details{overflow:hidden}
+#elitevest-public-home .ev-faq-list summary{color:#14283b;line-height:1.6}
+#elitevest-public-home .ev-faq-list details p{color:#405367;line-height:1.8}
+#elitevest-public-home .ev-final-cta h2{color:#fff;line-height:1.25}
+#elitevest-public-home .ev-final-cta>p:not(.ev-kicker){color:#e1e9f0;line-height:1.8}
+#elitevest-public-home .ev-public-footer{color:#e0e8f0}
+#elitevest-public-home .ev-public-footer>p{color:#d0dbe5;font-size:12px;line-height:1.8}
+#elitevest-public-home .ev-footer-copy{color:#b7c5d1;line-height:1.7}
+#elitevest-public-home .ev-hero-bottom{color:#d0dbe5;line-height:1.6;letter-spacing:.08em}
+#elitevest-public-home .ev-emblem-tag,#elitevest-public-home .ev-emblem-caption{color:#e0e8f0;line-height:1.6;letter-spacing:.08em}
+#elitevest-public-home .ev-float-card small{color:#e0e8f0;line-height:1.5}
+#elitevest-public-home .ev-float-card strong{color:#fff;line-height:1.45}
+#elitevest-public-home .ev-public-actions{width:100%;align-items:stretch}
+#elitevest-public-home .ev-public-actions .btn{max-width:100%;overflow-wrap:anywhere;white-space:normal;line-height:1.4;min-height:48px}
+@media(max-width:760px){
+ #elitevest-public-home .ev-public-hero-inner{grid-template-columns:minmax(0,1fr);gap:10px}
+ #elitevest-public-home .ev-public-copy h1{font-size:clamp(2rem,9vw,3rem)}
+ #elitevest-public-home .ev-hero-visual{width:100%;min-height:280px;overflow:hidden}
+ #elitevest-public-home .ev-float-top{right:0;top:3%}
+ #elitevest-public-home .ev-float-bottom{left:0;bottom:2%}
+ #elitevest-public-home .ev-hero-bottom{justify-content:flex-start;gap:12px 18px;flex-wrap:wrap;font-size:10px}
+ #elitevest-public-home .ev-public-section{padding:42px 18px}
+ #elitevest-public-home .ev-process-section{padding:42px 18px}
+ #elitevest-public-home .ev-safety-panel{grid-template-columns:40px minmax(0,1fr);gap:13px;padding:20px}
+ #elitevest-public-home .ev-safety-symbol{width:38px;height:38px}
+ #elitevest-public-home .ev-public-footer{padding:24px 18px}
+}
+@media(max-width:380px){
+ #elitevest-public-home .ev-public-copy h1{font-size:2rem}
+ #elitevest-public-home .ev-emblem{width:190px}
+ #elitevest-public-home .ev-float-card{max-width:155px}
+ #elitevest-public-home .ev-float-card strong{font-size:11px}
+ #elitevest-public-home .ev-public-actions .btn{width:100%}
+}
+</style>
+</head>
 <body class="ev-public">
 <header>
   <div class="brand"><div class="logo">E</div><div><strong>ELITEVEST</strong><small>INVEST TODAY · GROW TOMORROW</small></div></div>
   <div class="actions"><button class="btn gold" id="installAppBtn" type="button" onclick="installEliteVest()">Install App</button><div class="member-chip hidden" id="memberChip"><span class="member-avatar" id="memberAvatar">M</span><span class="member-identity"><small>MEMBER ACCOUNT</small><strong id="memberUsername">Member</strong></span></div><button class="btn" id="loginTop" onclick="openAuth('login')">Sign in</button><button class="btn gold" id="joinTop" onclick="openAuth('register')">Join now</button><button class="btn" id="logoutTop" onclick="signOut()">Sign out</button></div>
 </header>
 
-<section id="elitevest-public-home" aria-label="EliteVest public homepage">\n<nav id="ev-public-nav" aria-label="Homepage navigation"><a href="#elitevest-public-home" class="ev-nav-brand"><span>E</span> ELITEVEST</a><div class="ev-nav-links"><a href="#ev-about">About</a><a href="#ev-how-it-works">How it works</a><a href="#ev-safety">Important information</a><a href="#ev-faq">FAQs</a></div><button class="btn gold ev-nav-join" onclick="openAuth('register')">Get started <span aria-hidden="true">→</span></button></nav>
+<section id="elitevest-public-home" aria-label="EliteVest public homepage">\n
 
   <div class="ev-public-hero">
     <div class="ev-public-hero-inner">
@@ -1528,9 +1587,9 @@ body.ev-member #elitevest-public-home {display:none!important}
     </div>
   </section>
 
-  <section class="ev-public-section">
+  <section id="ev-safety" class="ev-public-section">
     <div class="ev-safety-panel">
-      <div class="ev-safety-symbol">!</div><div><p class="ev-kicker">IMPORTANT INFORMATION</p><h2>Understand the risks. Verify first.</h2><p>Investment activity can involve loss of capital. Projected or displayed earnings are not guarantees. Before depositing, verify the legal operator, applicable authorisation, payment recipient, withdrawal terms, and all fees independently. Never rely on claims of guaranteed profits.</p></div>
+      <div class="ev-safety-symbol">!</div><div><p class="ev-kicker">IMPORTANT INFORMATION</p><h2>Understand the risks. Verify first.</h2><p>Investment activity can involve loss of capital. Displayed or projected earnings may not be achieved, and you could lose money. Before depositing, verify the legal operator, applicable authorisation, payment recipient, withdrawal terms, and all fees independently.</p></div>
     </div>
   </section>
 
@@ -1538,7 +1597,7 @@ body.ev-member #elitevest-public-home {display:none!important}
     <div class="ev-section-heading"><p class="ev-kicker">HELP CENTRE</p><h2>Frequently asked <span>questions.</span></h2><p>A few things to know before joining.</p></div>
     <div class="ev-faq-list">
       <details><summary>Can I explore EliteVest before registering?</summary><p>Yes. This public page introduces the platform. Create an account or sign in when you are ready to access member features.</p></details>
-      <details><summary>Are projected earnings guaranteed?</summary><p>No. Projections are not guarantees of future results. Review the full terms and risks, and do not invest money you cannot afford to lose.</p></details>
+      <details><summary>Are projected earnings certain?</summary><p>No. Future results are uncertain and you could lose money. Review the full terms and risks, and never commit money you cannot afford to lose.</p></details>
       <details><summary>How do I check package details?</summary><p>Sign in and open Packages to review the details currently available on the platform. Confirm all terms and fees before taking action.</p></details>
       <details><summary>Are deposits and withdrawals always available?</summary><p>Availability depends on the features and verified payment processes that are operational. A request or on-screen status alone does not confirm that a payment has settled.</p></details>
       <details><summary>How should I protect my account?</summary><p>Use a unique password, never share your sign-in details or one-time codes, and verify support and payment instructions before acting.</p></details>
@@ -1546,7 +1605,7 @@ body.ev-member #elitevest-public-home {display:none!important}
   </section>
 
   <section class="ev-final-cta"><p class="ev-kicker">YOUR NEXT STEP</p><h2>Start with the information. <span>Choose with confidence.</span></h2><p>Explore EliteVest, review the terms, and decide whether creating an account is right for you.</p><div class="ev-public-actions"><button class="btn gold" onclick="openAuth('register')">Create an account <span aria-hidden="true">→</span></button><button class="btn ev-outline-btn" onclick="openAuth('login')">I already have an account</button></div></section>
-  <footer class="ev-public-footer"><div class="ev-footer-brand"><span class="ev-footer-logo">E</span><span><strong>ELITEVEST</strong><small>INVEST TODAY · GROW TOMORROW</small></span></div><p>Information on this website is not a guarantee of returns or a substitute for independent financial advice. Verify the operator, applicable authorisation, terms, and risks before committing funds.</p><span class="ev-footer-copy">© <span id="evYear">2026</span> EliteVest. Please read all terms before proceeding.</span></footer>
+  <footer class="ev-public-footer"><div class="ev-footer-brand"><span class="ev-footer-logo">E</span><span><strong>ELITEVEST</strong><small>INVEST TODAY · GROW TOMORROW</small></span></div><p>Information on this website is general platform information, not personal financial advice. Verify the operator, applicable authorisation, terms, and risks before committing funds.</p><span class="ev-footer-copy">© <span id="evYear">2026</span> EliteVest. Please read all terms before proceeding.</span></footer>
 </section>
 
 <div class="layout">
