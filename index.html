@@ -437,6 +437,50 @@ table th{font-weight:750;color:#475467;background:#f8fafc}
 }
 </style>
 
+
+<style id="elitevest-readable-text-fix">
+/* High-contrast text for white surfaces */
+:root{
+  --text:#101828 !important;
+  --muted:#344054 !important;
+  --line:#b8c1cc !important;
+}
+body{color:#101828}
+body p, body label, body small, body li,
+body .muted, body .helper-text, body .description,
+body .form-hint, body .field-hint, body .subtitle,
+body .nav-link, body .menu-link,
+body th, body td, body .table,
+body input, body select, body textarea{
+  color:#101828;
+}
+body input::placeholder, body textarea::placeholder{
+  color:#475467 !important;
+  opacity:1 !important;
+}
+body input, body select, body textarea{
+  background:#fff;
+  border-color:#98a2b3;
+}
+body .card, body .stat-card, body .panel, body .modal-content,
+body .form-card, body .table-wrap{
+  color:#101828;
+}
+body .card p, body .stat-card p, body .panel p,
+body .card small, body .stat-card small, body .panel small,
+body .card label, body .panel label{
+  color:#344054;
+}
+/* Keep intentional dark hero/banner text readable */
+.hero, .hero *, .dashboard-hero, .dashboard-hero *{
+  color:inherit;
+}
+.hero h1, .hero h2, .hero h3, .dashboard-hero h1,
+.dashboard-hero h2, .dashboard-hero h3{
+  color:#fff;
+}
+</style>
+
 </head>
 <body>
 <header>
