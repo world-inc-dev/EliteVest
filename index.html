@@ -791,6 +791,55 @@ tr:nth-child(even) td{background:rgba(255,255,255,.025) !important}
 }
 </style>
 
+
+<style id="elitevest-package-figures-visible">
+/* High-contrast figures and labels inside package cards */
+.package,
+.package.featured{
+ background:linear-gradient(145deg,#102b46 0%,#0d5555 100%) !important;
+ color:#f8fbff !important;border:1px solid rgba(144,225,218,.42) !important;
+ border-radius:22px !important;box-shadow:0 14px 32px rgba(0,0,0,.25) !important;
+}
+.package .package-top,.package .package-top strong{
+ color:#ffffff !important;font-weight:800 !important;
+}
+.package .price{
+ display:block !important;color:#7af0c0 !important;
+ font-size:clamp(1.35rem,4vw,1.8rem) !important;
+ font-weight:900 !important;line-height:1.35 !important;
+ opacity:1 !important;visibility:visible !important;
+ text-shadow:0 1px 1px rgba(0,0,0,.2);
+}
+.package .muted,.package .small,.package .row,
+.package .row span,.package .row strong,
+.package .line + .row span{
+ color:#e2edf5 !important;opacity:1 !important;visibility:visible !important;
+}
+.package .row{
+ display:flex !important;justify-content:space-between !important;
+ align-items:flex-start !important;gap:12px !important;
+ padding:10px 0 !important;border-bottom:1px solid rgba(202,232,237,.18) !important;
+}
+.package .row span{color:#d1e2ec !important;flex:1 1 auto}
+.package .row strong{
+ color:#ffffff !important;font-weight:800 !important;text-align:right;
+ flex:0 1 auto;overflow-wrap:anywhere;
+}
+.package .btn{
+ display:inline-flex !important;align-items:center;justify-content:center;
+ min-height:44px !important;margin-top:14px !important;
+ background:linear-gradient(135deg,#e6c879,#f5dfa0) !important;
+ color:#102b46 !important;border:1px solid #f5dfa0 !important;
+ font-weight:850 !important;border-radius:12px !important;
+}
+.package .status,.package .badge{color:#fff !important}
+@media(max-width:480px){
+ .package{padding:18px !important}
+ .package .price{font-size:1.35rem !important}
+ .package .row{font-size:.92rem !important}
+}
+</style>
+
 </head>
 <body>
 <header>
