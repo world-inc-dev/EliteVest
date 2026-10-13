@@ -246,11 +246,43 @@ let deferredInstallPrompt=null;
 window.addEventListener('beforeinstallprompt',event=>{event.preventDefault();deferredInstallPrompt=event;const b=$('installAppBtn');if(b){b.textContent='Install App';b.classList.remove('hidden')}});
 window.addEventListener('appinstalled',()=>{deferredInstallPrompt=null;const b=$('installAppBtn');if(b){b.textContent='App Installed';b.disabled=true}toast('EliteVest has been installed.');});
 async function installEliteVest(){
-  if(deferredInstallPrompt){deferredInstallPrompt.prompt();const choice=await deferredInstallPrompt.userChoice;deferredInstallPrompt=null;if(choice?.outcome==='accepted'){const b=$('installAppBtn');if(b){b.textContent='App Installed';b.disabled=true}}return}
-  const isIOS=/iphone|ipad|ipod/i.test(navigator.userAgent);
-  if(isIOS){toast('To install: tap Share in Safari, then Add to Home Screen.');return}
-  if(window.matchMedia('(display-mode: standalone)').matches||navigator.standalone){toast('EliteVest is already installed.');return}
-  toast('If Install is unavailable, open this site in Chrome, then browser menu ⋮ → Install app or Add to Home screen.');
+  const b=$('installAppBtn');
+  if(window.matchMedia('(display-mode: standalone)').matches||navigator.standalone){
+    toast('EliteVest is already installed.');
+    if(b){b.textContent='App Installed';b.disabled=true}
+    return;
+  }
+  if(deferredInstallPrompt){
+    try{
+      deferredInstallPrompt.prompt();
+      const choice=await deferredInstallPrompt.userChoice;
+      if(choice&&choice.outcome==='accepted'){
+        if(b){b.textContent='App Installed';b.disabled=true}
+        toast('EliteVest installation accepted.');
+      }else{
+        toast('Installation was cancelled. Tap Install App to try again.');
+      }
+    }catch(err){
+      console.warn('Native install prompt unavailable',err);
+      showInstallInstructions();
+    }finally{deferredInstallPrompt=null}
+    return;
+  }
+  showInstallInstructions();
+}
+function showInstallInstructions(){
+  const ua=navigator.userAgent||'';
+  let steps;
+  if(/iphone|ipad|ipod/i.test(ua)){
+    steps='iPhone/iPad: Open EliteVest in Safari → tap Share (the square with the up arrow) → choose Add to Home Screen → tap Add.';
+  }else if(/SamsungBrowser/i.test(ua)){
+    steps='Samsung Internet: Tap the browser menu (☰ or ⋮) → choose Add page to → Home screen (or Add to Home screen) → tap Add.';
+  }else if(/Edg/i.test(ua)){
+    steps='Microsoft Edge: Open the browser menu ⋮ → Apps → Install this site as an app (or Add to phone/home screen).';
+  }else{
+    steps='Chrome on Android: Tap the browser menu ⋮ → Install app. If that option is missing, choose Add to Home screen, then confirm Add.';
+  }
+  alert('Install EliteVest\n\n'+steps+'\n\nIf you do not see that option, update your browser and open the live website over HTTPS, then try again.');
 }
 if('serviceWorker' in navigator && /^https?:$/.test(location.protocol)){window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js').catch(err=>console.warn('PWA service worker registration failed',err)))}
 
