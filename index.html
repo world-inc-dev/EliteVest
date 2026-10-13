@@ -1462,14 +1462,28 @@ body.ev-member #elitevest-public-home {display:none!important}
 @media(max-width:430px){.ev-public-hero{padding:38px 18px 20px}.ev-public-copy h1{font-size:2.45rem}.ev-pill{font-size:10px}.ev-hero-visual{min-height:285px}.ev-emblem{width:210px}.ev-emblem-mark{font-size:54px}.ev-float-card{padding:9px 10px;max-width:175px}.ev-float-card strong{font-size:10px}.ev-hero-bottom{flex-wrap:wrap}.ev-public-actions .btn{width:100%}.ev-safety-panel{grid-template-columns:minmax(0,1fr)}}
 </style>
 
-</head>
+
+<style id="elitevest-homepage-navigation-polish">
+#ev-public-nav{position:relative;z-index:4;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:14px clamp(18px,6vw,88px);background:#fff;border-bottom:1px solid #e7ebf0;color:#172b3e}
+.ev-nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#152b3d;font-size:12px;font-weight:900;letter-spacing:.14em;white-space:nowrap}
+.ev-nav-brand span{display:grid;place-items:center;width:34px;height:34px;border-radius:10px;background:#d8b46a;color:#14283b;font-size:20px;letter-spacing:0}
+.ev-nav-links{display:flex;align-items:center;justify-content:center;gap:clamp(12px,2.5vw,30px)}
+.ev-nav-links a{color:#536579;text-decoration:none;font-size:12px;font-weight:700;transition:color .2s}
+.ev-nav-links a:hover{color:#137c75}
+.ev-nav-join{white-space:nowrap;min-height:40px;padding:9px 14px}
+#elitevest-public-home [id]{scroll-margin-top:20px}
+@media(max-width:760px){#ev-public-nav{flex-wrap:wrap;gap:12px;padding:12px 18px}.ev-nav-links{order:3;width:100%;justify-content:flex-start;overflow-x:auto;padding:5px 0 2px;gap:20px}.ev-nav-links a{white-space:nowrap}.ev-nav-join{margin-left:auto}}
+@media(max-width:380px){.ev-nav-brand{font-size:10px}.ev-nav-join{font-size:11px;padding:8px 10px}}
+</style>
+\n</head>
 <body class="ev-public">
 <header>
   <div class="brand"><div class="logo">E</div><div><strong>ELITEVEST</strong><small>INVEST TODAY · GROW TOMORROW</small></div></div>
   <div class="actions"><button class="btn gold" id="installAppBtn" type="button" onclick="installEliteVest()">Install App</button><div class="member-chip hidden" id="memberChip"><span class="member-avatar" id="memberAvatar">M</span><span class="member-identity"><small>MEMBER ACCOUNT</small><strong id="memberUsername">Member</strong></span></div><button class="btn" id="loginTop" onclick="openAuth('login')">Sign in</button><button class="btn gold" id="joinTop" onclick="openAuth('register')">Join now</button><button class="btn" id="logoutTop" onclick="signOut()">Sign out</button></div>
 </header>
 
-<section id="elitevest-public-home" aria-label="EliteVest public homepage">
+<section id="elitevest-public-home" aria-label="EliteVest public homepage">\n<nav id="ev-public-nav" aria-label="Homepage navigation"><a href="#elitevest-public-home" class="ev-nav-brand"><span>E</span> ELITEVEST</a><div class="ev-nav-links"><a href="#ev-about">About</a><a href="#ev-how-it-works">How it works</a><a href="#ev-safety">Important information</a><a href="#ev-faq">FAQs</a></div><button class="btn gold ev-nav-join" onclick="openAuth('register')">Get started <span aria-hidden="true">→</span></button></nav>
+
   <div class="ev-public-hero">
     <div class="ev-public-hero-inner">
       <div class="ev-public-copy">
@@ -1493,7 +1507,7 @@ body.ev-member #elitevest-public-home {display:none!important}
     <div class="ev-hero-bottom"><span>01 / EXPLORE</span><span>02 / UNDERSTAND</span><span>03 / MANAGE</span></div>
   </div>
 
-  <section class="ev-public-section ev-intro-section">
+  <section id="ev-about" class="ev-public-section ev-intro-section">
     <div class="ev-section-heading"><p class="ev-kicker">THE ELITEVEST EXPERIENCE</p><h2>A platform designed around <span>clarity and control.</span></h2><p>Get familiar with the platform before creating an account. Review the available information and decide what is right for you.</p></div>
     <div class="ev-feature-grid">
       <article class="ev-feature-card"><div class="ev-feature-icon">▦</div><p class="ev-card-index">01 / OVERVIEW</p><h3>Your activity, organised</h3><p>Use your personal dashboard to review account information and available activity records after signing in.</p></article>
@@ -1502,7 +1516,7 @@ body.ev-member #elitevest-public-home {display:none!important}
     </div>
   </section>
 
-  <section class="ev-process-section">
+  <section id="ev-how-it-works" class="ev-process-section">
     <div class="ev-process-wrap">
       <div class="ev-section-heading ev-heading-light"><p class="ev-kicker">GETTING STARTED</p><h2>Know the steps <span>before you begin.</span></h2><p>Take your time to understand the process. Do not send money until the payment method, recipient, and terms have been independently verified.</p></div>
       <div class="ev-steps">
@@ -1520,7 +1534,7 @@ body.ev-member #elitevest-public-home {display:none!important}
     </div>
   </section>
 
-  <section class="ev-public-section ev-faq-section">
+  <section id="ev-faq" class="ev-public-section ev-faq-section">
     <div class="ev-section-heading"><p class="ev-kicker">HELP CENTRE</p><h2>Frequently asked <span>questions.</span></h2><p>A few things to know before joining.</p></div>
     <div class="ev-faq-list">
       <details><summary>Can I explore EliteVest before registering?</summary><p>Yes. This public page introduces the platform. Create an account or sign in when you are ready to access member features.</p></details>
