@@ -915,6 +915,118 @@ body :is(.muted,.small,.hint,.help,.subtext,.description,.meta,.secondary,.text-
   body :is(.card,.panel,.box,.tile,.stat-card,.summary-card,.package,.package-card,.wallet-card,.transaction-card,.profile-card,.admin-card,.content-card) { color:#f8fafc !important; }
 }
 </style>
+
+<style id="elitevest-white-surface-dark-text-fix">
+/* Final targeted fix: dark text on all white/light surfaces. */
+:root { --text:#172235; --muted:#526579; }
+html,body,main,.layout,.page { color:#172235 !important; }
+body :is(.side,.mobile-nav,.card,.package,.quick-action,.notice,.modal,.modal-content,.table-wrap,.table-container,.member-chip,.tabs,.field,.form-group,.profile-card,.admin-card,.content-card,.stat,.stat-card,.summary-card,.wallet-card,.transaction-card,.list-item,.empty-state,.dropdown-menu,.menu-panel) {
+  color:#172235 !important;
+}
+body :is(.side,.mobile-nav,.card,.package,.quick-action,.notice,.modal,.modal-content,.table-wrap,.table-container,.member-chip,.tabs,.field,.form-group,.profile-card,.admin-card,.content-card,.stat,.stat-card,.summary-card,.wallet-card,.transaction-card,.list-item,.empty-state,.dropdown-menu,.menu-panel) :is(p,span,strong,b,em,i,label,small,li,dt,dd,th,td,h1,h2,h3,h4,h5,h6,div,output) {
+  color:#172235 !important;
+  -webkit-text-fill-color:#172235 !important;
+  opacity:1 !important;
+}
+body :is(.side,.mobile-nav,.card,.package,.quick-action,.notice,.modal,.modal-content,.table-wrap,.table-container,.member-chip,.tabs,.field,.form-group,.profile-card,.admin-card,.content-card,.stat,.stat-card,.summary-card,.wallet-card,.transaction-card,.list-item,.empty-state,.dropdown-menu,.menu-panel) :is(.muted,.small,.hint,.help,.subtext,.description,.meta,.secondary,.text-muted,.form-text,.package .row span,.stat-label) {
+  color:#526579 !important;
+  -webkit-text-fill-color:#526579 !important;
+  opacity:1 !important;
+}
+body :is(.side,.mobile-nav) button,
+body :is(.side,.mobile-nav) a,
+body .nav button,
+body .mobile-nav button {
+  color:#172235 !important;
+  -webkit-text-fill-color:#172235 !important;
+  opacity:1 !important;
+  font-weight:700 !important;
+}
+body .nav button.active,
+body .nav button:hover,
+body .tabs button.active,
+body .mobile-nav button.active {
+  background:#d9f3e5 !important;
+  color:#075b36 !important;
+  -webkit-text-fill-color:#075b36 !important;
+  border-color:#8bd3ac !important;
+}
+body .nav button .nav-icon,
+body .quick-icon,
+body .stat-icon {
+  color:#075b36 !important;
+  -webkit-text-fill-color:#075b36 !important;
+}
+body .package .price,
+body .package-card .price,
+body .price,
+body .amount,
+body .balance,
+body .money,
+body .value,
+body .stat-value {
+  color:#087443 !important;
+  -webkit-text-fill-color:#087443 !important;
+  font-weight:850 !important;
+  opacity:1 !important;
+}
+body .package .row strong,
+body .package-card .row strong { color:#172235 !important; -webkit-text-fill-color:#172235 !important; }
+body .package .row span,
+body .package-card .row span { color:#526579 !important; -webkit-text-fill-color:#526579 !important; }
+body .package .tag,
+body .package .status,
+body .tag,
+body .status { color:#075b36 !important; -webkit-text-fill-color:#075b36 !important; }
+body input,body select,body textarea {
+  background:#ffffff !important;
+  color:#172235 !important;
+  -webkit-text-fill-color:#172235 !important;
+  border-color:#b8c5d5 !important;
+}
+body input::placeholder,body textarea::placeholder {
+  color:#64748b !important;
+  -webkit-text-fill-color:#64748b !important;
+  opacity:1 !important;
+}
+body select option { background:#ffffff !important; color:#172235 !important; }
+body .btn:not(.gold):not(.primary):not(.btn-primary),
+body button:not(.gold):not(.primary):not(.btn-primary) {
+  color:#172235 !important;
+  -webkit-text-fill-color:#172235 !important;
+}
+body .gold,body .btn.gold,body .btn-gold,body button.gold,body .btn-primary,body button.primary {
+  color:#172235 !important;
+  -webkit-text-fill-color:#172235 !important;
+}
+/* Keep deliberately dark/colored hero banners and welcome/profile banner text light. */
+body :is(.hero,.banner,.welcome-banner,.wallet-hero,.wallet-summary) {
+  color:#ffffff !important;
+}
+body :is(.hero,.banner,.welcome-banner,.wallet-hero,.wallet-summary) * {
+  color:#ffffff !important;
+  -webkit-text-fill-color:#ffffff !important;
+  opacity:1 !important;
+}
+body :is(.hero,.banner,.welcome-banner,.wallet-hero,.wallet-summary) :is(.hero-primary,.hero-secondary) {
+  color:#10485a !important;
+  -webkit-text-fill-color:#10485a !important;
+}
+body :is(.hero,.banner,.welcome-banner,.wallet-hero,.wallet-summary) :is(.hero-primary,.hero-secondary) * {
+  color:inherit !important;
+  -webkit-text-fill-color:currentColor !important;
+}
+body table,body table td { color:#172235 !important; -webkit-text-fill-color:#172235 !important; }
+body table th { color:#334155 !important; -webkit-text-fill-color:#334155 !important; }
+body .success,body .positive,body .status-success,body .approved { color:#087443 !important; -webkit-text-fill-color:#087443 !important; }
+body .danger,body .negative,body .error,body .status-error,body .rejected { color:#b42318 !important; -webkit-text-fill-color:#b42318 !important; }
+body .warning,body .pending,body .status-pending { color:#854d0e !important; -webkit-text-fill-color:#854d0e !important; }
+@media(max-width:600px) {
+  body .mobile-nav button { font-size:12px !important; }
+  body .mobile-nav button span { color:#172235 !important; -webkit-text-fill-color:#172235 !important; }
+  body .mobile-nav button.active span { color:#075b36 !important; -webkit-text-fill-color:#075b36 !important; }
+}
+</style>
 </head>
 <body>
 <header>
