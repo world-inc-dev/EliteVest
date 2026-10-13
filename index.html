@@ -544,6 +544,53 @@ body .card label, body .panel label{
 }
 </style>
 
+
+<style id="elitevest-all-banners-navy-teal">
+/* Consistent dark navy-blue and teal gradient across platform banners */
+.hero,
+.dashboard-hero,
+.page-banner,
+.section-banner,
+.auth-banner,
+.welcome-banner,
+.banner,
+.dashboard-heading,
+.heading,
+.page-heading,
+.section-heading{
+  background:linear-gradient(135deg,#102b46 0%,#145b59 100%) !important;
+  color:#ffffff !important;
+  border-color:#164e63 !important;
+}
+/* Keep text and icons readable on dark gradient banner surfaces */
+.hero h1,.hero h2,.hero h3,.hero p,.hero .eyebrow,
+.dashboard-hero h1,.dashboard-hero h2,.dashboard-hero h3,
+.dashboard-hero p,.dashboard-hero .eyebrow,
+.page-banner h1,.page-banner h2,.page-banner p,
+.section-banner h1,.section-banner h2,.section-banner p,
+.auth-banner h1,.auth-banner h2,.auth-banner p,
+.welcome-banner h1,.welcome-banner h2,.welcome-banner p,
+.banner h1,.banner h2,.banner p,
+.dashboard-heading h1,.dashboard-heading h2,
+.page-heading h1,.page-heading h2,
+.section-heading h1,.section-heading h2{
+  color:#ffffff !important;
+}
+.hero .eyebrow,.dashboard-hero .eyebrow,
+.page-banner .eyebrow,.section-banner .eyebrow,
+.auth-banner .eyebrow,.welcome-banner .eyebrow{
+  color:#f4dca4 !important;
+}
+/* Don't recolor standard buttons when a heading/banner contains them */
+.hero .btn,.dashboard-hero .btn,
+.page-banner .btn,.section-banner .btn,
+.auth-banner .btn,.welcome-banner .btn,
+.banner .btn,.dashboard-heading .btn,
+.page-heading .btn,.section-heading .btn{
+  color:inherit;
+}
+</style>
+
 </head>
 <body>
 <header>
