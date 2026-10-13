@@ -1614,6 +1614,52 @@ body.ev-member .layout{display:grid!important;visibility:visible!important;point
  #elitevest-public-home .ev-emblem{width:175px}
 }
 </style>
+<style id="elitevest-final-full-width-fix">
+/* Final layout override: keep the member workspace beside its sidebar and fill the viewport. */
+body.ev-member .layout{
+  display:grid!important;
+  width:100%!important;
+  max-width:none!important;
+  grid-template-columns:220px minmax(0,1fr)!important;
+  align-items:stretch!important;
+  margin:0!important;
+  min-height:calc(100vh - 65px)!important;
+}
+body.ev-member .layout>aside.side{display:block!important;width:auto!important;min-width:0!important}
+body.ev-member .layout>main{
+  display:block!important;
+  width:100%!important;
+  max-width:none!important;
+  min-width:0!important;
+  margin:0!important;
+  padding:clamp(16px,2.5vw,36px)!important;
+  box-sizing:border-box!important;
+}
+body.ev-member .layout>main>.page,
+body.ev-member .layout>main>.page.active{
+  display:none;
+  width:100%!important;
+  max-width:none!important;
+  min-width:0!important;
+  margin:0!important;
+}
+body.ev-member .layout>main>.page.active{display:block!important}
+body.ev-member .layout .stats,
+body.ev-member .layout .package-grid,
+body.ev-member .layout .grid,
+body.ev-member .layout .quick-actions,
+body.ev-member .layout .dashboard-grid,
+body.ev-member .layout .overview-grid{
+  width:100%!important;
+  max-width:none!important;
+}
+@media(max-width:700px){
+ body.ev-member .layout{display:block!important;width:100%!important}
+ body.ev-member .layout>aside.side{display:none!important}
+ body.ev-member .layout>main{display:block!important;padding:16px 12px calc(100px + env(safe-area-inset-bottom))!important}
+ body.ev-member .layout>main>.page.active{display:block!important}
+}
+</style>
 </head>
 <body class="ev-public">
 <header>
